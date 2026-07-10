@@ -1,1 +1,1 @@
-# theame.by
+# IITP Moodle Theme Extension

@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "IITP Moodle ",
+  "version": "3.0",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://cet.iitp.ac.in/moodle/*"
+      ],
+      "css": [
+        "css/variables.css",
+        "css/base.css"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/images/IIT-Patna.png",
+        "css/*",
+        "js/*"
+      ],
+      "matches": [
+        "https://cet.iitp.ac.in/*"
+      ]
+    }
+  ]
+}
