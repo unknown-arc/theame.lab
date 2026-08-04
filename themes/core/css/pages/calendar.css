@@ -1,0 +1,24 @@
+/* --- THEME.BY Page: Calendar (/calendar/) --- */
+html[class*="moodle-apple-pro"] .maincalendar .calendarmonth {
+  border-collapse: separate !important;
+  border-spacing: 6px !important;
+}
+html[class*="moodle-apple-pro"] .maincalendar td.day {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md, 14px) !important;
+}
+html[class*="moodle-apple-pro"] .maincalendar td.day.today {
+  background: var(--calendar-today) !important;
+  border-color: var(--accent) !important;
+}
+html[class*="moodle-apple-pro"] .calendar_event_course {
+  background: var(--calendar-event) !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-sm, 8px) !important;
+}
+html[class*="moodle-apple-pro"] .calendar_event_due {
+  background: var(--calendar-deadline) !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-sm, 8px) !important;
+}

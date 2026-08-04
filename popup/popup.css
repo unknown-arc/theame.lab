@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 300px;
+  padding: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  background: #ffffff;
+}
+
+.container {
+  border: 3px solid #111111;
+  border-radius: 22px;
+  padding: 22px 18px 18px;
+  background: #ffffff;
+}
+
+.logo {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #111111;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.power-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.power-btn {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 3px solid #111111;
+  background: #ffffff;
+  color: #111111;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+}
+
+.power-btn:hover {
+  transform: translateY(-2px);
+}
+
+.power-btn:active {
+  transform: translateY(0);
+}
+
+.power-btn.off {
+  background: #111111;
+  color: #ffffff;
+}
+
+#powerText {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.section-title {
+  margin-bottom: 10px;
+  color: #8a8a8e;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.theme-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid #111111;
+  background: #ffffff;
+  color: #111111;
+  padding: 14px 18px;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.theme-row:hover {
+  transform: translateY(-1px);
+}
+
+.theme-row.active {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.chevron {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.theme-list[data-disabled="true"] .theme-row {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.status-line {
+  text-align: center;
+  font-size: 11px;
+  color: #8a8a8e;
+  line-height: 1.4;
+}

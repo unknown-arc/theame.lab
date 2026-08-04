@@ -1,0 +1,72 @@
+/* --- THEME.BY: Activity list items, badges & misc card-like surfaces ---
+   Course/dashboard cards themselves are handled in css/base.css; this file
+   covers the smaller repeated surfaces around them. */
+
+html[class*="moodle-apple-pro"] .activity-item,
+html[class*="moodle-apple-pro"] li.activity {
+  border-radius: var(--radius-md, 14px) !important;
+  transition: background-color var(--duration-fast, 0.15s) ease;
+  margin-bottom: var(--space-2, 8px) !important;
+}
+html[class*="moodle-apple-pro"] .activity-item:hover {
+  background-color: var(--control-bg) !important;
+}
+html[class*="moodle-apple-pro"] .activity-item .activityname,
+html[class*="moodle-apple-pro"] .activity-item .instancename {
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+}
+
+/* Activity icon chips */
+html[class*="moodle-apple-pro"] .activityicon,
+html[class*="moodle-apple-pro"] .activity-icon {
+  border-radius: var(--radius-sm, 8px) !important;
+  padding: 4px !important;
+  background-color: var(--control-bg) !important;
+}
+
+/* Badges (grades, statuses, submission state) */
+html[class*="moodle-apple-pro"] .badge {
+  border-radius: var(--radius-pill, 999px) !important;
+  font-weight: 600 !important;
+  padding: 4px 10px !important;
+}
+html[class*="moodle-apple-pro"] .badge-success {
+  background-color: var(--success, #34c759) !important;
+  color: #ffffff !important;
+}
+html[class*="moodle-apple-pro"] .badge-danger {
+  background-color: var(--danger, #ff3b30) !important;
+  color: #ffffff !important;
+}
+html[class*="moodle-apple-pro"] .badge-secondary,
+html[class*="moodle-apple-pro"] .badge-light {
+  background-color: var(--control-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Generic list groups reused across grades/messages/notifications */
+html[class*="moodle-apple-pro"] .list-group-item {
+  background: var(--bg-surface) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Alerts / callouts */
+html[class*="moodle-apple-pro"] .alert {
+  border: none !important;
+  border-radius: var(--radius-md, 14px) !important;
+  padding: var(--space-4, 16px) !important;
+}
+html[class*="moodle-apple-pro"] .alert-info {
+  background-color: rgba(0, 113, 227, 0.1) !important;
+  color: var(--accent) !important;
+}
+html[class*="moodle-apple-pro"] .alert-success {
+  background-color: rgba(52, 199, 89, 0.12) !important;
+  color: #1a7a35 !important;
+}
+html[class*="moodle-apple-pro"] .alert-danger {
+  background-color: rgba(255, 59, 48, 0.12) !important;
+  color: #c22218 !important;
+}

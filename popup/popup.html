@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding: 16px; width: 160px; background: #f5f5f7; margin: 0; color: #1d1d1f; border-radius: 12px; }
-    h2 { font-size: 16px; font-weight: 600; margin-bottom: 16px; text-align: center; }
-    button { width: 100%; margin-bottom: 10px; padding: 12px; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.2s ease, transform 0.1s ease; border: 1px solid transparent; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-    button:hover { transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-    button:active { transform: translateY(0); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-    
-    #btn-off { background: #d2d2d7; color: #1d1d1f; }
-    #btn-off:hover { background: #c1c1c7; }
-    
-    #btn-light { background: #ffffff; color: #1d1d1f; border-color: #d2d2d7; }
-    #btn-light:hover { background: #fafafa; border-color: #c1c1c7; }
-    
-    #btn-dark { background: #1c1c1e; color: #f5f5f7; margin-bottom: 0; }
-    #btn-dark:hover { background: #2c2c2e; }
-  </style>
+  <meta charset="UTF-8">
+  <title>THEME.BY</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h2>Moodle Apple Pro</h2>
-  <button id="btn-off">OFF</button>
-  <button id="btn-light">LIGHT</button>
-  <button id="btn-dark">DARK</button>
+
+  <div class="container">
+
+    <div class="logo">THEME.BY</div>
+
+    <div class="power-wrapper">
+      <button id="toggleTheme" class="power-btn" aria-pressed="true" aria-label="Toggle theme on or off">
+        <span id="powerText">ON</span>
+      </button>
+    </div>
+
+    <div class="section-title">Appearance</div>
+
+    <div class="theme-list" role="radiogroup" aria-label="Theme appearance">
+
+      <button class="theme-row" data-theme="light" role="radio" aria-checked="false">
+        <span class="theme-label">Light</span>
+        <span class="chevron">&#8250;</span>
+      </button>
+
+      <button class="theme-row" data-theme="dark" role="radio" aria-checked="false">
+        <span class="theme-label">Dark</span>
+        <span class="chevron">&#8250;</span>
+      </button>
+
+    </div>
+
+    <div class="status-line" id="statusLine">Theme is active on cet.iitp.ac.in</div>
+
+  </div>
+
   <script src="popup.js"></script>
 </body>
 </html>

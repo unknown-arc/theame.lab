@@ -1,0 +1,7 @@
+{
+    "login": "/login",
+    "dashboard": "/my",
+    "course": "/course",
+    "quiz": "/mod/quiz",
+    "profile": "/user/profile"
+}

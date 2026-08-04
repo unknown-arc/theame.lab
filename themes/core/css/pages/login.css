@@ -1,0 +1,238 @@
+/* 1. Complete Background Replacement */
+html, body, #page-wrapper, #page, #page-login-index, .login-wrapper {
+    background-color: transparent !important; 
+    background-image: none !important; 
+}
+
+html {
+    background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop') !important; 
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+}
+
+/* 2. Remove Logo */
+.login-container img, .logo img, .login-logo, .logo {
+    display: none !important;
+}
+
+/* 3. Card Modernization (Bulletproof Left-Center Placement) */
+* {
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+#page-wrapper, #page, #region-main-box, #region-main, .login-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    max-width: 100% !important;
+}
+
+.login-wrapper {
+    position: fixed !important;
+    top: 0 !important;
+    left: 25% !important; 
+    transform: translateX(-50%) !important; 
+    width: 420px !important; 
+    height: 100vh !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; 
+    z-index: 1000 !important;
+}
+
+.card, .loginwrapper .card {
+    width: 100% !important; 
+    max-width: 100% !important;
+    position: relative !important; 
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    
+    background-color: rgba(255, 255, 255, 0.75) !important; 
+    backdrop-filter: blur(24px) !important; 
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-radius: 24px !important; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    padding: 2.5rem 2rem !important;
+    box-sizing: border-box !important;
+}
+
+/* 4. Form Inputs & Primary Button (Minimalist & Fluid) */
+input.form-control {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    padding: 14px 16px !important;
+    font-size: 15px !important;
+    color: #1d1d1f !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important; 
+}
+
+input.form-control:focus {
+    background-color: #ffffff !important;
+    border-color: #0071e3 !important; 
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15) !important;
+    outline: none !important;
+}
+
+#loginbtn, .btn-primary {
+    background-color: #1d1d1f !important; 
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    padding: 12px 16px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    box-sizing: border-box !important;
+}
+
+#loginbtn:hover, .btn-primary:hover {
+    background-color: #000000 !important;
+    transform: scale(1.02) !important; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 5. Vertical Stacking & Aggressive Line Removal (UPDATED) */
+.login-container .row, 
+.login-wrapper .row,
+.card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.login-container [class*="col-"],
+.loginwrapper [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    border: none !important;
+    padding: 0 !important; 
+}
+
+/* Added 'hr' here to natively erase the extra line at the bottom */
+.login-divider, .divider, hr, 
+.login-container [class*="col-"]::before, 
+.login-container [class*="col-"]::after {
+    display: none !important; 
+    content: none !important;
+}
+
+/* 6. Ultimate Separator Line & Microsoft Button Fix */
+
+/* A. The Separator Line - Applied directly to the link container */
+.forgetpass,
+.login-container a[href*="forgot_password"] {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding-bottom: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important; 
+}
+
+/* B. Brute-Force "Sign in with" text */
+.login-divider,
+.potentialidp-title,
+.login-container h6,
+.login-container h5,
+.login-container p {
+    color: #86868b !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* C. Fix Moodle's HTML Wrapper (Break the Bootstrap Flex Trap) */
+.forgetpass ~ div, 
+.potentialidp-title ~ div,
+.potentialidplist,
+.potentialidp {
+    width: 100% !important;
+    min-width: 100% !important;
+    display: block !important; /* Strictly overrides Moodle's d-flex centering trap */
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* D. Microsoft Button perfectly matched to Log In Button */
+.potentialidplist a,
+.potentialidp a,
+.login-container a.btn:not(#loginbtn),
+.login-container a[title="Microsoft"] {
+    background-color: #ffffff !important;
+    color: #1d1d1f !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important; 
+    padding: 12px 16px !important;
+    
+    /* True full width */
+    width: 100% !important;
+    max-width: 100% !important; 
+    display: block !important;
+    box-sizing: border-box !important;
+    
+    /* Force logo and text side-by-side using inner flexbox */
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    
+    text-decoration: none !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04) !important;
+    transition: all 0.3s ease !important;
+    margin-top: 8px !important;
+}
+
+/* E. The Microsoft Logo Injection */
+.potentialidplist a::before,
+.potentialidp a::before,
+.login-container a.btn:not(#loginbtn)::before {
+    content: "" !important;
+    display: block !important;
+    width: 24px !important; 
+    height: 24px !important; 
+    min-width: 24px !important; 
+    background: url('https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg') no-repeat center center !important;
+    background-size: contain !important;
+}
+
+/* F. White Hover Effect */
+.potentialidplist a:hover,
+.potentialidp a:hover,
+.login-container a.btn:not(#loginbtn):hover {
+    background-color: #f5f5f7 !important;
+    transform: scale(1.02) translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+    border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 7. Hide Cookies Notice */
+.login-container .d-flex.mt-2,
+.card-body > .d-flex.mt-2:last-child {
+    display: none !important;
+}

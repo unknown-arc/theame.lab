@@ -1,0 +1,78 @@
+{
+  "themes": [
+    {
+      "id": "light",
+      "name": "Light",
+      "class": "moodle-apple-pro-light",
+      "colorFile": "themes/core/css/colors/light.css",
+      "icon": "☀"
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "class": "moodle-apple-pro-dark",
+      "colorFile": "themes/core/css/colors/dark.css",
+      "icon": "🌙"
+    }
+  ],
+  "common": [
+    "themes/core/css/common/variables.css",
+    "themes/core/css/common/base.css",
+    "themes/core/css/common/typography.css",
+    "themes/core/css/common/animations.css"
+  ],
+  "pages": {
+    "dashboard": {
+      "match": ["/my/", "/my/index.php"],
+      "file": "themes/core/css/pages/dashboard.css"
+    },
+    "course": {
+      "match": ["/course/view.php"],
+      "file": "themes/core/css/pages/course.css"
+    },
+    "calendar": {
+      "match": ["/calendar/"],
+      "file": "themes/core/css/pages/calendar.css"
+    },
+    "grades": {
+      "match": ["/grade/"],
+      "file": "themes/core/css/pages/grades.css"
+    },
+    "quiz": {
+      "match": ["/mod/quiz/"],
+      "file": "themes/core/css/pages/quiz.css"
+    },
+    "assignment": {
+      "match": ["/mod/assign/"],
+      "file": "themes/core/css/pages/assignment.css"
+    },
+    "profile": {
+      "match": ["/user/profile.php", "/user/view.php"],
+      "file": "themes/core/css/pages/profile.css"
+    },
+    "messages": {
+      "match": ["/message/"],
+      "file": "themes/core/css/pages/messages.css"
+    },
+    "login": {
+      "match": ["/login/"],
+      "file": "themes/core/css/pages/login.css"
+    },
+    "forms": {
+      "match": ["mform", "/edit.php"],
+      "file": "themes/core/css/pages/forms.css"
+    },
+    "blocks": {
+      "match": ["/blocks/"],
+      "file": "themes/core/css/pages/blocks.css"
+    },
+    "navbar": {
+      "match": ["*"],
+      "file": "themes/core/css/pages/navbar.css"
+    },
+    "footer": {
+      "match": ["*"],
+      "file": "themes/core/css/pages/footer.css"
+    }
+  }
+}

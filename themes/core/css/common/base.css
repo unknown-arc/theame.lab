@@ -225,7 +225,7 @@ html[class*="moodle-apple-pro"] .navbar-brand::before {
     height: 32px !important; /* Change this to adjust logo height */
     
     /* Put your image URL here. (This uses the official IITP SVG as a default) */
-    background-image: url('chrome-extension://__MSG_@@extension_id__/IIT-Patna.png') !important;;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/assets/images/IIT-Patna.png') !important;;
     background-size: contain !important;
     background-position: center !important;
     background-repeat: no-repeat !important;

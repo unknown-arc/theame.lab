@@ -1,34 +1,58 @@
 {
   "manifest_version": 3,
-  "name": "IITP Moodle ",
+  "name": "THEME.BY — IITP Moodle Theme",
   "version": "3.0",
+  "description": "Injects a clean, Apple-inspired light/dark theme into the IITP Moodle portal. Toggle it on/off and switch appearance from the toolbar popup.",
+  
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+
   "permissions": [
     "storage"
   ],
+
+  "host_permissions": [
+    "https://cet.iitp.ac.in/*"
+  ],
+
   "action": {
-    "default_popup": "popup/popup.html"
+    "default_popup": "popup/popup.html",
+    "default_title": "THEME.BY"
   },
+
   "content_scripts": [
     {
       "matches": [
         "https://cet.iitp.ac.in/moodle/*"
       ],
-      "css": [
-        "css/variables.css",
-        "css/base.css"
-      ],
       "js": [
+        "js/engine/Utils.js",
+        "js/engine/StorageManager.js",
+        "js/engine/PageManager.js",
+        "js/engine/ColorManager.js",
+        "js/engine/ThemeLoader.js",
+        "js/engine/ThemeManager.js",
+        "js/engine/ThemeEngine.js",
         "js/content.js"
       ],
       "run_at": "document_start"
     }
   ],
+
   "web_accessible_resources": [
     {
       "resources": [
-        "assets/images/IIT-Patna.png",
-        "css/*",
-        "js/*"
+        "css/*.css",
+        "themes/core/css/**/*.css",
+        "themes/core/manifest.json",
+        "config/themes.json",
+        "assets/images/*",
+        "assets/icons/*",
+        "themes/base/assets/*"
       ],
       "matches": [
         "https://cet.iitp.ac.in/*"

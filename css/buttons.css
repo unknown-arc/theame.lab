@@ -1,0 +1,73 @@
+/* --- THEME.BY: Buttons --- */
+
+html[class*="moodle-apple-pro"] .btn {
+  border-radius: var(--radius-pill, 999px) !important;
+  font-weight: 600 !important;
+  padding: 8px 18px !important;
+  transition: transform var(--duration-fast, 0.15s) ease,
+              opacity var(--duration-fast, 0.15s) ease,
+              background-color var(--duration-fast, 0.15s) ease;
+  border: none !important;
+}
+html[class*="moodle-apple-pro"] .btn:active {
+  transform: scale(0.97);
+}
+
+html[class*="moodle-apple-pro"] .btn-primary,
+html[class*="moodle-apple-pro"] .btn-success {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+  box-shadow: var(--shadow-sm);
+}
+html[class*="moodle-apple-pro"] .btn-primary:hover,
+html[class*="moodle-apple-pro"] .btn-success:hover {
+  opacity: 0.88;
+}
+
+html[class*="moodle-apple-pro"] .btn-secondary,
+html[class*="moodle-apple-pro"] .btn-outline-secondary {
+  background-color: var(--control-bg) !important;
+  color: var(--text-primary) !important;
+  border: none !important;
+}
+html[class*="moodle-apple-pro"] .btn-secondary:hover,
+html[class*="moodle-apple-pro"] .btn-outline-secondary:hover {
+  background-color: var(--bg-base) !important;
+}
+
+html[class*="moodle-apple-pro"] .btn-outline-primary {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1.5px solid var(--accent) !important;
+}
+
+html[class*="moodle-apple-pro"] .btn-danger {
+  background-color: var(--danger, #ff3b30) !important;
+  color: #ffffff !important;
+}
+
+html[class*="moodle-apple-pro"] .btn.disabled,
+html[class*="moodle-apple-pro"] .btn:disabled {
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Small icon-only buttons (e.g. edit-mode gear, action menus) */
+html[class*="moodle-apple-pro"] .btn-icon,
+html[class*="moodle-apple-pro"] .icon-no-margin {
+  border-radius: var(--radius-sm, 8px) !important;
+  padding: 6px !important;
+}
+
+/* Primary "Save changes" / submit buttons on forms */
+html[class*="moodle-apple-pro"] .form-control-static + .btn-primary,
+html[class*="moodle-apple-pro"] #id_submitbutton,
+html[class*="moodle-apple-pro"] input[type="submit"] {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-pill, 999px) !important;
+  padding: 10px 22px !important;
+  font-weight: 600 !important;
+  border: none !important;
+}

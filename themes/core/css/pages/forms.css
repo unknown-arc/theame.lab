@@ -1,0 +1,17 @@
+/* --- THEME.BY Page: Settings / edit forms (page-module layer) ---
+   Adds spacing and section framing on top of the shared css/forms.css
+   rules, specifically for long admin/edit-settings pages. */
+html[class*="moodle-apple-pro"] .path-admin #region-main .form-item,
+html[class*="moodle-apple-pro"] .mform .form-group {
+  padding: var(--space-3, 12px) 0 !important;
+  border-bottom: 1px solid var(--border-color);
+}
+html[class*="moodle-apple-pro"] .mform .form-group:last-child {
+  border-bottom: none;
+}
+html[class*="moodle-apple-pro"] .tertiary-navigation {
+  background: var(--bg-surface) !important;
+  border-radius: var(--radius-md, 14px) !important;
+  padding: var(--space-3, 12px) var(--space-4, 16px) !important;
+  margin-bottom: var(--space-4, 16px) !important;
+}

@@ -1,0 +1,38 @@
+/* --- THEME.BY Core: Typography scale --- */
+
+html[class*="moodle-apple-pro"] h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; color: var(--text-primary); }
+html[class*="moodle-apple-pro"] h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.015em; color: var(--text-primary); }
+html[class*="moodle-apple-pro"] h3 { font-size: 19px; font-weight: 600; color: var(--text-primary); }
+html[class*="moodle-apple-pro"] h4,
+html[class*="moodle-apple-pro"] h5,
+html[class*="moodle-apple-pro"] h6 { font-weight: 600; color: var(--text-primary); }
+
+html[class*="moodle-apple-pro"] p,
+html[class*="moodle-apple-pro"] li {
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+html[class*="moodle-apple-pro"] small,
+html[class*="moodle-apple-pro"] .small {
+  color: var(--text-secondary);
+  font-size: var(--font-sm, 13px);
+}
+
+html[class*="moodle-apple-pro"] code,
+html[class*="moodle-apple-pro"] pre,
+html[class*="moodle-apple-pro"] kbd {
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+}
+
+html[class*="moodle-apple-pro"] strong { font-weight: 600; }
+
+/* De-emphasise Moodle's default heavy underlines on inline text links,
+   keep them for links that live inside body copy. */
+html[class*="moodle-apple-pro"] .no-overflow a,
+html[class*="moodle-apple-pro"] .card-text a {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 113, 227, 0.35);
+  text-underline-offset: 2px;
+}

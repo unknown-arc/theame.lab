@@ -1,0 +1,46 @@
+/* --- THEME.BY: Shared keyframes & motion utility classes ---
+   Kept minimal and respectful of prefers-reduced-motion. */
+
+@keyframes theme-by-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes theme-by-slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes theme-by-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.55; }
+}
+
+html[class*="moodle-apple-pro"] #region-main,
+html[class*="moodle-apple-pro"] .card,
+html[class*="moodle-apple-pro"] [data-region="course-card"] {
+  animation: theme-by-fade-in var(--duration-slow, 0.4s) var(--ease-standard, ease) both;
+}
+
+html[class*="moodle-apple-pro"] .alert,
+html[class*="moodle-apple-pro"] .dropdown-menu {
+  animation: theme-by-slide-up var(--duration-base, 0.25s) var(--ease-standard, ease) both;
+}
+
+/* Loading placeholders (skeletons) */
+html[class*="moodle-apple-pro"] .theme-by-skeleton {
+  background-color: var(--control-bg);
+  border-radius: var(--radius-sm, 8px);
+  animation: theme-by-pulse 1.4s ease-in-out infinite;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html[class*="moodle-apple-pro"] *,
+  html[class*="moodle-apple-pro"] *::before,
+  html[class*="moodle-apple-pro"] *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

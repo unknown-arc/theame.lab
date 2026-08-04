@@ -1,0 +1,22 @@
+/* --- THEME.BY Page: User profile (/user/profile.php) --- */
+html[class*="moodle-apple-pro"] .profile_tree,
+html[class*="moodle-apple-pro"] .userprofile {
+  background: transparent !important;
+}
+html[class*="moodle-apple-pro"] .profile_tree .card,
+html[class*="moodle-apple-pro"] .profile-content-panel {
+  border-radius: var(--radius-lg, 20px) !important;
+  border: 1px solid var(--border-color) !important;
+}
+html[class*="moodle-apple-pro"] .userprofile .userpicture {
+  border-radius: 50% !important;
+  border: 3px solid var(--bg-surface) !important;
+  box-shadow: var(--shadow-md);
+}
+html[class*="moodle-apple-pro"] .userprofile dl.list dt {
+  color: var(--text-secondary) !important;
+  font-weight: 500 !important;
+}
+html[class*="moodle-apple-pro"] .userprofile dl.list dd {
+  color: var(--text-primary) !important;
+}
