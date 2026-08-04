@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "THEME.BY — IITP Moodle Theme",
   "version": "3.0",
-  "description": "Injects a clean, Apple-inspired light/dark theme into the IITP Moodle portal. Toggle it on/off and switch appearance from the toolbar popup.",
+  "description": "IIT Patna Moodle Theme update via css style injection.",
   
   "icons": {
     "16": "assets/icons/icon16.png",
