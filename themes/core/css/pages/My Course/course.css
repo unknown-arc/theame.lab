@@ -1,0 +1,18 @@
+/* 1. Remove Analytical Widget / Footer Analytics & Card Wrappers */
+.block_analyticswidget,
+[data-block="analyticswidget"],
+#inst45,
+section[id*="inst45"],
+.block_analyticswidget *,
+[data-block="analyticswidget"] * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: none !important;
+}

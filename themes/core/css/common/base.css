@@ -245,20 +245,5 @@ html.moodle-apple-pro-dark .navbar-brand::after {
     color: #ffffff !important; 
 }
 
-/* --- Clutter Removal (Help Icon & Conecti.me) --- */
 
-/* 1. Hide the ? Help Icon on the bottom right */
-html[class*="moodle-apple-pro"] .btn-floating,
-html[class*="moodle-apple-pro"] [data-region="help-popover"],
-html[class*="moodle-apple-pro"] .popover-region-help,
-html[class*="moodle-apple-pro"] a[title*="Help"],
-html[class*="moodle-apple-pro"] a[href*="docs.moodle.org"] {
-    display: none !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
 
-/* 2 & 3. Hide the Conecti.me Developer Blocks and Orange Bar */
-html[class*="moodle-apple-pro"] #page-footer {
-    display: none !important; 
-} 

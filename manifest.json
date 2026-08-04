@@ -37,16 +37,19 @@
         "js/engine/ThemeLoader.js",
         "js/engine/ThemeManager.js",
         "js/engine/ThemeEngine.js",
-        "js/content.js"
+        "js/content.js",
+        "js/redirect.js"
       ],
       "run_at": "document_start"
     }
   ],
 
+
   "web_accessible_resources": [
     {
       "resources": [
-        "css/*.css",
+        "core/*.css",
+        "core/**/*.css",
         "themes/core/css/**/*.css",
         "themes/core/manifest.json",
         "config/themes.json",
@@ -57,6 +60,6 @@
       "matches": [
         "https://cet.iitp.ac.in/*"
       ]
-    }
+    }  
   ]
 }

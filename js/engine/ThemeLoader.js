@@ -14,12 +14,14 @@
 
   const BASE_STYLESHEETS = [
     "themes/core/css/common/variables.css",
-    "themes/core/css/header.css",
+    "themes/core/css/common/header/header.css",
     "themes/core/css/sidebar.css",
     "themes/core/css/buttons.css",
     "themes/core/css/cards.css",
     "themes/core/css/forms.css",
     "themes/core/css/common/animations.css",
+    "themes/core/css/pages/My Course/course.css",
+    "core/page_footer/footer.css",
   ];
 
   const ThemeLoader = {
@@ -55,7 +57,7 @@
 
     // Inject only ONE layout CSS
     if (isLoginPage) {
-      this._injectOne("themes/core/css/pages/login.css");
+      this._injectOne("core/login_page/login.css");
     } else {
       this._injectOne("themes/core/css/common/base.css");
     }

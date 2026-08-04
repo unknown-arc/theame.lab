@@ -1,0 +1,5 @@
+/* Remove Page Footer and Developer Credit Section 
+ Also Hide the ? Help Icon on the bottom right */
+#page-footer {
+    display: none !important;
+}
