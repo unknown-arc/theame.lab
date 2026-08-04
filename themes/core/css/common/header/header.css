@@ -1,76 +1,106 @@
-/* --- THEME.BY: Header & top navigation extras ---
-   Complements the base header rules in css/base.css: breadcrumbs, the
-   search box, and the user account dropdown menu. */
+/* --- Header, Logo & Navigation Styles (header.css) --- */
 
-html[class*="moodle-apple-pro"] .breadcrumb {
-  background: transparent !important;
-  padding: 6px 0 !important;
-  font-size: var(--font-sm, 13px);
-}
-html[class*="moodle-apple-pro"] .breadcrumb-item + .breadcrumb-item::before {
-  color: var(--text-secondary);
-}
-html[class*="moodle-apple-pro"] .breadcrumb-item a {
-  color: var(--text-secondary);
-}
-html[class*="moodle-apple-pro"] .breadcrumb-item.active {
-  color: var(--text-primary);
-  font-weight: 500;
+/* Header & Nav: Frosted Glass & Precision Rounding */
+#page-header, 
+header.navbar {
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    padding: 12px 24px !important;
+    border-radius: 16px 16px 0 0 !important;
+    box-shadow: none !important;
 }
 
-/* Header search box */
-html[class*="moodle-apple-pro"] #search-input,
-html[class*="moodle-apple-pro"] .search-input-field {
-  background: var(--control-bg) !important;
-  border: none !important;
-  border-radius: var(--radius-pill, 999px) !important;
-  padding: 8px 16px !important;
-  color: var(--text-primary) !important;
+/* Navigation Links */
+a { 
+    color: #0071e3; 
+    text-decoration: none; 
+    transition: color 0.2s ease, opacity 0.2s ease; 
 }
-html[class*="moodle-apple-pro"] #search-input::placeholder {
-  color: var(--text-secondary) !important;
+a:hover { opacity: 0.8; }
+
+h2, 
+.navbar-brand { 
+    color: #1d1d1f; 
+    font-weight: 600; 
+    font-size: 17px; 
 }
 
-/* Account menu trigger (avatar + name in the top-right) */
-html[class*="moodle-apple-pro"] .usermenu .login,
-html[class*="moodle-apple-pro"] .usermenu .dropdown-toggle {
-  border-radius: var(--radius-pill, 999px) !important;
-  padding: 4px 10px 4px 4px !important;
-  transition: background-color var(--duration-fast, 0.15s) ease;
-}
-html[class*="moodle-apple-pro"] .usermenu .dropdown-toggle:hover {
-  background-color: var(--control-bg) !important;
-}
-html[class*="moodle-apple-pro"] .usermenu .userpicture {
-  border-radius: 50% !important;
+.nav-link { 
+    color: #515154; 
+    font-size: 14px; 
+    font-weight: 400; 
+    transition: all 0.2s ease; 
 }
 
-/* The dropdown panel itself */
-html[class*="moodle-apple-pro"] .dropdown-menu {
-  background: var(--bg-surface) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: var(--radius-md, 14px) !important;
-  box-shadow: var(--shadow-lg) !important;
-  padding: 8px !important;
-  overflow: hidden;
-}
-html[class*="moodle-apple-pro"] .dropdown-menu .dropdown-item {
-  color: var(--text-primary) !important;
-  border-radius: var(--radius-sm, 8px) !important;
-  padding: 8px 12px !important;
-  font-size: var(--font-md, 15px);
-}
-html[class*="moodle-apple-pro"] .dropdown-menu .dropdown-item:hover {
-  background-color: var(--control-bg) !important;
-}
-html[class*="moodle-apple-pro"] .dropdown-divider {
-  border-color: var(--border-color) !important;
-  margin: 6px 4px !important;
+.nav-link:hover { 
+    color: #000000 !important; 
+    background-color: rgba(0, 0, 0, 0.03) !important; 
+    border-radius: 8px; 
 }
 
-/* Notification / message bell badges */
-html[class*="moodle-apple-pro"] .count-container {
-  background: var(--accent) !important;
-  border-radius: var(--radius-pill, 999px) !important;
-  border: 2px solid var(--bg-surface) !important;
+/* Top Navigation Spacing & Active Indicator Bar */
+.navbar-nav {
+    gap: 4px !important;
+}
+
+.navbar-nav .nav-link {
+    border-radius: 4px !important;
+    padding: 4px 8px !important;
+    position: relative !important;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .active > .nav-link {
+    font-weight: 600 !important;
+    color: #1d1d1f !important;
+    background-color: transparent !important;
+}
+
+/* Small Black Bar below active navigation text */
+.navbar-nav .nav-link.active::after,
+.navbar-nav .active > .nav-link::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 2px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 24px !important;
+    height: 3px !important;
+    background-color: #1d1d1f !important;
+    border-radius: 3px !important;
+}
+
+/* --- Logo & Text Integration --- */
+.navbar-brand img,
+.navbar-brand .logo {
+    display: none !important;
+}
+
+.navbar-brand {
+    font-size: 0 !important; 
+    margin-right: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.navbar-brand::before {
+    content: '' !important;
+    display: block !important;
+    width: 32px !important;
+    height: 32px !important;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/assets/images/IIT-Patna.png') !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.navbar-brand::after {
+    content: 'IITP' !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #1d1d1f !important;
+    letter-spacing: -0.04em !important;
 }

@@ -37,6 +37,7 @@
         "js/engine/ThemeLoader.js",
         "js/engine/ThemeManager.js",
         "js/engine/ThemeEngine.js",
+        "js/engine/PageTransition.js",
         "js/content.js",
         "js/redirect.js"
       ],

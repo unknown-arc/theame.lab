@@ -19,7 +19,7 @@
     "themes/core/css/buttons.css",
     "themes/core/css/cards.css",
     "themes/core/css/forms.css",
-    "themes/core/css/common/animations.css",
+    "themes/core/css/common/page_transitions.css",
     "themes/core/css/pages/My Course/course.css",
     "core/page_footer/footer.css",
   ];
