@@ -13,15 +13,11 @@
   const LINK_ATTR = "data-theme-by";
 
   const BASE_STYLESHEETS = [
-    "themes/core/css/common/variables.css",
-    "themes/core/css/common/header/header.css",
-    "themes/core/css/sidebar.css",
-    "themes/core/css/buttons.css",
-    "themes/core/css/cards.css",
-    "themes/core/css/forms.css",
+    "themes/core/css/common/typography.css",
     "themes/core/css/common/page_transitions.css",
+    "themes/core/css/common/header/header.css",
+    "themes/core/css/common/footer/footer.css",
     "themes/core/css/pages/My Course/course.css",
-    "core/page_footer/footer.css",
   ];
 
   const ThemeLoader = {

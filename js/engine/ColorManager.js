@@ -44,3 +44,4 @@
 
   ThemeBY.ColorManager = ColorManager;
 })(window);
+

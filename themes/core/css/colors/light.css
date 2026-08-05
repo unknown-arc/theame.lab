@@ -1,22 +1,13 @@
-/* --- THEME.BY Core: Light-mode extra colour tokens ---
-   Adds on top of the core palette already defined in css/base.css. */
-html.moodle-apple-pro-light {
-  --chart-1: #0071e3;
-  --chart-2: #34c759;
-  --chart-3: #ff9f0a;
-  --chart-4: #ff3b30;
-  --chart-5: #af52de;
-
-  --grade-pass: #1a7a35;
-  --grade-fail: #c22218;
-  --grade-pending: #8a6d00;
-
-  --calendar-event: #0071e3;
-  --calendar-deadline: #ff3b30;
-  --calendar-today: rgba(0, 113, 227, 0.1);
-
-  --message-out-bg: #0071e3;
-  --message-out-text: #ffffff;
-  --message-in-bg: #e8e8ed;
-  --message-in-text: #1d1d1f;
+/* --- Light Theme Color Tokens (theme-light.css) --- */
+:root {
+    --bg-base: #f5f5f7;
+    --bg-surface: #ffffff;
+    --bg-nav: rgba(255, 255, 255, 0.75);
+    --text-primary: #1d1d1f;
+    --text-secondary: #515154;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --accent: #0071e3;
+    --control-bg: #e8e8ed;
+    --progress-bg: #34c759;
+    --shadow-base: rgba(0, 0, 0, 0.04);
 }
