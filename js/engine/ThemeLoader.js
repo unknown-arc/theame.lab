@@ -1,87 +1,131 @@
-/**
- * THEME.BY — ThemeLoader
- * Injects/removes the actual <link> stylesheets into the page. Keeps track
- * of what it has injected so re-applying a theme never duplicates tags and
- * disabling the theme cleanly removes everything it added.
- */
 (function (global) {
-  "use strict";
+    "use strict";
 
-  const ThemeBY = global.ThemeBY || (global.ThemeBY = {});
-  const { Utils } = ThemeBY;
+    const ThemeBY = global.ThemeBY || (global.ThemeBY = {});
+    const { Utils } = ThemeBY;
 
-  const LINK_ATTR = "data-theme-by";
+    const LINK_ATTR = "data-theme-by";
 
-  const BASE_STYLESHEETS = [
-    "themes/core/css/common/typography.css",
-    "themes/core/css/common/page_transitions.css",
-    "themes/core/css/common/header/header.css",
-    "themes/core/css/common/footer/footer.css",
-    "themes/core/css/pages/My Course/course.css",
-  ];
+    const STYLE_TYPES = {
+        COMMON: "common",
+        COLOR: "color",
+        PAGE: "page",
+        LOGIN: "login"
+    };
 
-  const ThemeLoader = {
-    _injected: new Set(),
+    const ThemeLoader = {
 
-    _injectOne(path) {
-      if (this._injected.has(path)) return;
+        _injected: new Set(),
 
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = Utils.assetURL(path);
-      link.setAttribute(LINK_ATTR, path);
-      (document.head || document.documentElement).appendChild(link);
+        _config: null,
 
-      this._injected.add(path);
-    },
+        async _loadConfig() {
 
-    _injectMany(paths) {
-      paths.filter(Boolean).forEach((p) => this._injectOne(p));
-    },
+            if (this._config)
+                return this._config;
 
-    /** Inject the always-on base theme plus any page-aware extras. */
-    async load(mode) {
-  Utils.onDomReady(async () => {
+            this._config = await Utils.loadJSON(
+                "themes/core/config/theme.json"
+            );
 
-    // Detect login page
-    const isLoginPage =
-      location.pathname.includes("/login/") ||
-      document.body.classList.contains("pagelayout-login");
+            return this._config;
+        },
 
-    // Common CSS
-    this._injectMany(BASE_STYLESHEETS);
+        _injectOne(path) {
 
-    // Inject only ONE layout CSS
-    if (isLoginPage) {
-      this._injectOne("core/login_page/login.css");
-    } else {
-      this._injectOne("themes/core/css/common/base.css");
-    }
+            if (!path) return;
 
-    try {
-      const [common, colorFile, pageFiles] = await Promise.all([
-        ThemeBY.PageManager.resolveCommonStylesheets(),
-        ThemeBY.PageManager.resolveColorStylesheet(mode),
-        ThemeBY.PageManager.resolvePageStylesheets(),
-      ]);
+            // Already injected?
+            if (document.querySelector(`link[${LINK_ATTR}="${path}"]`)) {
+                this._injected.add(path);
+                return;
+            }
 
-      this._injectMany(common);
-      this._injectOne(colorFile);
-      this._injectMany(pageFiles);
-    } catch (err) {
-      Utils.warn("page-aware stylesheets skipped:", err);
-    }
-  });
-},
+            const link = document.createElement("link");
 
-    /** Remove every stylesheet this loader has injected. */
-    unload() {
-      document
-        .querySelectorAll(`link[${LINK_ATTR}]`)
-        .forEach((link) => link.remove());
-      this._injected.clear();
-    },
-  };
+            link.rel = "stylesheet";
+            link.href = Utils.assetURL(path);
+            link.setAttribute(LINK_ATTR, path);
 
-  ThemeBY.ThemeLoader = ThemeLoader;
+            // Detect stylesheet type
+            let type = "common";
+
+            if (path.includes("/colors/")) {
+                type = "color";
+            } else if (path.includes("/pages/")) {
+                type = "page";
+            } else if (path.includes("/login_page/")) {
+                type = "login";
+            }
+
+            link.setAttribute("data-theme-type", type);
+
+            (document.head || document.documentElement).appendChild(link);
+
+            this._injected.add(path);
+
+        },
+
+        _injectMany(paths = []) {
+
+            paths.forEach(path => this._injectOne(path));
+
+        },
+
+        async load(mode = "light") {
+
+            const config = await this._loadConfig();
+
+            // Shared/common css
+            this._injectMany(config.common);
+
+            // Light/Dark css
+            this._replaceColorStylesheet(config.colors?.[mode]);
+
+            // Page css
+            const pageStyles =
+                await ThemeBY.PageManager.resolvePageStylesheets();
+
+            this._injectMany(pageStyles);
+
+            // Login page css
+            if (location.pathname.includes("/login") && config.shared?.login) {
+                this._injectOne(config.shared.login);
+            }
+
+        },
+
+        unload() {
+
+            document
+                .querySelectorAll(`link[${LINK_ATTR}]`)
+                .forEach(link => link.remove());
+
+            this._injected.clear();
+
+        },
+
+        _replaceColorStylesheet(path) {
+
+            document
+                .querySelectorAll('link[data-theme-type="color"]')
+                .forEach(link => {
+
+                    this._injected.delete(
+                        link.getAttribute(LINK_ATTR)
+                    );
+
+                    link.remove();
+
+                });
+
+            // Inject the new color stylesheet
+            this._injectOne(path);
+
+        },
+
+    };
+
+    ThemeBY.ThemeLoader = ThemeLoader;
+
 })(window);

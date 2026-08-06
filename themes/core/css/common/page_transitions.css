@@ -1,21 +1,41 @@
-/* --- Seamless Blur-to-Focus Page Load Transition --- */
+/* =====================================================
+   THEME.BY — Temporary Page Transition
+   (Will be replaced by Element Animations)
+===================================================== */
+
 @keyframes smoothUnblur {
     0% {
         opacity: 0;
-        filter: blur(16px);
-        transform: scale(0.995);
+        filter: blur(12px);
+        transform: translateY(8px);
     }
+
+    60% {
+        opacity: 0.85;
+        filter: blur(4px);
+        transform: translateY(3px);
+    }
+
     100% {
         opacity: 1;
         filter: blur(0);
-        transform: scale(1);
+        transform: translateY(0);
     }
 }
 
+/* Prevent page overflow during animation */
 html {
-    animation: smoothUnblur 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    overflow-x: clip;
 }
 
 body {
-    background-color: var(--bg-base, #f5f5f7) !important;
+    background: var(--bg-base, #f5f5f7);
+    overflow-x: clip;
+}
+
+/* Animate the Moodle page container instead of html */
+#page {
+    animation: smoothUnblur 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, filter, transform;
+    transform-origin: center top;
 }

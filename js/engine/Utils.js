@@ -23,6 +23,7 @@
       return res.json();
     },
 
+
     /** Debounce a function so it only runs after `wait` ms of silence. */
     debounce(fn, wait = 150) {
       let timer = null;

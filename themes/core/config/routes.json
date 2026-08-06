@@ -1,0 +1,39 @@
+{
+  "login": [
+    "/login"
+  ],
+
+  "dashboard": [
+    "/my",
+    "/my/index.php"
+  ],
+
+  "mycourse": [
+    "/my/courses.php"
+  ],
+
+  "quiz": [
+    "/mod/quiz"
+  ],
+
+  "assignment": [
+    "/mod/assign"
+  ],
+
+  "calendar": [
+    "/calendar"
+  ],
+
+  "grades": [
+    "/grade"
+  ],
+
+  "profile": [
+    "/user/profile",
+    "/user/view.php"
+  ],
+
+  "messages": [
+    "/message"
+  ]
+}

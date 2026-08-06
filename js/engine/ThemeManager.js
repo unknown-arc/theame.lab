@@ -13,7 +13,7 @@
     state: { enabled: true, themeMode: "light" },
 
     /** Apply (or remove) the theme based on the given settings. */
-    apply({ enabled, themeMode }) {
+    async apply({ enabled, themeMode }) {
       this.state = { enabled, themeMode };
 
       if (!enabled) {
@@ -23,23 +23,23 @@
       }
 
       ColorManager.applyMode(themeMode);
-      ThemeLoader.load(themeMode);
+      await ThemeLoader.load(themeMode);
     },
 
     /** Bootstrap: load saved settings, apply them, then start listening. */
     async init() {
       const settings = await StorageManager.get();
-      this.apply(settings);
+      await this.apply(settings);
 
-      StorageManager.onChange((partial) => {
-        this.apply({
+      StorageManager.onChange(async (partial) => {
+        await this.apply({
           enabled: partial.enabled ?? this.state.enabled,
           themeMode: partial.themeMode ?? this.state.themeMode,
         });
       });
 
-      StorageManager.onMessage((partial) => {
-        this.apply({
+      StorageManager.onMessage(async (partial) => {
+        await this.apply({
           enabled: partial.enabled ?? this.state.enabled,
           themeMode: partial.themeMode ?? this.state.themeMode,
         });

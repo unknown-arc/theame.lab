@@ -49,14 +49,14 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "core/*.css",
-        "core/**/*.css",
+        "shared/*.css",
+        "shared/**/*.css",
         "themes/core/css/**/*.css",
-        "themes/core/manifest.json",
-        "config/themes.json",
+        "themes/core/config/theme.json",
+        "themes/core/config/routes.json",
         "assets/images/*",
         "assets/icons/*",
-        "themes/base/assets/*"
+        "themes/core/assets/*"
       ],
       "matches": [
         "https://cet.iitp.ac.in/*"

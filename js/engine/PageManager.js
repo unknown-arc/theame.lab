@@ -1,67 +1,103 @@
-/**
- * THEME.BY — PageManager
- * Figures out which Moodle "page type" is currently open (dashboard, course,
- * quiz, ...) so the ThemeLoader can inject the right page-specific stylesheet
- * on top of the shared base theme.
- */
 (function (global) {
-  "use strict";
+    "use strict";
 
-  const ThemeBY = global.ThemeBY || (global.ThemeBY = {});
-  const { Utils } = ThemeBY;
+    const ThemeBY = global.ThemeBY || (global.ThemeBY = {});
+    const { Utils } = ThemeBY;
 
-  const PageManager = {
-    _config: null,
+    const PageManager = {
 
-    /** Load (and cache) the page-matching rules from config/themes.json. */
-    async loadConfig() {
-      if (this._config) return this._config;
-      try {
-        this._config = await Utils.loadJSON("config/themes.json");
-      } catch (err) {
-        Utils.warn("could not load config/themes.json, using empty page map", err);
-        this._config = { pages: {} };
-      }
-      return this._config;
-    },
+        _themeConfig: null,
+        _routesConfig: null,
 
-    /** Return the list of page ids that match the current location. */
-    async detectPages() {
-      const config = await this.loadConfig();
-      const pathname = window.location.pathname;
-      const search = window.location.search;
-      const matches = [];
+        async loadThemeConfig() {
 
-      for (const [pageId, rule] of Object.entries(config.pages || {})) {
-        if (Utils.matchesAny(pathname + search, rule.match)) {
-          matches.push(pageId);
+            if (this._themeConfig)
+                return this._themeConfig;
+
+            this._themeConfig = await Utils.loadJSON(
+                "themes/core/config/theme.json"
+            );
+
+            return this._themeConfig;
+        },
+
+        async loadRoutes() {
+
+            if (this._routesConfig)
+                return this._routesConfig;
+
+            this._routesConfig = await Utils.loadJSON(
+                "themes/core/config/routes.json"
+            );
+
+            return this._routesConfig;
+        },
+
+        async detectPages() {
+
+            const routes = await this.loadRoutes();
+
+            const pathname = window.location.pathname.replace(/^\/moodle/, "");
+
+            const search = window.location.search;
+
+            const url = pathname + search;
+
+            const matched = [];
+
+              for (const [pageId, rules] of Object.entries(routes)) {
+
+                  for (const rule of rules) {
+
+                      if (url.includes(rule)) {
+
+                          matched.push({
+                              pageId,
+                              rule,
+                              length: rule.length
+                          });
+
+                          break;
+                      }
+                  }
+              }
+
+              // Keep the most specific routes first
+              matched.sort((a, b) => b.length - a.length);
+
+              // Return only page ids
+              return matched.map(item => item.pageId);
+
+        },
+
+        async resolvePageStylesheets() {
+
+            const theme = await this.loadThemeConfig();
+
+            const pages = await this.detectPages();
+
+            return pages.flatMap(page => theme.pages?.[page] || []);
+
+        },
+
+        async resolveCommonStylesheets() {
+
+            const theme = await this.loadThemeConfig();
+
+            return theme.common || [];
+
+        },
+
+        async resolveColorStylesheet(mode) {
+
+            const theme = await this.loadThemeConfig();
+
+            return theme.colors?.[mode] || null;
+
         }
-      }
-      return matches;
-    },
 
-    /** Resolve the page-specific stylesheet paths for the current URL. */
-    async resolvePageStylesheets() {
-      const config = await this.loadConfig();
-      const pageIds = await this.detectPages();
-      return pageIds
-        .map((id) => config.pages[id]?.file)
-        .filter(Boolean);
-    },
+    };
 
-    /** Resolve the always-on "common" stylesheets from the theme registry. */
-    async resolveCommonStylesheets() {
-      const config = await this.loadConfig();
-      return config.common || [];
-    },
+    ThemeBY.PageManager = PageManager;
 
-    /** Resolve the stylesheet for a given theme mode ("light" | "dark"). */
-    async resolveColorStylesheet(mode) {
-      const config = await this.loadConfig();
-      const theme = (config.themes || []).find((t) => t.id === mode);
-      return theme ? theme.colorFile : null;
-    },
-  };
-
-  ThemeBY.PageManager = PageManager;
 })(window);

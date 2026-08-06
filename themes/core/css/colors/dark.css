@@ -1,13 +1,26 @@
-/* --- Dark Theme Color Tokens (theme-dark.css) --- */
+/* --- Lighter Background, Dark Cards Theme --- */
 :root {
-    --bg-base: #000000;
-    --bg-surface: #1c1c1e;
-    --bg-nav: rgba(28, 28, 30, 0.75);
-    --text-primary: #f5f5f7;
-    --text-secondary: #98989d;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --accent: #0a84ff;
-    --control-bg: #2c2c2e;
-    --progress-bg: #32d74b;
-    --shadow-base: rgba(255, 255, 255, 0.03);
+    --bg-base: #2a2a2d; /* Lighter dark shade for the main background */
+    --bg-surface: #141415; /* Deep dark shade for the cards/boxes */
+    --bg-nav: rgba(42, 42, 45, 0.85);
+    --text-primary: #e4e4e7;
+    --text-secondary: #a1a1aa;
+    --border-color: rgba(255, 255, 255, 0.15); 
+    --accent: #3b82f6; 
+    --control-bg: #3f3f46;
+    --progress-bg: #22c55e;
+    --shadow-base: rgba(0, 0, 0, 0.5); /* Stronger shadow to make the dark boxes pop */
+
+/* Header     */
+    --header-bg: rgba(28, 28, 30, 0.72);
+    --header-border: rgba(255, 255, 255, 0.08);
+
+    --header-title: #f5f5f7;
+    --header-nav: #b5b5bb;
+    --header-nav-hover: #ffffff;
+    --header-link: #4da3ff;
+
+    --header-hover-bg: rgba(255, 255, 255, 0.06);
+
+    --header-active-bar: #ffffff;
 }

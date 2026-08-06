@@ -10,4 +10,17 @@
     --control-bg: #e8e8ed;
     --progress-bg: #34c759;
     --shadow-base: rgba(0, 0, 0, 0.04);
+
+/* Header     */
+    --header-bg: rgba(255, 255, 255, 0.75);
+    --header-border: rgba(0, 0, 0, 0.08);
+
+    --header-title: #1d1d1f;
+    --header-nav: #515154;
+    --header-nav-hover: #000000;
+    --header-link: #0071e3;
+
+    --header-hover-bg: rgba(0, 0, 0, 0.03);
+
+    --header-active-bar: #1d1d1f;
 }

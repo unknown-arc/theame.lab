@@ -1,0 +1,52 @@
+{
+  "common": [
+    "themes/core/css/common/variables.css",
+    "themes/core/css/common/typography.css",
+    "themes/core/css/common/page_transitions.css",
+    "themes/core/css/common/header/header.css",
+    "themes/core/css/common/footer/footer.css"
+  ],
+
+  "colors": {
+    "light": "themes/core/css/colors/light.css",
+    "dark": "themes/core/css/colors/dark.css"
+  },
+
+  "pages": {
+    "dashboard": [
+      "themes/core/css/pages/dashboard/dashboard.css"
+    ],
+
+    "mycourse": [
+      "themes/core/css/pages/My course/course.css"
+    ],
+
+    "quiz": [
+      "themes/core/css/pages/quiz/quiz.css"
+    ],
+
+    "assignment": [
+      "themes/core/css/pages/assignment/assignment.css"
+    ],
+
+    "calendar": [
+      "themes/core/css/pages/calendar/calendar.css"
+    ],
+
+    "grades": [
+      "themes/core/css/pages/grades/grades.css"
+    ],
+
+    "profile": [
+      "themes/core/css/pages/profile/profile.css"
+    ],
+
+    "messages": [
+      "themes/core/css/pages/messages/messages.css"
+    ]
+  },
+
+  "shared": {
+    "login": "shared/login_page/login.css"
+  }
+}
