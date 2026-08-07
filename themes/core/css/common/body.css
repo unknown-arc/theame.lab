@@ -1,0 +1,229 @@
+/* ----------------------------------------------------------
+   Main Page Background
+---------------------------------------------------------- */
+body, 
+#page-wrapper, 
+#page {
+    background-color: #121212 !important; /* Change hex to match your specific dark theme */
+    color: #e0e0e0 !important;
+}
+
+/* ----------------------------------------------------------
+   Content Cards & Blocks
+---------------------------------------------------------- */
+.card, 
+.block,
+.block_recentlyaccesseditems .card-deck .card {
+    background-color: #1e1e1e !important; /* Slightly lighter dark for contrast */
+    border: 1px solid #333 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Fix text color inside cards */
+.card h1, .card h2, .card h3, .card h4, .card h5, .card h6, .card-title, .card-text {
+    color: #e0e0e0 !important;
+}
+
+/* ----------------------------------------------------------
+   Layout Wrappers & Side Drawers
+---------------------------------------------------------- */
+#page-content,
+#region-main,
+.drawer,
+.drawercontent {
+    background-color: #121212 !important; /* Match this to your main dark background */
+    border: none !important; /* Removes any default light borders */
+}
+
+/* Optional: Add a subtle border to separate the right drawer from the main content */
+.drawer {
+    border-left: 1px solid #333 !important; 
+}
+
+/* ----------------------------------------------------------
+   Deep Layout Wrappers (Moodle 4.x specific)
+---------------------------------------------------------- */
+#page.drawers .main-inner,
+#region-main-box,
+#region-main,
+.region-main-content {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Fix the white gap/scrollbar line between the main content and right drawer */
+[data-region="blocks-column"] {
+    background-color: #121212 !important;
+}
+
+/* ----------------------------------------------------------
+   Custom Dark Scrollbars
+---------------------------------------------------------- */
+
+/* ----------------------------------------------------------
+   1. Force Browser & Scrollbar Dark Mode
+---------------------------------------------------------- */
+:root, body {
+    color-scheme: dark !important;
+}
+
+/* Scrollbar Track & Thumb for All Elements */
+*::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+}
+
+*::-webkit-scrollbar-track {
+    background: #121212 !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #333333 !important;
+    border-radius: 5px !important;
+    border: 2px solid #121212 !important;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #555555 !important;
+}
+
+
+/* ----------------------------------------------------------
+   2. Target Moodle Right Drawer Containers
+---------------------------------------------------------- */
+.drawer,
+.drawercontent,
+.drawer-right,
+.drawer-left,
+#theme_boost-drawers-blocks,
+[data-region="right-hand-drawer"],
+.drawer-header {
+    background-color: #121212 !important;
+    background: #121212 !important;
+    border-color: #222222 !important;
+}
+
+/* ----------------------------------------------------------
+   Search Bars, Inputs & Select Controls
+---------------------------------------------------------- */
+input,
+select,
+textarea,
+.form-control,
+.custom-select {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333333 !important;
+}
+
+input::placeholder {
+    color: #888888 !important;
+}
+
+
+/* ----------------------------------------------------------
+   Dropdown Menus, Tabs & "All Courses" Bars
+---------------------------------------------------------- */
+.dropdown-menu,
+.popover,
+.moremenu,
+.nav-tabs,
+.nav-tabs .nav-link,
+.bg-white,
+.bg-light {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #333333 !important;
+}
+
+.dropdown-item {
+    color: #e0e0e0 !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   Light Buttons & Secondary Badges
+---------------------------------------------------------- */
+.btn-secondary,
+.btn-light,
+.btn-outline-secondary {
+    background-color: #2a2a2a !important;
+    color: #e0e0e0 !important;
+    border-color: #444444 !important;
+}
+
+/* ----------------------------------------------------------
+   Course Activities, Quizzes & Assignments
+---------------------------------------------------------- */
+.activity-item,
+.activity-item:not(.activityinline),
+.activity-description,
+.activity-altcontent,
+.course-content .section .activity .contentwithoutlink {
+    background-color: #1e1e1e !important; /* Matches your dark card background */
+    border: 1px solid #333333 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Ensure all text inside the instructions is clearly visible */
+.activity-item .text-muted,
+.activity-item .description,
+.activity-description,
+.activity-description * {
+    color: #cccccc !important;
+}
+
+/* Fix any remaining white backgrounds on specific quiz/assignment containers */
+.path-mod .activity-header,
+.path-mod-quiz .generalbox {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333333 !important;
+}
+
+/* ----------------------------------------------------------
+   Activity Dates (Opened / Closed) & Availability Info
+---------------------------------------------------------- */
+.activity-dates,
+.activity-info,
+.availabilityinfo,
+.activity-item .info {
+    background-color: #2a2a2a !important; /* Slightly lighter than the main dark card for contrast */
+    color: #e0e0e0 !important;
+    border: 1px solid #444444 !important;
+    border-radius: 4px; /* Optional: smooths the edges */
+}
+
+/* Force text inside the date boxes to be readable */
+.activity-dates *,
+.activity-info *,
+.availabilityinfo * {
+    color: #e0e0e0 !important;
+}
+
+/* ----------------------------------------------------------
+   Course Links & General Hyperlinks
+---------------------------------------------------------- */
+a, 
+.coursename, 
+.aalink, 
+.card a,
+.block a {
+    color: var(--accent) !important;
+    text-decoration: none;
+}
+
+a:hover, 
+.coursename:hover, 
+.aalink:hover, 
+.card a:hover,
+.block a:hover {
+    color: var(--header-link) !important; 
+    text-decoration: underline;
+}

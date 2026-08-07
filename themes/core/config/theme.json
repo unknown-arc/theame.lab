@@ -4,7 +4,8 @@
     "themes/core/css/common/typography.css",
     "themes/core/css/common/page_transitions.css",
     "themes/core/css/common/header/header.css",
-    "themes/core/css/common/footer/footer.css"
+    "themes/core/css/common/footer/footer.css",
+    "themes/core/css/common/bodyy.css"
   ],
 
   "colors": {

@@ -1,78 +1,161 @@
-/* --- Header, Logo & Navigation Styles --- */
+/* ==========================================================
+   THEME.BY — Header
+   Only styles the TOP navigation bar
+   ========================================================== */
 
-/* Header */
-#page-header,
-header.navbar {
+
+/* ----------------------------------------------------------
+   Top Navbar
+---------------------------------------------------------- */
+
+nav.navbar.fixed-top {
+
     background: var(--header-bg) !important;
+
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
 
     border-bottom: 1px solid var(--header-border) !important;
 
-    padding: 12px 24px !important;
-    border-radius: 16px 16px 0 0 !important;
     box-shadow: none !important;
+
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+
 }
 
-/* Links */
 
-a {
-    color: var(--header-link);
-    text-decoration: none;
-    transition: color .2s ease, opacity .2s ease;
+/* ----------------------------------------------------------
+   Bootstrap Overrides
+---------------------------------------------------------- */
+
+nav.navbar.fixed-top.navbar-light {
+
+    background: var(--header-bg) !important;
+
 }
 
-a:hover {
-    opacity: .8;
+nav.navbar.fixed-top.bg-white {
+
+    background: var(--header-bg) !important;
+
 }
 
-/* Title */
 
-h2,
-.navbar-brand {
-    color: var(--header-title);
-    font-weight: 600;
-    font-size: 17px;
+/* ----------------------------------------------------------
+   Brand
+---------------------------------------------------------- */
+
+nav.navbar.fixed-top .navbar-brand {
+
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-right: 20px;
+
+    font-size: 0 !important;
+
 }
 
-/* Navigation */
+nav.navbar.fixed-top .navbar-brand img,
+nav.navbar.fixed-top .navbar-brand .logo {
 
-.nav-link {
-    color: var(--header-nav);
-    font-size: 14px;
-    font-weight: 400;
-    transition: all .2s ease;
+    display: none !important;
+
 }
 
-.nav-link:hover {
-    color: var(--header-nav-hover) !important;
-    background: var(--header-hover-bg) !important;
-    border-radius: 8px;
-}
-
-/* Navigation spacing */
-
-.navbar-nav {
-    gap: 4px !important;
-}
-
-.navbar-nav .nav-link {
-    position: relative;
-    border-radius: 4px;
-    padding: 4px 8px !important;
-}
-
-.navbar-nav .nav-link.active,
-.navbar-nav .active > .nav-link {
+nav.navbar.fixed-top .navbar-nav .nav-link.active,
+nav.navbar.fixed-top .navbar-nav .active>.nav-link {
 
     color: var(--header-title) !important;
+
     font-weight: 600;
+
+    background: transparent !important;
+    
+    border-bottom: none !important; /* Removes the default thin Moodle bar */
+    
+    box-shadow: none !important; /* Catches any focus-state shadow lines */
+
+}
+
+nav.navbar.fixed-top .navbar-brand::before {
+
+    content: "";
+
+    width: 32px;
+    height: 32px;
+
+    display: block;
+
+    background:
+        url("chrome-extension://__MSG_@@extension_id__/assets/images/IIT-Patna.png")
+        center / contain
+        no-repeat;
+
+}
+
+nav.navbar.fixed-top .navbar-brand::after {
+
+    content: "IITP";
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -.04em;
+
+    color: var(--header-title);
+
+}
+
+
+/* ----------------------------------------------------------
+   Navigation
+---------------------------------------------------------- */
+
+nav.navbar.fixed-top .navbar-nav {
+
+    gap: 4px;
+
+}
+
+nav.navbar.fixed-top .navbar-nav .nav-link {
+
+    color: var(--header-nav) !important;
+
+    border-radius: 8px;
+
+    position: relative;
+
+    transition: .25s;
+
+}
+
+nav.navbar.fixed-top .navbar-nav .nav-link:hover {
+
+    color: var(--header-nav-hover) !important;
+
+    background: var(--header-hover-bg) !important;
+
+}
+
+nav.navbar.fixed-top .navbar-nav .nav-link.active,
+nav.navbar.fixed-top .navbar-nav .active>.nav-link {
+
+    color: var(--header-title) !important;
+
+    font-weight: 600;
+
     background: transparent !important;
 
 }
 
-.navbar-nav .nav-link.active::after,
-.navbar-nav .active > .nav-link::after {
+nav.navbar.fixed-top .navbar-nav .nav-link.active::after,
+nav.navbar.fixed-top .navbar-nav .active>.nav-link::after {
 
     content: "";
 
@@ -84,58 +167,124 @@ h2,
     transform: translateX(-50%);
 
     width: 24px;
+
     height: 3px;
 
-    border-radius: 3px;
+    border-radius: 999px;
 
     background: var(--header-active-bar);
 
 }
 
-/* Logo */
 
-.navbar-brand img,
-.navbar-brand .logo {
+/* ----------------------------------------------------------
+   Header Links
+---------------------------------------------------------- */
 
-    display: none !important;
+nav.navbar.fixed-top a {
 
-}
+    color: var(--header-link);
 
-.navbar-brand {
+    text-decoration: none;
 
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    margin-right: 20px;
-
-    font-size: 0;
+    transition: .2s;
 
 }
 
-.navbar-brand::before {
+nav.navbar.fixed-top a:hover {
 
-    content: "";
-
-    width: 32px;
-    height: 32px;
-
-    display: block;
-
-    background: url("chrome-extension://__MSG_@@extension_id__/assets/images/IIT-Patna.png")
-        center/contain no-repeat;
+    opacity: .85;
 
 }
 
-.navbar-brand::after {
 
-    content: "IITP";
+/* ----------------------------------------------------------
+   Icons
+---------------------------------------------------------- */
 
-    color: var(--header-title);
+nav.navbar.fixed-top i,
+nav.navbar.fixed-top svg {
 
-    font-size: 22px;
-    font-weight: 700;
+    color: var(--header-icon) !important;
 
-    letter-spacing: -.04em;
+    fill: currentColor;
 
+}
+
+nav.navbar.fixed-top a:hover i,
+nav.navbar.fixed-top a:hover svg {
+
+    color: var(--header-nav-hover) !important;
+
+}
+
+
+/* ----------------------------------------------------------
+   Search
+---------------------------------------------------------- */
+
+nav.navbar.fixed-top input {
+
+    background: var(--header-input-bg);
+
+    color: var(--header-input-text);
+
+    border: 1px solid var(--header-border);
+
+}
+
+
+/* ----------------------------------------------------------
+   Buttons
+---------------------------------------------------------- */
+
+nav.navbar.fixed-top .btn {
+
+    transition: .25s;
+
+}
+
+
+/* ----------------------------------------------------------
+   User Menu
+---------------------------------------------------------- */
+
+nav.navbar.fixed-top .usermenu {
+
+    color: var(--header-text);
+
+}
+
+
+/* ----------------------------------------------------------
+   Notification Icons
+---------------------------------------------------------- */
+
+nav.navbar.fixed-top .popover-region-toggle {
+
+    color: var(--header-icon) !important;
+
+}
+
+
+/* ----------------------------------------------------------
+   Keep page header transparent
+---------------------------------------------------------- */
+
+#page-header {
+
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+
+}
+
+/* ----------------------------------------------------------
+   Edit Mode Toggle
+---------------------------------------------------------- */
+nav.navbar.fixed-top .form-check-label,
+nav.navbar.fixed-top .editmode-switch-form label {
+    color: var(--header-title) !important;
 }
