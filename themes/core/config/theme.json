@@ -19,7 +19,8 @@
     ],
 
     "mycourse": [
-      "themes/core/css/pages/My course/course.css"
+      "themes/core/css/pages/My course/mycourse.css",
+      "themes/core/css/pages/My course/filterbar.css"
     ],
 
     "quiz": [
@@ -45,6 +46,12 @@
     "messages": [
       "themes/core/css/pages/messages/messages.css"
     ]
+  },
+
+  "pageScripts": {
+        "mycourse": [
+            "themes/core/js/pages/mycourse.js"
+        ]
   },
 
   "shared": {

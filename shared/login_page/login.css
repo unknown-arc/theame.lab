@@ -5,7 +5,8 @@ html, body, #page-wrapper, #page, #page-login-index, .login-wrapper {
 }
 
 html {
-    background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop') !important; 
+    /* background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop') !important;  */
+    background-image: url('https://4kwallpapers.com/images/wallpapers/miyamoto-musashi-3840x2160-15204.jpg') !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;

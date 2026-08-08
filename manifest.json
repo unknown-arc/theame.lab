@@ -52,11 +52,10 @@
         "shared/*.css",
         "shared/**/*.css",
         "themes/core/css/**/*.css",
-        "themes/core/config/theme.json",
-        "themes/core/config/routes.json",
-        "assets/images/*",
-        "assets/icons/*",
-        "themes/core/assets/*"
+        "themes/core/config/*.json",
+        "themes/core/assets/**/*",
+        "assets/**/*",
+        "themes/core/js/**/*.js"
       ],
       "matches": [
         "https://cet.iitp.ac.in/*"
