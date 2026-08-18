@@ -3,9 +3,12 @@
     "/login"
   ],
 
+  "home": [
+    "/?redirect=0"
+  ],
+
   "dashboard": [
-    "/my",
-    "/my/index.php"
+    "/my"
   ],
 
   "mycourse": [

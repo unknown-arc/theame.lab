@@ -5,7 +5,9 @@
     "themes/core/css/common/page_transitions.css",
     "themes/core/css/common/header/header.css",
     "themes/core/css/common/footer/footer.css",
-    "themes/core/css/common/bodyy.css"
+    "themes/core/css/common/bodyy.css",
+    "themes/core/css/common/base.css",
+    "themes/core/css/common/custom-font.css"
   ],
 
   "colors": {
@@ -14,13 +16,17 @@
   },
 
   "pages": {
+    "home": [
+      "themes/core/css/pages/home/home.css"
+    ],
+    
     "dashboard": [
       "themes/core/css/pages/dashboard/dashboard.css"
     ],
 
     "mycourse": [
-      "themes/core/css/pages/My course/mycourse.css",
-      "themes/core/css/pages/My course/filterbar.css"
+      "themes/core/css/pages/My Course/mycourse.css",
+      "themes/core/css/pages/My Course/filterbarr.css"
     ],
 
     "quiz": [

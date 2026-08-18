@@ -5,10 +5,10 @@
 }
 
 body {
-  width: 300px;
+  width: 280px;
   padding: 24px 20px 20px;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-  background: #f5f5f5;
+  background: #f0f0f0;
   color: #1c1c1e;
 }
 
@@ -44,11 +44,9 @@ body {
   outline: none;
   -webkit-tap-highlight-color: transparent;
   
-  /* Shared Transitions - Bounce animation removed */
   transition: background 0.4s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.4s ease, transform 0.2s ease;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 24px rgba(0, 0, 0, 0.05);
 
-  /* --- Uiverse Animation Variables --- */
   --duration: 7s;
   --easing: linear;
   --c-color-1: rgba(26, 163, 255, .7);
@@ -63,7 +61,6 @@ body {
   --c-color: #fff;
 }
 
-/* Retained scale down for a tactile click feel */
 .power-btn:active {
   transform: scale(0.96);
 }
@@ -201,10 +198,10 @@ body {
 @keyframes circle-12 { 33% { transform: translate(56px, 0px) translateZ(0); } 66% { transform: translate(60px, -32px) translateZ(0); } }
 
 /* =========================================
-   THEMES (Updated to match Uiverse colors)
+   SECTION TITLE
 ========================================= */
 .section-title {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: #a0a0a6;
   font-size: 11px;
   font-weight: 600;
@@ -212,59 +209,124 @@ body {
   letter-spacing: 0.1em;
 }
 
+/* =========================================
+   THEME LIST & BUTTONS
+========================================= */
 .theme-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 18px;
 }
 
-.theme-row {
-  position: relative;
+/* ---- Dark button ---- */
+.theme-row[data-theme="dark"] {
+  padding: 10px 18px;
+  margin-top: 4px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: #f0f0f0;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #666666;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  border-radius: 14px;
-  border: 1px solid #e4e4e7;
-  background: #ffffff;
-  color: #48484c;
-  padding: 13px 16px;
-  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+.theme-row[data-theme="dark"]:hover {
+  letter-spacing: 3px;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(30 30 30) 0px 7px 29px 0px;
+}
+
+.theme-row[data-theme="dark"]:active {
+  letter-spacing: 3px;
+  background-color: hsla(0, 0%, 0%, 0.9);
+  color: hsl(0, 0%, 100%);
+  box-shadow: none;
+  transform: scale(0.96);
+}
+
+.theme-row[data-theme="dark"].active {
+  background-color: hsl(0, 0%, 0%, 0.9);
+  color: hsl(0, 0%, 100%);
+}
+
+/* ---- Light button ---- */
+.theme-row[data-theme="light"] {
+  padding: 10px 18px;
+  margin-top: 6px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: #f0f0f0;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  font-size: 14px;
   font-weight: 600;
   font-family: inherit;
-  cursor: pointer;
-  z-index: 0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  color: #666666;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s ease;
 }
 
-.theme-row:hover {
-  transform: translateY(-1px);
-  border-color: #d4d4d8;
+.theme-row[data-theme="light"]:hover {
+  letter-spacing: 3px;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: rgb(225 225 225) 0px 7px 29px 0px;
 }
 
+.theme-row[data-theme="light"]:active {
+  letter-spacing: 3px;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: none;
+  transform: scale(0.96);
+}
+
+.theme-row[data-theme="light"].active {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+}
+
+/* ---- Active/selected state (no green effect) ---- */
 .theme-row.active {
-  background: #ffffff;
-  color: #1c1c1e;
-  border-color: #72faff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 4px 16px rgba(21, 210, 255, 0.25);
+  outline: none;
 }
 
 .theme-row.active::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 3px;
-  border-radius: 3px;
-  background: linear-gradient(180deg, #72faff, #15d2ff);
+  display: none;
 }
 
-.theme-label { transition: padding-left 0.2s ease; }
-.theme-row.active .theme-label { padding-left: 8px; }
-.theme-row.active .chevron { color: #15d2ff; }
-.chevron { font-size: 18px; line-height: 1; color: #c7c7cc; }
-.theme-list[data-disabled="true"] .theme-row { opacity: 0.4; pointer-events: none; }
-.status-line { text-align: center; font-size: 11px; color: #a0a0a6; line-height: 1.4; }
+.theme-list[data-disabled="true"] .theme-row {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.chevron {
+  font-size: 16px;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.5;
+}
+
+.status-line {
+  text-align: center;
+  font-size: 11px;
+  color: #a0a0a6;
+  line-height: 1.4;
+}
