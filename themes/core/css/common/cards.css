@@ -1,0 +1,41 @@
+/* 1. Ensure the overall page background allows the glass effect to be visible */
+body {
+    background-color: #f4f6f9 !important; 
+}
+
+/* 2. Remove solid white backgrounds and borders from all main structural wrappers */
+.main-inner,
+#page-content,
+#region-main-box,
+#region-main,
+#region-main .bg-white,
+[role="main"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 3. Apply the rounded glassmorphism effect to the cards and blocks */
+.card, 
+.block, 
+.coursebox {
+    background: rgba(255, 255, 255, 0.4) !important;
+    border-radius: 20px !important; 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 4. Make internal list items (like individual courses) transparent so they blend into the card */
+.list-group-item, 
+.course-listitem {
+    background-color: transparent !important;
+    border: none !important; 
+}
+
+/* Optional: Add a subtle separator line between list items */
+.list-group-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}

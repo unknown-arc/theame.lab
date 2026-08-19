@@ -7,7 +7,10 @@
     "themes/core/css/common/footer/footer.css",
     "themes/core/css/common/bodyy.css",
     "themes/core/css/common/base.css",
-    "themes/core/css/common/custom-font.css"
+    "themes/core/css/common/custom-font.css",
+    "themes/core/css/common/cards.css",
+    "themes/core/css/common/bg.css",
+    "themes/core/css/profile/profile.css"
   ],
 
   "colors": {
