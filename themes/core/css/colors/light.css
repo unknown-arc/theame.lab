@@ -23,4 +23,46 @@
     --header-hover-bg: rgba(0, 0, 0, 0.03);
 
     --header-active-bar: #1d1d1f;
+
+/* Buttons    */
+    /* Solid White Default */
+    --btn-bg-default: #ffffff;
+    --btn-border-default: #e2e8f0; /* Subtle border for visibility */
+    --btn-text-default: #2d3436;
+    --btn-shadow-default: 0 4px 15px rgba(0, 0, 0, 0.05);
+    
+    /* Gradient Hover */
+    --btn-bg-hover: #ffffff;
+    --btn-text-hover: #2d3436;
+    --btn-shadow-hover: 0 10px 25px rgba(108, 92, 231, 0.35);
+    --btn-shadow-active: 0 4px 10px rgba(108, 92, 231, 0.2);
+
+/* Cards      */
+    --body-bg: #f4f6f9;
+    --card-glass-bg: rgba(255, 255, 255, 0.4);
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    --card-glass-border: rgba(255, 255, 255, 0.5);
+    --list-divider: rgba(255, 255, 255, 0.2);
+
+/*Drop Downs  */
+    --dropdown-bg-solid: rgba(255, 255, 255, 0.95);
+    --select-option-bg: #ffffff;
+    --select-option-text: #2d3436;
+
+/* Search Bar */
+    --search-bg: rgba(255, 255, 255, 0.5);
+    --search-border: rgba(255, 255, 255, 0.7);
+    --search-text: #2d3436;
+    --search-placeholder: #636e72;
+    --search-btn-bg: #0984e3;
+    --search-btn-hover: #6c5ce7;
+}
+
+:root {
+    /* ... existing variables ... */
+    
+    /* Typography Colors */
+    --text-main: #2d3436;      /* Standard body text */
+    --text-heading: #1e272e;   /* Bold, dark headers */
+    --text-muted: #636e72;     /* Secondary/subtle text */
 }

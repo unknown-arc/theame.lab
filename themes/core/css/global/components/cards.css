@@ -1,6 +1,6 @@
 /* 1. Ensure the overall page background allows the glass effect to be visible */
 body {
-    background-color: #f4f6f9 !important; 
+    background-color: var(--body-bg) !important; 
 }
 
 /* 2. Remove solid white backgrounds and borders from all main structural wrappers */
@@ -20,12 +20,12 @@ body {
 .card, 
 .block, 
 .coursebox {
-    background: rgba(255, 255, 255, 0.4) !important;
+    background: var(--card-glass-bg) !important;
     border-radius: 20px !important; 
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+    box-shadow: var(--card-shadow) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border: 1px solid var(--card-glass-border) !important;
 }
 
 /* 4. Make internal list items (like individual courses) transparent so they blend into the card */
@@ -37,5 +37,5 @@ body {
 
 /* Optional: Add a subtle separator line between list items */
 .list-group-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-bottom: 1px solid var(--list-divider) !important;
 }

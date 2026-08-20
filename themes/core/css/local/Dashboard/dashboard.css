@@ -1,0 +1,5 @@
+/* Hides the entire card shell, not just the inside body */
+.card:has(#instance-45-header),
+.block:has(#instance-45-header) {
+    display: none !important;
+}

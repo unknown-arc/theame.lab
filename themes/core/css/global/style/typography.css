@@ -1,0 +1,82 @@
+/* ========================================
+   THEME.BY — Global Typography (Icon Fix Applied)
+   ======================================== */
+
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* 1. Apply Poppins to everything EXCEPT icon elements */
+*:not(i):not(.icon):not(.fa):not(.fas):not(.far):not(.fab):not([class*="fa-"]) {
+    font-family: "Poppins", -apple-system, sans-serif !important;
+}
+
+/* 2. Explicitly protect Moodle/FontAwesome icons from being overridden */
+i, .icon, .fa, .fas, .far, .fab, [class*="fa-"] {
+    font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome", inherit !important;
+}
+
+/* 3. Global Text Colors */
+body {
+    color: var(--text-main) !important;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--text-heading) !important;
+    font-weight: 600 !important;
+}
+
+/* 4. COURSE LINKS FIX (Forces solid dark/light, removes Moodle shading) */
+a, 
+.course-listitem a, 
+.list-group-item a, 
+.card a,
+.text-dark,
+.aalink,
+.dimmed_text,
+.dimmed {
+    color: var(--text-main) !important;
+    text-decoration: none !important;
+    opacity: 1 !important; 
+    font-weight: 500 !important;
+    transition: color 0.2s ease-in-out !important;
+}
+
+/* Subtle hover effect for links */
+a:hover, 
+.course-listitem a:hover {
+    color: #0984e3 !important; 
+}
+
+/* Muted or Secondary Text */
+small, .form-text {
+    color: var(--text-muted) !important;
+}
+
+/* 5. HYPERLINKS (Solid Light Blue) */
+a, 
+.course-listitem a, 
+.list-group-item a, 
+.card a,
+.aalink {
+    color: #38bdf8 !important; /* Light blue */
+    text-decoration: none !important;
+    opacity: 1 !important; /* Removes Moodle's built-in transparency */
+    font-weight: 500 !important;
+    transition: color 0.2s ease-in-out !important;
+}
+
+/* Hyperlink Hover Effect */
+a:hover, 
+.course-listitem a:hover {
+    color: #e90e0e !important; /* Slightly deeper blue on hover for contrast */
+}
+
+/* 6. MOODLE SHADED TEXT FIX (Keeps non-links tied to your theme color) */
+.text-dark,
+.dimmed_text,
+.dimmed {
+    color: var(--text-main) !important;
+    opacity: 1 !important; 
+}

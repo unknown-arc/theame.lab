@@ -23,4 +23,47 @@
     --header-hover-bg: rgba(255, 255, 255, 0.06);
 
     --header-active-bar: #ffffff;
+
+/* Buttons    */
+    /* Solid White Default */
+    --btn-bg-default: #000000;
+    --btn-border-default: transparent;
+    --btn-text-default: #dedede; /* Dark text to contrast the white button */
+    --btn-shadow-default: 0 4px 15px rgba(0, 0, 0, 0.3);
+    
+    /* Neon Gradient Hover */
+    --btn-bg-hover: #ffffff ;
+    --btn-text-hover: #000000;
+    --btn-shadow-hover: 0 10px 25px rgba(129, 140, 248, 0.35);
+    --btn-shadow-active: 0 4px 10px rgba(129, 140, 248, 0.2);
+
+/* Cards      */
+    --body-bg: #0f172a; /* Deep slate background for dark mode */
+    --card-glass-bg: rgba(0, 0, 0, 0.4); /* Dark glass */
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    --card-glass-border: rgba(255, 255, 255, 0.1); /* Subtle bright edge */
+    --list-divider: rgba(255, 255, 255, 0.1);
+
+/* Dropdowns  */
+    --dropdown-bg-solid: rgba(15, 23, 42, 0.95);
+    --select-option-bg: #0f172a;
+    --select-option-text: #e2e8f0;
+
+/* Search Bar */
+    --search-bg: rgba(15, 23, 42, 0.5);
+    --search-border: rgba(255, 255, 255, 0.1);
+    --search-text: #e2e8f0;
+    --search-placeholder: #94a3b8;
+    --search-btn-bg: #38bdf8; /* Brighter blue for dark mode */
+    --search-btn-hover: #818cf8;
+    --search-clear-hover: #ffffff;
+}
+
+:root {
+    /* ... existing variables ... */
+    
+    /* Typography Colors */
+    --text-main: #e2e8f0;      /* Soft white for readability */
+    --text-heading: #ffffff;   /* Pure white for prominent headers */
+    --text-muted: #94a3b8;     /* Dimmed slate for secondary text */
 }

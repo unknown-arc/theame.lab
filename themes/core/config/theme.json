@@ -1,17 +1,22 @@
 {
   "common": [
-    "themes/core/css/common/variables.css",
-    "themes/core/css/common/typography.css",
-    "themes/core/css/common/page_transitions.css",
-    "themes/core/css/common/header/header.css",
-    "themes/core/css/common/footer/footer.css",
-    "themes/core/css/common/bodyy.css",
-    "themes/core/css/common/base.css",
-    "themes/core/css/common/cards.css",
-    "themes/core/css/common/bg.css",
+    "themes/core/css/global/components/buttons.css",
+    "themes/core/css/global/components/cards.css",
+    "themes/core/css/global/components/dropdown.css",
+    "themes/core/css/global/components/searchbar.css",
+
+    "themes/core/css/global/style/typography.css",
+    
+    "themes/core/css/global/variables.css",
+    "themes/core/css/global/page_transitions.css",
+    "themes/core/css/global/header/header.css",
+    "themes/core/css/global/footer/footer.css",
+    "themes/core/css/global/bodyy.css",
+    "themes/core/css/global/base.css",
     "themes/core/css/profile/profile.css",
-    "themes/core/css/common/course_card.css",
-    "themes/core/css/common/search.css"
+    "themes/core/css/global/course_card.css",
+    
+    "themes/core/css/backgrounds/CyberpunkNeon.css"
 
   ],
 
@@ -22,47 +27,47 @@
 
   "pages": {
     "home": [
-      "themes/core/css/pages/home/home.css",
-      "themes/core/css/pages/home/scroll_animation.css"
+      "themes/core/css/local/home/home.css",
+      "themes/core/css/local/home/scroll_animation.css"
     ],
     
     "dashboard": [
-      "themes/core/css/pages/dashboard/dashboard.css"
+      "themes/core/css/local/dashboard/dashboard.css"
     ],
 
     "mycourse": [
-      "themes/core/css/pages/My Course/mycourse.css",
-      "themes/core/css/pages/My Course/filterbarrs.css"
+      "themes/core/css/local/My Course/mycourse.css",
+      "themes/core/css/local/My Course/filterbarrs.css"
     ],
 
     "quiz": [
-      "themes/core/css/pages/quiz/quiz.css"
+      "themes/core/css/local/quiz/quiz.css"
     ],
 
     "assignment": [
-      "themes/core/css/pages/assignment/assignment.css"
+      "themes/core/css/local/assignment/assignment.css"
     ],
 
     "calendar": [
-      "themes/core/css/pages/calendar/calendar.css"
+      "themes/core/css/local/calendar/calendar.css"
     ],
 
     "grades": [
-      "themes/core/css/pages/grades/grades.css"
+      "themes/core/css/local/grades/grades.css"
     ],
 
     "profile": [
-      "themes/core/css/pages/profile/profile.css"
+      "themes/core/css/local/profile/profile.css"
     ],
 
     "messages": [
-      "themes/core/css/pages/messages/messages.css"
+      "themes/core/css/local/messages/messages.css"
     ]
   },
 
-  "pageScripts": {
+  "localcripts": {
         "mycourse": [
-            "themes/core/js/pages/mycourse.js"
+            "themes/core/js/local/mycourse.js"
         ]
   },
 

@@ -1,0 +1,115 @@
+/* ========================================
+   UNIVERSAL SEARCH BAR (Global, Timeline, Overview)
+   ======================================== */
+
+/* 1. The Outer Pill Container */
+.simplesearchform .input-group,
+.block_timeline .searchbar,
+.block_myoverview .searchbar,
+[data-region="search-input"],
+.searchbar {
+    background: var(--search-bg) !important; 
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 50px !important; 
+    border: 1px solid var(--search-border) !important;
+    box-shadow: var(--card-shadow) !important;
+    
+    /* Alignment and Spacing Fixes */
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+    padding: 4px 8px !important;
+    margin-bottom: 15px !important;
+    max-width: 500px !important;
+    height: 48px !important; /* Locks height to prevent collapsing */
+}
+
+/* 2. The Text Input Area */
+.simplesearchform .form-control,
+.searchbar .form-control,
+[data-region="search-input"] .form-control {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important; 
+    color: var(--search-text) !important;
+    font-size: 15px !important;
+    
+    /* Sizing Fixes */
+    height: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 40px !important; /* Critical: Leaves room for the X button */
+    margin: 0 !important;
+    flex-grow: 1 !important; /* Ensures the input takes up available space */
+}
+
+/* Placeholder Text */
+.form-control::placeholder {
+    color: var(--search-placeholder) !important;
+    font-weight: 500 !important;
+}
+
+/* 3. The Clear (X) Button Fix */
+.searchbar [data-action="clearsearch"],
+[data-region="search-input"] [data-action="clearsearch"],
+.simplesearchform .btn-clear,
+.searchbar .close {
+    position: absolute !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* Perfect vertical center */
+    z-index: 10 !important; 
+    
+    /* Reset Moodle's native button styles */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+/* Style the actual X icon */
+[data-action="clearsearch"] i,
+.btn-clear i,
+.close i,
+.searchbar .close i {
+    color: var(--search-text) !important; /* Matches base text color initially */
+    font-size: 14px !important;
+    opacity: 0.5 !important;
+    
+    /* FIX: 'display: inline-block' is required for transforms (scale) to work on icons */
+    display: inline-block !important; 
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
+}
+
+/* Cross button hover effect (Enlarge + Black/White Color Shift) */
+[data-action="clearsearch"]:hover i,
+.btn-clear:hover i,
+.close:hover i,
+.searchbar .close:hover i {
+    opacity: 1 !important;
+    color: var(--search-clear-hover) !important; /* Pulls black in light mode, white in dark mode */
+    transform: scale(1.3) !important; /* Enlarges the icon by 30% */
+}
+
+/* 4. The Global Search Magnifying Glass Button (If applicable) */
+.simplesearchform .btn.search-icon {
+    background-color: var(--search-btn-bg) !important; 
+    border-radius: 40px !important; 
+    border: none !important;
+    padding: 8px 20px !important;
+    margin-left: 5px !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(9, 132, 227, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.simplesearchform .btn.search-icon:hover {
+    background-color: var(--search-btn-hover) !important; 
+    transform: translateY(-2px) !important; 
+}
+

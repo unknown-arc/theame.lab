@@ -1,0 +1,97 @@
+/* ========================================
+   DROPDOWN & SELECT STRUCTURE
+   ======================================== */
+
+/* 1. Z-INDEX FIX: Prevents hiding behind calendar or other blocks */
+.block, 
+.card, 
+.card-body {
+    overflow: visible !important; /* Ensures the dropdown isn't clipped by the card's edge */
+}
+
+/* Elevates the parent wrapper so the menu inside it sits above the cards below it */
+.dropdown:focus-within, 
+.dropdown:hover, 
+.btn-group:focus-within, 
+.btn-group:hover,
+.show {
+    z-index: 9999 !important;
+}
+
+/* 2. The Main Dropdown Container */
+.dropdown-menu {
+    background: var(--dropdown-bg-solid) !important; 
+    border: 1px solid var(--card-glass-border) !important;
+    border-radius: 15px !important;
+    box-shadow: var(--card-shadow) !important;
+    padding: 8px !important;
+    z-index: 10000 !important; 
+}
+
+/* 3. Individual Dropdown Items */
+.dropdown-item {
+    color: var(--btn-text-default) !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    background: transparent !important;
+    padding: 8px 15px !important;
+    margin-bottom: 2px !important;
+    
+    /* Text wrapping for long items */
+    white-space: normal !important; 
+    word-wrap: break-word !important;
+    height: auto !important; 
+}
+
+/* 4. Dropdown Item Hover/Active State */
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active {
+    background: var(--btn-bg-hover) !important;
+    color: var(--btn-text-hover) !important;
+    transform: scale(1.03) !important; 
+    transform-origin: left center !important; 
+}
+
+/* 5. Native Select Dropdowns ("All courses" filter) */
+select,
+.custom-select,
+.form-select {
+    background-color: var(--dropdown-bg-solid) !important; 
+    border: 1px solid var(--card-glass-border) !important;
+    border-radius: 15px !important;
+    box-shadow: var(--card-shadow) !important;
+    padding: 8px 15px !important;
+    color: var(--text-main) !important;
+    font-family: inherit !important;
+    outline: none !important;
+}
+
+/* 6. Native Options inside the select box */
+select option {
+    background-color: var(--select-option-bg) !important; 
+    color: var(--select-option-text) !important;
+    padding: 10px !important;
+}
+
+/* ========================================
+   STACKING CONTEXT FIX (For Glassmorphism)
+   ======================================== */
+
+/* 1. Give all cards a baseline position and z-index */
+.block, 
+.card, 
+.coursebox {
+    position: relative !important;
+    z-index: 1 !important; 
+}
+
+/* 2. Elevate the entire card/block when hovered or clicked */
+.block:hover, 
+.card:hover, 
+.coursebox:hover,
+.block:focus-within, 
+.card:focus-within, 
+.coursebox:focus-within {
+    z-index: 9999 !important; /* Pops the active card above all other cards */
+}
