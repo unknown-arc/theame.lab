@@ -7,10 +7,12 @@
     "themes/core/css/common/footer/footer.css",
     "themes/core/css/common/bodyy.css",
     "themes/core/css/common/base.css",
-    "themes/core/css/common/custom-font.css",
     "themes/core/css/common/cards.css",
     "themes/core/css/common/bg.css",
-    "themes/core/css/profile/profile.css"
+    "themes/core/css/profile/profile.css",
+    "themes/core/css/common/course_card.css",
+    "themes/core/css/common/search.css"
+
   ],
 
   "colors": {
@@ -20,7 +22,8 @@
 
   "pages": {
     "home": [
-      "themes/core/css/pages/home/home.css"
+      "themes/core/css/pages/home/home.css",
+      "themes/core/css/pages/home/scroll_animation.css"
     ],
     
     "dashboard": [
@@ -29,7 +32,7 @@
 
     "mycourse": [
       "themes/core/css/pages/My Course/mycourse.css",
-      "themes/core/css/pages/My Course/filterbarr.css"
+      "themes/core/css/pages/My Course/filterbarrs.css"
     ],
 
     "quiz": [

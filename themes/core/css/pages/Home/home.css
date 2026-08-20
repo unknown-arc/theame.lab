@@ -1,3 +1,22 @@
-/* #topofscroll {
-    margin-right: 600px !important; 
-} */
+/* ---------------------------------------------------
+   1. HIDE SITE ANNOUNCEMENTS
+   --------------------------------------------------- */
+.sitenews,
+#site-news-forum,
+.block_news_items,
+.sitetopic {
+    display: none !important;
+}
+
+/* Hides the "Site announcements" heading specifically if it's outside the main block */
+h2:has(+ .sitenews),
+h2:has(+ .subscribelink) {
+    display: none !important;
+}
+
+/* 1. Squeeze the main content to 72% to make room on the right */
+#region-main {
+    position: relative !important;
+    padding-right: 28% !important; /* Creates an empty 28% column on the right */
+    min-height: 80vh !important;
+}
