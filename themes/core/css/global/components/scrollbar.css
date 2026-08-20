@@ -1,0 +1,57 @@
+/* ========================================
+   MODERN SCROLLBAR (Adapts to Light/Dark)
+   ======================================== */
+
+/* 1. Global Scrollbar Width */
+::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important; /* For horizontal scrollbars */
+}
+
+/* 2. The Track (Background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track) !important;
+    border-radius: 10px !important;
+}
+
+/* 3. The Thumb (The draggable part) */
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb) !important;
+    border-radius: 10px !important; 
+    border: 3px solid transparent !important; /* Creates a floating "pill" effect by adding invisible padding */
+    background-clip: content-box !important; /* Ensures the background color only fills inside the invisible border */
+}
+
+/* 4. The Thumb Hover State */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover) !important;
+    background-clip: content-box !important;
+}
+
+/* ========================================
+   FIREFOX SUPPORT
+   ======================================== */
+/* Firefox uses a different, simpler standard for scrollbars */
+* {
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track) !important;
+}
+
+/* 5. ULTIMATE OVERRIDE: Hide Scrollbar Arrows */
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-button:start,
+::-webkit-scrollbar-button:end,
+::-webkit-scrollbar-button:horizontal:increment,
+::-webkit-scrollbar-button:horizontal:decrement,
+::-webkit-scrollbar-button:vertical:increment,
+::-webkit-scrollbar-button:vertical:decrement,
+::-webkit-scrollbar-button:single-button {
+    display: none !important;
+    width: 0px !important;
+    height: 0px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+}

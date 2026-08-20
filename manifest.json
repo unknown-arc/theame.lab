@@ -34,6 +34,7 @@
         "js/engine/StorageManager.js",
         "js/engine/PageManager.js",
         "js/engine/ColorManager.js",
+        "js/engine/BackgroundManager.js",
         "js/engine/ThemeLoader.js",
         "js/engine/ThemeManager.js",
         "js/engine/ThemeEngine.js",

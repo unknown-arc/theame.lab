@@ -4,6 +4,7 @@
     "themes/core/css/global/components/cards.css",
     "themes/core/css/global/components/dropdown.css",
     "themes/core/css/global/components/searchbar.css",
+    "themes/core/css/global/components/scrollbar.css",
 
     "themes/core/css/global/style/typography.css",
     
@@ -11,7 +12,6 @@
     "themes/core/css/global/page_transitions.css",
     "themes/core/css/global/header/header.css",
     "themes/core/css/global/footer/footer.css",
-    "themes/core/css/global/bodyy.css",
     "themes/core/css/global/base.css",
     "themes/core/css/profile/profile.css",
     "themes/core/css/global/course_card.css",
@@ -23,6 +23,11 @@
   "colors": {
     "light": "themes/core/css/colors/light.css",
     "dark": "themes/core/css/colors/dark.css"
+  },
+
+  "backgrounds": {
+    "light": "themes/core/css/backgrounds/bg.css",
+    "dark": "themes/core/css/backgrounds/CyberpunkNeon.css"
   },
 
   "pages": {

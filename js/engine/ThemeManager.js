@@ -1,53 +1,77 @@
-/**
- * THEME.BY — ThemeManager
- * High-level orchestrator: reads persisted settings, applies/removes the
- * theme, and keeps everything in sync when the popup changes settings.
- */
-(function (global) {
-  "use strict";
+(function(global) {
+    "use strict";
 
-  const ThemeBY = global.ThemeBY || (global.ThemeBY = {});
-  const { Utils, StorageManager, ColorManager, ThemeLoader } = ThemeBY;
+    const ThemeBY = global.ThemeBY || (global.ThemeBY = {});
+    const {
+        Utils,
+        StorageManager,
+        ColorManager,
+        BackgroundManager,
+        ThemeLoader
+    } = ThemeBY;
 
-  const ThemeManager = {
-    state: { enabled: true, themeMode: "light" },
+    const ThemeManager = {
+        state: {
+            enabled: true,
+            themeMode: "light"
+        },
 
-    /** Apply (or remove) the theme based on the given settings. */
-    async apply({ enabled, themeMode }) {
-      this.state = { enabled, themeMode };
+        async apply(settings) {
+            const enabled =
+                settings.enabled ?? this.state.enabled;
 
-      if (!enabled) {
-        ColorManager.clear();
-        ThemeLoader.unload();
-        return;
-      }
+            const themeMode =
+                settings.themeMode ?? this.state.themeMode;
 
-      ColorManager.applyMode(themeMode);
-      await ThemeLoader.load(themeMode);
-    },
+            this.state = {
+                enabled,
+                themeMode
+            };
 
-    /** Bootstrap: load saved settings, apply them, then start listening. */
-    async init() {
-      const settings = await StorageManager.get();
-      await this.apply(settings);
+            if (!enabled) {
+                ColorManager.clear();
+                BackgroundManager.clear();
+                ThemeLoader.unload();
+                return;
+            }
 
-      StorageManager.onChange(async (partial) => {
-        await this.apply({
-          enabled: partial.enabled ?? this.state.enabled,
-          themeMode: partial.themeMode ?? this.state.themeMode,
-        });
-      });
+            ColorManager.applyMode(themeMode);
+            await ThemeLoader.load(themeMode);
+            await BackgroundManager.applyMode(themeMode);
+        },
 
-      StorageManager.onMessage(async (partial) => {
-        await this.apply({
-          enabled: partial.enabled ?? this.state.enabled,
-          themeMode: partial.themeMode ?? this.state.themeMode,
-        });
-      });
+        async init() {
+            const settings =
+                await StorageManager.get();
 
-      Utils.log("ready —", this.state.enabled ? this.state.themeMode : "off");
-    },
-  };
+            await this.apply(settings);
 
-  ThemeBY.ThemeManager = ThemeManager;
+            StorageManager.onChange(async partial => {
+                await this.apply({
+                    enabled:
+                        partial.enabled ?? this.state.enabled,
+                    themeMode:
+                        partial.themeMode ?? this.state.themeMode
+                });
+            });
+
+            StorageManager.onMessage(async partial => {
+                await this.apply({
+                    enabled:
+                        partial.enabled ?? this.state.enabled,
+                    themeMode:
+                        partial.themeMode ?? this.state.themeMode
+                });
+            });
+
+            Utils.log(
+                "ready —",
+                this.state.enabled
+                    ? this.state.themeMode
+                    : "off"
+            );
+        }
+    };
+
+    ThemeBY.ThemeManager = ThemeManager;
 })(window);

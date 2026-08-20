@@ -32,8 +32,8 @@
     --btn-shadow-default: 0 4px 15px rgba(0, 0, 0, 0.05);
     
     /* Gradient Hover */
-    --btn-bg-hover: #ffffff;
-    --btn-text-hover: #2d3436;
+    --btn-bg-hover: #000000;
+    --btn-text-hover: #ffffff;
     --btn-shadow-hover: 0 10px 25px rgba(108, 92, 231, 0.35);
     --btn-shadow-active: 0 4px 10px rgba(108, 92, 231, 0.2);
 
@@ -56,6 +56,13 @@
     --search-placeholder: #636e72;
     --search-btn-bg: #0984e3;
     --search-btn-hover: #6c5ce7;
+    --search-clear-hover: #000000;
+
+/* Scrollbar */
+    --scrollbar-track: transparent; 
+    --scrollbar-thumb: rgba(0, 0, 0, 0.4); 
+    --scrollbar-thumb-hover: rgb(0, 0, 0);
+    
 }
 
 :root {

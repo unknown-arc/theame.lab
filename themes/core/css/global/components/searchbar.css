@@ -19,10 +19,12 @@
     display: flex !important;
     align-items: center !important;
     position: relative !important;
-    padding: 4px 8px !important;
+    
+    /* FIX: Decreased height and tightened padding for a sleeker profile */
+    padding: 3px 6px !important;
+    height: 42px !important; 
     margin-bottom: 15px !important;
     max-width: 500px !important;
-    height: 48px !important; /* Locks height to prevent collapsing */
 }
 
 /* 2. The Text Input Area */
@@ -33,14 +35,14 @@
     border: none !important;
     box-shadow: none !important; 
     color: var(--search-text) !important;
-    font-size: 15px !important;
+    font-size: 14px !important; /* Slightly smaller to match sleeker bar */
     
     /* Sizing Fixes */
     height: 100% !important;
     padding-left: 15px !important;
-    padding-right: 40px !important; /* Critical: Leaves room for the X button */
+    padding-right: 35px !important; /* Leaves room for the X button */
     margin: 0 !important;
-    flex-grow: 1 !important; /* Ensures the input takes up available space */
+    flex-grow: 1 !important; 
 }
 
 /* Placeholder Text */
@@ -55,12 +57,11 @@
 .simplesearchform .btn-clear,
 .searchbar .close {
     position: absolute !important;
-    right: 15px !important;
+    right: 12px !important;
     top: 50% !important;
-    transform: translateY(-50%) !important; /* Perfect vertical center */
+    transform: translateY(-50%) !important; 
     z-index: 10 !important; 
     
-    /* Reset Moodle's native button styles */
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
@@ -68,8 +69,10 @@
     align-items: center !important;
     justify-content: center !important;
     padding: 0 !important;
-    width: 30px !important;
-    height: 30px !important;
+    
+    /* Slightly scaled down to fit the new 42px height */
+    width: 26px !important;
+    height: 26px !important;
 }
 
 /* Style the actual X icon */
@@ -77,39 +80,53 @@
 .btn-clear i,
 .close i,
 .searchbar .close i {
-    color: var(--search-text) !important; /* Matches base text color initially */
+    color: var(--search-text) !important; 
     font-size: 14px !important;
     opacity: 0.5 !important;
-    
-    /* FIX: 'display: inline-block' is required for transforms (scale) to work on icons */
     display: inline-block !important; 
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
 }
 
-/* Cross button hover effect (Enlarge + Black/White Color Shift) */
+/* Cross button hover effect */
 [data-action="clearsearch"]:hover i,
 .btn-clear:hover i,
 .close:hover i,
 .searchbar .close:hover i {
     opacity: 1 !important;
-    color: var(--search-clear-hover) !important; /* Pulls black in light mode, white in dark mode */
-    transform: scale(1.3) !important; /* Enlarges the icon by 30% */
+    color: var(--search-clear-hover) !important; 
+    transform: scale(1.3) !important; 
 }
 
-/* 4. The Global Search Magnifying Glass Button (If applicable) */
+/* 4. The Global Search Magnifying Glass Button (Redesigned) */
 .simplesearchform .btn.search-icon {
     background-color: var(--search-btn-bg) !important; 
-    border-radius: 40px !important; 
+    border-radius: 50% !important; /* REDESIGN: Now a perfect circle */
     border: none !important;
-    padding: 8px 20px !important;
     margin-left: 5px !important;
     color: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(9, 132, 227, 0.3) !important;
-    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 10px rgba(9, 132, 227, 0.25) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    
+    /* Perfect Square Dimensions to force a circle inside the pill */
+    width: 34px !important;
+    height: 34px !important;
+    padding: 0 !important; 
+    
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important; /* Prevents the circle from squishing */
 }
 
+/* Redesigned Search Icon Hover */
 .simplesearchform .btn.search-icon:hover {
     background-color: var(--search-btn-hover) !important; 
-    transform: translateY(-2px) !important; 
+    transform: scale(1.08) !important; /* Now enlarges slightly instead of jumping up */
+    box-shadow: 0 6px 15px rgba(108, 92, 231, 0.4) !important;
 }
 
+/* Ensure the icon sits perfectly center */
+.simplesearchform .btn.search-icon i {
+    margin: 0 !important;
+    font-size: 14px !important;
+}

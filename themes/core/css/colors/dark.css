@@ -57,6 +57,11 @@
     --search-btn-bg: #38bdf8; /* Brighter blue for dark mode */
     --search-btn-hover: #818cf8;
     --search-clear-hover: #ffffff;
+
+    /* Scrollbar Colors */
+    --scrollbar-track: transparent;
+    --scrollbar-thumb: rgba(255, 255, 255, 0.15); /* Soft, semi-transparent white */
+    --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3); /* Brighter on hover */
 }
 
 :root {
