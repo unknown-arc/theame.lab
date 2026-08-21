@@ -23,7 +23,7 @@
     /* FIX: Decreased height and tightened padding for a sleeker profile */
     padding: 3px 6px !important;
     height: 42px !important; 
-    margin-bottom: 15px !important;
+    margin-bottom: 0px !important; /* <-- UPDATED HERE */
     max-width: 500px !important;
 }
 

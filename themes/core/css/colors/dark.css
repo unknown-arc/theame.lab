@@ -65,6 +65,107 @@
 }
 
 :root {
+
+/* Course_Overview     */
+
+    .dashboard-card { background-color: #000000 !important; box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
+    .dashboard-card:hover { box-shadow: 0 10px 25px rgba(255, 255, 255, 0.9) !important; }
+
+    .dashboard-card .coursename, .dashboard-card .card-title a { color: #f1f2f6 !important; }
+    .dashboard-card .card-title a:hover { color: var(--sem-color) !important; }
+
+    .dashboard-card .course-category { background: rgba(47, 54, 64, 0.9) !important; color: #f5f6fa !important; backdrop-filter: blur(4px) !important; box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important; }
+    .dashboard-card .progress { background-color: #2f3640 !important; box-shadow: inset 0 1px 2px rgba(0,0,0,0.3) !important; }
+    .dashboard-card .progress-text, .dashboard-card .text-muted { color: #a4b0be !important; }
+
+    .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn:hover { background-color: rgba(255, 255, 255, 0.1) !important; color: #f1f2f6 !important; }
+    .dashboard-card .dropdown-menu { box-shadow: 0 8px 25px rgba(0,0,0,0.5) !important; background-color: #2f3640 !important; }
+
+    .dashboard-card .dropdown-item { background-color: #353b48 !important; }
+    .dashboard-card .dropdown-item:nth-child(2)::before { color: #f5f6fa !important; }
+    .dashboard-card .dropdown-item:nth-child(3)::before { color: #f5f6fa !important; }
+
+    .dashboard-card .dropdown-item:hover { color: #1e272e !important; }
+    .dashboard-card .dropdown-item:hover::before { color: #1e272e !important; }   
+
+    /* 3-Dot Button */
+    .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn { 
+        color: #a4b0be !important; 
+    }
+    .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn:hover { 
+        background-color: rgba(255, 255, 255, 0.1) !important; 
+        color: #ffffff !important; 
+    }
+
+    /* The Popup Menu Container */
+    .dashboard-card .dropdown-menu { 
+        background-color: #2f3640 !important; 
+        border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Adds a crisp, subtle edge */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; /* Deeper shadow for depth */
+    }
+
+    /* The Pills (Resting State) */
+    .dashboard-card .dropdown-item { 
+        background-color: rgba(255, 255, 255, 0.08) !important; /* Softer, glassy look instead of harsh grey */
+        color: #f1f2f6 !important; 
+    }
+
+    /* Icon Colors Before Hover (Brightened for dark mode) */
+    .dashboard-card .dropdown-item:nth-child(1)::before { color: #feca57 !important; } /* Gold Star */
+    .dashboard-card .dropdown-item:nth-child(2)::before { color: #dcdde1 !important; } /* Unstar */
+    .dashboard-card .dropdown-item:nth-child(3)::before { color: #dcdde1 !important; } /* Restore */
+    .dashboard-card .dropdown-item:nth-child(4)::before { color: #ff7675 !important; } /* Remove */
+
+    /* Hover State Text & Icons */
+    .dashboard-card .dropdown-item:hover { 
+        color: #ffffff !important; 
+    }
+    .dashboard-card .dropdown-item:hover::before { 
+        color: #ffffff !important; 
+    }
+
+
+    .dashboard-card .dropdown-item:nth-child(1):hover { 
+    background-color: #feca57 !important; /* Gold fill for Star */
+    }
+    .dashboard-card .dropdown-item:nth-child(2):hover,
+    .dashboard-card .dropdown-item:nth-child(3):hover { 
+        background-color: var(--sem-color) !important; /* Dynamic course color fill */
+    }
+    .dashboard-card .dropdown-item:nth-child(4):hover { 
+        background-color: #ff7675 !important; /* Red fill for Remove */
+    }
+
+    /* 2. Change text and icon color for perfect contrast against the bright backgrounds */
+    .dashboard-card .dropdown-item:hover,
+    .dashboard-card .dropdown-item:hover::before { 
+        color: #1e272e !important; /* Dark text makes it pop beautifully against the bright hover colors */
+    }
+
+/* My_Courses */
+
+    /* Details Area (Bottom Half) Base Colors */
+    .block_course_list .card-text a {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+    }
+
+    /* Hover State: Reverse Colors & Bright Glow */
+    .block_course_list .card-text a:hover {
+        background-color: #ffffff !important; /* Reverses to white background */
+        color: #000000 !important; /* Reverses to dark text */
+        box-shadow: 0 12px 25px rgba(255, 255, 255, 0.3) !important; /* Soft white glowing shadow */
+    }
+
+    /* Protect the Footer/All Courses text color on resting state */
+    .block_course_list .footer a {
+        color: #ffffff !important;
+    }
+
+}
+
+
+:root {
     /* ... existing variables ... */
     
     /* Typography Colors */

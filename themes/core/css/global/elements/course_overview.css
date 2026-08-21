@@ -1,0 +1,126 @@
+/* ===================================================
+   COURSE OVERVIEW: STRUCTURE, LAYOUT & COLORS
+   =================================================== */
+
+/* 1. CARD REDESIGN */
+.dashboard-card {
+    --sem-color: #636e72; /* Default fallback */
+    border-radius: 16px !important;
+    border: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    overflow: visible !important; 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+.dashboard-card:hover { transform: translateY(-6px) !important; }
+
+/* 2. UNIVERSAL COURSE ID COLORS */
+.dashboard-card[data-course-id$="0"] { --sem-color: #0984e3 !important; } 
+.dashboard-card[data-course-id$="1"] { --sem-color: #00b894 !important; } 
+.dashboard-card[data-course-id$="2"] { --sem-color: #6c5ce7 !important; } 
+.dashboard-card[data-course-id$="3"] { --sem-color: #e17055 !important; } 
+.dashboard-card[data-course-id$="4"] { --sem-color: #d63031 !important; } 
+.dashboard-card[data-course-id$="5"] { --sem-color: #00cec9 !important; } 
+.dashboard-card[data-course-id$="6"] { --sem-color: #fdcb6e !important; } 
+.dashboard-card[data-course-id$="7"] { --sem-color: #e84393 !important; } 
+.dashboard-card[data-course-id$="8"] { --sem-color: #ff9f43 !important; } 
+.dashboard-card[data-course-id$="9"] { --sem-color: #8e44ad !important; } 
+
+/* 3. BASE IMAGE & UNIFIED PATTERNS */
+.dashboard-card-img {
+    background-color: var(--sem-color) !important;
+    background-blend-mode: soft-light !important; /* Unified blend mode fixes dark mode visibility */
+    background-size: cover !important;
+    border-top-left-radius: 16px !important;
+    border-top-right-radius: 16px !important;
+}
+
+[data-course-id$="0"] .dashboard-card-img, [data-course-id$="6"] .dashboard-card-img { background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.25) 10px, rgba(255,255,255,0.25) 20px) !important; }
+[data-course-id$="1"] .dashboard-card-img, [data-course-id$="7"] .dashboard-card-img { background-image: radial-gradient(circle, rgba(255,255,255,0.3) 15%, transparent 15%) !important; background-size: 20px 20px !important; }
+[data-course-id$="2"] .dashboard-card-img, [data-course-id$="8"] .dashboard-card-img { background-image: repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(0,0,0,0.15) 15px, rgba(0,0,0,0.15) 30px) !important; }
+[data-course-id$="3"] .dashboard-card-img, [data-course-id$="9"] .dashboard-card-img { background-image: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255,255,255,0.2) 10px, rgba(255,255,255,0.2) 20px) !important; }
+[data-course-id$="4"] .dashboard-card-img { background-image: linear-gradient(rgba(255,255,255,0.2) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.2) 2px, transparent 2px) !important; background-size: 25px 25px !important; }
+[data-course-id$="5"] .dashboard-card-img { background-image: radial-gradient(circle at 100% 150%, rgba(255,255,255,0.2) 24%, transparent 25%) !important; background-size: 40px 40px !important; }
+
+/* 4. TYPOGRAPHY & BADGES */
+.dashboard-card .coursename, .dashboard-card .card-title a { font-size: 16px !important; font-weight: 700 !important; text-decoration: none !important; line-height: 1.4 !important; transition: color 0.2s ease !important; }
+.dashboard-card .fa-star { color: #ffb142 !important; margin-right: 4px !important; }
+.dashboard-card .course-category { border-radius: 20px !important; padding: 6px 14px !important; font-size: 11px !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; }
+
+/* 5. UNIVERSAL PROGRESS BAR (Color locked in) */
+.dashboard-card .progress { height: 8px !important; border-radius: 10px !important; margin-top: 15px !important; }
+.dashboard-card .progress-bar { background: var(--sem-color) !important; border-radius: 10px !important; }
+.dashboard-card .progress-text, .dashboard-card .text-muted { font-size: 12px !important; font-weight: 600 !important; }
+
+/* 6. MENUS & ICONS */
+.dashboard-card:hover, .dashboard-card:has(.dropdown.show) { z-index: 100 !important; }
+.dashboard-card .dropdown-menu { border-radius: 36px !important; border: none !important; padding: 8px !important; z-index: 9999 !important; flex-direction: row !important; gap: 8px !important; min-width: max-content !important; right: 0 !important; left: auto !important; transform: translateY(35px) !important; }
+.dashboard-card .dropdown-menu.show { display: flex !important; }
+.dashboard-card .dropdown-item.hidden, .dashboard-card .dropdown-item.d-none { display: none !important; }
+.dashboard-card .dropdown-item { display: flex !important; flex-direction: row-reverse !important; align-items: center !important; justify-content: center !important; width: 36px !important; height: 36px !important; padding: 0 !important; border-radius: 36px !important; font-size: 0 !important; color: transparent !important; white-space: nowrap !important; overflow: hidden !important; transition: all 0.25s ease !important; }
+.dashboard-card .dropdown-item i, .dashboard-card .dropdown-item .icon { display: none !important; }
+
+.dashboard-card .dropdown-item:nth-child(1)::before { content: "★" !important; font-size: 16px !important; transition: margin 0.25s ease !important; }
+.dashboard-card .dropdown-item:nth-child(2)::before { content: "☆" !important; font-size: 16px !important; transition: margin 0.25s ease !important; }
+.dashboard-card .dropdown-item:nth-child(3)::before { content: "↺" !important; font-size: 16px !important; transition: margin 0.25s ease !important; }
+.dashboard-card .dropdown-item:nth-child(4)::before { content: "⊘" !important; font-size: 16px !important; font-weight: bold !important; transition: margin 0.25s ease !important; }
+
+.dashboard-card .dropdown-item:hover { width: auto !important; padding: 0 14px !important; font-size: 12px !important; }
+.dashboard-card .dropdown-item:hover::before { margin-left: 6px !important; margin-right: 0 !important; }
+
+/* ===================================================
+   3-DOT MENU REDESIGN (Matching Global Buttons)
+   =================================================== */
+
+/* 1. Base State: Premium Frosted Glass Circle */
+.dashboard-card .dropdown .btn.coursemenubtn {
+    background: var(--btn-bg-default) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid var(--btn-border-default) !important;
+    box-shadow: var(--btn-shadow-default) !important;
+    
+    /* Force a perfect circle instead of a pill */
+    border-radius: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important; 
+    
+    /* Centering the dots */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* 2. Hover State: Lift and Glow */
+.dashboard-card .dropdown .btn.coursemenubtn:hover {
+    background: var(--btn-bg-hover) !important;
+    border-color: transparent !important;
+    transform: translateY(-3px) !important;
+    box-shadow: var(--btn-shadow-hover) !important;
+}
+
+/* 3. Click State: Press down */
+.dashboard-card .dropdown .btn.coursemenubtn:active {
+    transform: translateY(1px) !important;
+    box-shadow: var(--btn-shadow-active) !important;
+}
+
+/* 4. Icon Colors: Forcing Moodle's dots to match your button text */
+.dashboard-card .dropdown .btn.coursemenubtn i,
+.dashboard-card .dropdown .btn.coursemenubtn .icon,
+.dashboard-card .dropdown .btn.coursemenubtn svg {
+    color: var(--btn-text-default) !important;
+    fill: var(--btn-text-default) !important; 
+    font-size: 16px !important;
+    margin: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Icon Hover Color */
+.dashboard-card .dropdown .btn.coursemenubtn:hover i,
+.dashboard-card .dropdown .btn.coursemenubtn:hover .icon,
+.dashboard-card .dropdown .btn.coursemenubtn:hover svg {
+    color: var(--btn-text-hover) !important;
+    fill: var(--btn-text-hover) !important;
+}

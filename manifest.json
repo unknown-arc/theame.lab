@@ -32,6 +32,7 @@
       "js": [
         "js/engine/Utils.js",
         "js/engine/StorageManager.js",
+        "js/engine/StorageManager.js",
         "js/engine/PageManager.js",
         "js/engine/ColorManager.js",
         "js/engine/BackgroundManager.js",

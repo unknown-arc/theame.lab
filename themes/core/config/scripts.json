@@ -1,0 +1,25 @@
+{
+  "common": [],
+
+  "pages": {
+    "home": [],
+
+    "dashboard": [
+      "themes/core/js/local/mycourse.js"
+    ],
+
+    "mycourse": [ ],
+
+    "quiz": [],
+
+    "assignment": [],
+
+    "calendar": [],
+
+    "grades": [],
+
+    "profile": [],
+
+    "messages": []
+  }
+}
