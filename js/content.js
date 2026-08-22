@@ -1,15 +1,43 @@
 /**
  * THEME.BY — content.js
- * Bootstraps the engine on every matched Moodle page. All the real logic
- * lives in js/engine/*; this file just kicks it off.
  */
-(function () {
-  "use strict";
+(function(){
+    "use strict";
 
-  if (!window.ThemeBY || !window.ThemeBY.ThemeEngine) {
-    console.warn("[THEME.BY] engine modules missing — theme not applied.");
-    return;
-  }
+    if(!window.ThemeBY||!window.ThemeBY.ThemeEngine){
+        console.warn("[THEME.BY] engine modules missing — theme not applied.");
+        return;
+    }
 
-  window.ThemeBY.ThemeEngine.start();
+    const ThemeBY=window.ThemeBY;
+
+    function startTheme(){
+        ThemeBY.ThemeEngine.start();
+    }
+
+    function stopTheme(){
+        ThemeBY.ThemeLoader?.unload();
+    }
+
+    chrome.storage.local.get(["enabled"],({enabled})=>{
+        if(enabled!==false){
+            startTheme();
+        }
+    });
+
+    chrome.storage.onChanged.addListener((changes,area)=>{
+        if(area!=="local"||!changes.enabled)return;
+
+        const enabled=changes.enabled.newValue;
+
+        if(enabled){
+            startTheme();
+        }else{
+            stopTheme();
+
+            setTimeout(()=>{
+                window.location.reload();
+            },50);
+        }
+    });
 })();

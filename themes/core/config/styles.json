@@ -8,15 +8,23 @@
     "themes/core/css/global/components/dropdown.css",
     "themes/core/css/global/components/searchbar.css",
     "themes/core/css/global/components/scrollbar.css",
+    "themes/core/css/global/components/toggleswitch.css",
+    "themes/core/css/global/components/notifymsg.css",
 
     "themes/core/css/global/elements/course_overview.css",
     "themes/core/css/global/elements/my_course.css",
+    "themes/core/css/global/elements/microsoft_block.css",
+    "themes/core/css/global/elements/calendar.css",
+    "themes/core/css/global/elements/online_user.css",
 
     "themes/core/css/global/style/typography.css",
+
+    "themes/core/css/global/header/iitplogo.css",
+    "themes/core/css/global/header/header.css",
+    "themes/core/css/global/header/profilepopup.css",
     
     "themes/core/css/global/variables.css",
     "themes/core/css/global/page_transitions.css",
-    "themes/core/css/global/header/header.css",
     "themes/core/css/global/base.css",
     "themes/core/css/profile/profiles.css",
     

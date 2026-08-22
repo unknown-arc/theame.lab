@@ -1,11 +1,14 @@
 {
-  "common": [],
+  "common": [
+    "themes/core/js/global/navbar.js"
+  ],
 
   "pages": {
     "home": [],
 
     "dashboard": [
-      "themes/core/js/local/mycourse.js"
+      "themes/core/js/local/my_course.js",
+      "themes/core/js/local/microsoft_block.js"
     ],
 
     "mycourse": [ ],

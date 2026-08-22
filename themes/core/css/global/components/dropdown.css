@@ -1,59 +1,111 @@
 /* ========================================
-   DROPDOWN & SELECT STRUCTURE
+   DROPDOWN, SELECT & STACKING FIXES
    ======================================== */
 
-/* 1. Z-INDEX FIX: Prevents hiding behind calendar or other blocks */
+/* 1. STACKING CONTEXT & Z-INDEX FIXES */
+/* Sets a baseline position and ensures dropdowns aren't clipped by card edges */
 .block, 
 .card, 
+.coursebox,
 .card-body {
-    overflow: visible !important; /* Ensures the dropdown isn't clipped by the card's edge */
+    position: relative !important;
+    z-index: 0 !important; 
+    overflow: visible !important; 
 }
 
-/* Elevates the parent wrapper so the menu inside it sits above the cards below it */
+/* Elevates the entire container/card when hovered or focused so its dropdown pops over siblings */
+.block:hover, 
+.card:hover, 
+.coursebox:hover,
+.block:focus-within, 
+.card:focus-within, 
+.coursebox:focus-within,
 .dropdown:focus-within, 
 .dropdown:hover, 
 .btn-group:focus-within, 
 .btn-group:hover,
 .show {
-    z-index: 9999 !important;
+    z-index: 1 !important; 
 }
 
-/* 2. The Main Dropdown Container */
+/* 2. MAIN DROPDOWN CONTAINER */
 .dropdown-menu {
     background: var(--dropdown-bg-solid) !important; 
     border: 1px solid var(--card-glass-border) !important;
     border-radius: 15px !important;
     box-shadow: var(--card-shadow) !important;
     padding: 8px !important;
-    z-index: 10000 !important; 
+    z-index: 1 !important; /* Forced high to prevent getting stuck behind lower cards */
 }
 
-/* 3. Individual Dropdown Items */
+/* 3. DROPDOWN ITEMS (Base State) */
 .dropdown-item {
     color: var(--btn-text-default) !important;
-    border-radius: 8px !important;
-    transition: all 0.2s ease !important;
     background: transparent !important;
+    border-radius: 8px !important;
     padding: 8px 15px !important;
     margin-bottom: 2px !important;
-    
-    /* Text wrapping for long items */
+    height: auto !important; 
     white-space: normal !important; 
     word-wrap: break-word !important;
-    height: auto !important; 
+    transition: all 0.2s ease !important;
 }
 
-/* 4. Dropdown Item Hover/Active State */
+/* 4. DROPDOWN ITEMS (Hover/Focus State) */
 .dropdown-item:hover,
-.dropdown-item:focus,
-.dropdown-item.active {
+.dropdown-item:focus {
     background: var(--btn-bg-hover) !important;
     color: var(--btn-text-hover) !important;
     transform: scale(1.03) !important; 
     transform-origin: left center !important; 
 }
 
-/* 5. Native Select Dropdowns ("All courses" filter) */
+/* ========================================
+   ACTIVE DROPDOWN ITEM (Selected State)
+   ======================================== */
+
+/* 1. Base text styling for the selected item */
+.dropdown-item[aria-current="true"],
+.dropdown-item.active {
+    position: relative !important;
+    background: rgba(127, 127, 127, 0.08) !important; /* Extremely subtle frosted tint */
+    font-weight: 700 !important; 
+    padding-left: 20px !important; /* Pushes text right to make room for the line */
+    transform: none !important; /* Keeps it stable (overrides hover scale) */
+}
+
+/* 2. Nuke the default Moodle checkmark (tick) entirely */
+.dropdown-item[aria-current="true"] i,
+.dropdown-item.active i,
+.dropdown-item[aria-current="true"] .icon,
+.dropdown-item.active .icon,
+.dropdown-item[aria-current="true"]::before,
+.dropdown-item.active::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* 3. The Sleek Left Accent Line */
+.dropdown-item[aria-current="true"]::after,
+.dropdown-item.active::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 6px !important; 
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    height: 60% !important; 
+    width: 4px !important;
+    background: #0984e3 !important; /* Vibrant Blue accent */
+    border-radius: 4px !important;
+    display: block !important;
+    box-shadow: 0 0 6px rgba(9, 132, 227, 0.4) !important; /* Subtle glow */
+}
+
+/* ========================================
+   NATIVE SELECT INPUTS
+   ======================================== */
+
+/* Native Select Dropdowns ("All courses" filter) */
 select,
 .custom-select,
 .form-select {
@@ -67,31 +119,9 @@ select,
     outline: none !important;
 }
 
-/* 6. Native Options inside the select box */
+/* Native Options inside the select box */
 select option {
     background-color: var(--select-option-bg) !important; 
     color: var(--select-option-text) !important;
     padding: 10px !important;
-}
-
-/* ========================================
-   STACKING CONTEXT FIX (For Glassmorphism)
-   ======================================== */
-
-/* 1. Give all cards a baseline position and z-index */
-.block, 
-.card, 
-.coursebox {
-    position: relative !important;
-    z-index: 1 !important; 
-}
-
-/* 2. Elevate the entire card/block when hovered or clicked */
-.block:hover, 
-.card:hover, 
-.coursebox:hover,
-.block:focus-within, 
-.card:focus-within, 
-.coursebox:focus-within {
-    z-index: 9999 !important; /* Pops the active card above all other cards */
 }

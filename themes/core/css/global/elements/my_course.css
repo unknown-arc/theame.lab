@@ -2,12 +2,22 @@
    MY COURSES: SPLIT-CARD GRID LAYOUT (JS POWERED)
    =================================================== */
 
-/* 1. Grid Container Setup */
+/* 1. Grid Container Setup (Min 180px, Max 200px, Strictly 4 Columns) */
 .block_course_list .card-text {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 16px !important;
+    
+    /* Boxes will flexibly scale between 180px and 200px based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 210px)) !important; 
+    
+    gap: 16px !important; 
     padding: 0 !important;
+    justify-content: center !important; 
+    
+    /* THE MATH: 848px is exactly 4 boxes at their maximum 200px size + the 3 gaps. 
+       This mathematically blocks a 5th box from ever joining the row. */
+    max-width: 888px !important; 
+    
+    margin: 24px auto 0 auto !important; 
 }
 
 /* 2. Force Moodle's List to Grid Items */

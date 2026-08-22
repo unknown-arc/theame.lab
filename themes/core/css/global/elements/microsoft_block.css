@@ -1,0 +1,81 @@
+/* Master container holding the layout and bottom text */
+#custom-master-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Row wrapper for profile and buttons */
+#custom-layout-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Pushes items below each other if space is tight */
+    align-items: center;
+    justify-content: center;
+    gap: 40px; 
+    width: 100%;
+    padding: 10px 0 20px 0; /* Space between buttons and bottom text */
+}
+
+/* Profile container and image */
+#custom-left-side {
+    margin-top: 0 !important; 
+    display: flex;
+    justify-content: center;
+}
+
+#custom-profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    margin-top: 0 !important;
+}
+
+/* Button container */
+#custom-right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 220px;
+}
+
+/* Aligns the SVG and text nicely inside your existing global button styles */
+#custom-right-side button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* --- New Bottom Text & Effects --- */
+#custom-status-text {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #555;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0; /* Starts hidden for the fade-in effect */
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Pulsing effect for the word "connected" */
+.status-highlight {
+    color: #10e097; /* Success Green */
+    font-weight: bold;
+    display: inline-block;
+    animation: pulseGlow 2s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 0 rgba(40, 167, 69, 0); }
+    50% { text-shadow: 0 0 10px rgba(40, 167, 69, 0.6); }
+    100% { text-shadow: 0 0 0 rgba(40, 167, 69, 0); }
+}

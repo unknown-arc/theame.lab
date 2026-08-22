@@ -1,290 +1,52 @@
 /* ==========================================================
-   THEME.BY — Header
-   Only styles the TOP navigation bar
+   THEME.BY — Header Core Styles (JS Glider + Bold SVG)
    ========================================================== */
-
-
-/* ----------------------------------------------------------
-   Top Navbar
----------------------------------------------------------- */
-
-nav.navbar.fixed-top {
-
-    background: var(--header-bg) !important;
-
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-
-    border-bottom: 1px solid var(--header-border) !important;
-
-    box-shadow: none !important;
-
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-
-}
-
-
-/* ----------------------------------------------------------
-   Bootstrap Overrides
----------------------------------------------------------- */
-
-nav.navbar.fixed-top.navbar-light {
-
-    background: var(--header-bg) !important;
-
-}
-
-nav.navbar.fixed-top.bg-white {
-
-    background: var(--header-bg) !important;
-
-}
-
-
-/* ----------------------------------------------------------
-   Brand
----------------------------------------------------------- */
-
-nav.navbar.fixed-top .navbar-brand {
-
-    display: flex !important;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-right: 20px;
-
-    font-size: 0 !important;
-
-}
-
-nav.navbar.fixed-top .navbar-brand img,
-nav.navbar.fixed-top .navbar-brand .logo {
-
-    display: none !important;
-
-}
-
-nav.navbar.fixed-top .navbar-nav .nav-link.active,
-nav.navbar.fixed-top .navbar-nav .active>.nav-link {
-
-    color: var(--header-title) !important;
-
-    font-weight: 600;
-
-    background: transparent !important;
-    
-    border-bottom: none !important; /* Removes the default thin Moodle bar */
-    
-    box-shadow: none !important; /* Catches any focus-state shadow lines */
-
-}
-
-nav.navbar.fixed-top .navbar-brand::before {
-
-    content: "";
-
-    width: 32px;
-    height: 32px;
-
-    display: block;
-
-    background:
-        url("chrome-extension://__MSG_@@extension_id__/assets/images/IIT-Patna.png")
-        center / contain
-        no-repeat;
-
-}
-
-nav.navbar.fixed-top .navbar-brand::after {
-
-    content: "IITP";
-
-    font-size: 22px;
-
-    font-weight: 700;
-
-    letter-spacing: -.04em;
-
-    color: var(--header-title);
-
-}
-
-
-/* ----------------------------------------------------------
-   Navigation
----------------------------------------------------------- */
-
-nav.navbar.fixed-top .navbar-nav {
-
-    gap: 4px;
-
-}
-
-nav.navbar.fixed-top .navbar-nav .nav-link {
-
-    color: var(--header-nav) !important;
-
-    border-radius: 8px;
-
-    position: relative;
-
-    transition: .25s;
-
-}
-
-nav.navbar.fixed-top .navbar-nav .nav-link:hover {
-
-    color: var(--header-nav-hover) !important;
-
-    background: var(--header-hover-bg) !important;
-
-}
-
-nav.navbar.fixed-top .navbar-nav .nav-link.active,
-nav.navbar.fixed-top .navbar-nav .active>.nav-link {
-
-    color: var(--header-title) !important;
-
-    font-weight: 600;
-
-    background: transparent !important;
-
-}
-
-nav.navbar.fixed-top .navbar-nav .nav-link.active::after,
-nav.navbar.fixed-top .navbar-nav .active>.nav-link::after {
-
-    content: "";
-
+nav.navbar.fixed-top { background: var(--header-bg) !important; backdrop-filter: blur(20px) !important; -webkit-backdrop-filter: blur(20px) !important; border-bottom: 1px solid var(--header-border) !important; box-shadow: none !important; padding-left: 24px !important; padding-right: 24px !important; }
+nav.navbar.fixed-top.navbar-light, nav.navbar.fixed-top.bg-white { background: var(--header-bg) !important; }
+nav.navbar.fixed-top .navbar-nav { gap: 4px; position: relative; } /* Added position relative for the glider */
+nav.navbar.fixed-top .navbar-nav .nav-link { color: var(--header-nav) !important; border-radius: 8px; position: relative; transition: all .3s ease; }
+
+/* 1. Bold Active Text & Hover Background */
+nav.navbar.fixed-top .navbar-nav .nav-link:hover { color: var(--header-nav-hover) !important; background: var(--header-hover-bg) !important; }
+nav.navbar.fixed-top .navbar-nav .nav-link.active, nav.navbar.fixed-top .navbar-nav .active>.nav-link { color: var(--header-title) !important; font-weight: bold !important; background: transparent !important; border-bottom: none !important; box-shadow: none !important; }
+
+/* 2. The JS Glider Element */
+.nav-glider {
     position: absolute;
-
-    left: 50%;
     bottom: 2px;
-
-    transform: translateX(-50%);
-
-    width: 24px;
-
+    left: 0;
     height: 3px;
-
     border-radius: 999px;
-
     background: var(--header-active-bar);
-
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
 }
 
-
-/* ----------------------------------------------------------
-   Header Links
----------------------------------------------------------- */
-
-nav.navbar.fixed-top a {
-
-    color: var(--header-link);
-
-    text-decoration: none;
-
-    transition: .2s;
-
+/* 3. Larger, Theme-Adaptive SVG Redirect Icon on Hover */
+nav.navbar.fixed-top .navbar-nav .nav-item:nth-child(4) .nav-link::before, 
+nav.navbar.fixed-top .navbar-nav .nav-item:nth-child(5) .nav-link::before { 
+    content: ""; position: absolute; right: 8px; top: 50%; width: 18px; height: 18px; 
+    background-color: var(--header-title); 
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E"); 
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E"); 
+    -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; 
+    transform: translateY(-50%) translate(-5px, 5px); opacity: 0; transition: all 0.3s ease; 
 }
+nav.navbar.fixed-top .navbar-nav .nav-item:nth-child(4) .nav-link:hover, 
+nav.navbar.fixed-top .navbar-nav .nav-item:nth-child(5) .nav-link:hover { padding-right: 34px !important; }
+nav.navbar.fixed-top .navbar-nav .nav-item:nth-child(4) .nav-link:hover::before, 
+nav.navbar.fixed-top .navbar-nav .nav-item:nth-child(5) .nav-link:hover::before { opacity: 1; transform: translateY(-50%) translate(0, 0); }
 
-nav.navbar.fixed-top a:hover {
-
-    opacity: .85;
-
-}
-
-
-/* ----------------------------------------------------------
-   Icons
----------------------------------------------------------- */
-
-nav.navbar.fixed-top i,
-nav.navbar.fixed-top svg {
-
-    color: var(--header-icon) !important;
-
-    fill: currentColor;
-
-}
-
-nav.navbar.fixed-top a:hover i,
-nav.navbar.fixed-top a:hover svg {
-
-    color: var(--header-nav-hover) !important;
-
-}
-
-
-/* ----------------------------------------------------------
-   Search
----------------------------------------------------------- */
-
-nav.navbar.fixed-top input {
-
-    background: var(--header-input-bg);
-
-    color: var(--header-input-text);
-
-    border: 1px solid var(--header-border);
-
-}
-
-
-/* ----------------------------------------------------------
-   Buttons
----------------------------------------------------------- */
-
-nav.navbar.fixed-top .btn {
-
-    transition: .25s;
-
-}
-
-
-/* ----------------------------------------------------------
-   User Menu
----------------------------------------------------------- */
-
-nav.navbar.fixed-top .usermenu {
-
-    color: var(--header-text);
-
-}
-
-
-/* ----------------------------------------------------------
-   Notification Icons
----------------------------------------------------------- */
-
-nav.navbar.fixed-top .popover-region-toggle {
-
-    color: var(--header-icon) !important;
-
-}
-
-
-/* ----------------------------------------------------------
-   Keep page header transparent
----------------------------------------------------------- */
-
-#page-header {
-
-    background: transparent !important;
-
-    border: none !important;
-
-    box-shadow: none !important;
-
-}
-
-/* ----------------------------------------------------------
-   Edit Mode Toggle
----------------------------------------------------------- */
-nav.navbar.fixed-top .form-check-label,
-nav.navbar.fixed-top .editmode-switch-form label {
-    color: var(--header-title) !important;
-}
+/* Utilities & Overrides */
+nav.navbar.fixed-top a { color: var(--header-link); text-decoration: none; transition: .2s; }
+nav.navbar.fixed-top a:hover { opacity: .85; }
+nav.navbar.fixed-top i, nav.navbar.fixed-top svg { color: var(--header-icon) !important; fill: currentColor; }
+nav.navbar.fixed-top a:hover i, nav.navbar.fixed-top a:hover svg { color: var(--header-nav-hover) !important; }
+nav.navbar.fixed-top input { background: var(--header-input-bg); color: var(--header-input-text); border: 1px solid var(--header-border); }
+nav.navbar.fixed-top .btn { transition: .25s; }
+nav.navbar.fixed-top .usermenu { color: var(--header-text); }
+nav.navbar.fixed-top .popover-region-toggle { color: var(--header-icon) !important; }
+#page-header { background: transparent !important; border: none !important; box-shadow: none !important; }
+nav.navbar.fixed-top .form-check-label, nav.navbar.fixed-top .editmode-switch-form label { color: var(--header-title) !important; }
+a[id^="message-drawer-toggle"] { display: none !important; }

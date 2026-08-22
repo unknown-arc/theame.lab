@@ -12,20 +12,23 @@
     --control-bg: #e8e8ed;
     --progress-bg: #34c759;
     --shadow-base: rgba(0, 0, 0, 0.04);
+}
 
-/* Header     */
+:root { /* header */
+
     --header-bg: rgba(255, 255, 255, 0.75);
     --header-border: rgba(0, 0, 0, 0.08);
-
     --header-title: #1d1d1f;
     --header-nav: #515154;
     --header-nav-hover: #000000;
     --header-link: #0071e3;
-
     --header-hover-bg: rgba(0, 0, 0, 0.03);
-
     --header-active-bar: #1d1d1f;
+}
 
+
+:root {  /*Components*/
+    
 /* Buttons    */
     /* Solid White Default */
     --btn-bg-default: #ffffff;
@@ -64,7 +67,32 @@
     --scrollbar-track: transparent; 
     --scrollbar-thumb: rgba(0, 0, 0, 0.4); 
     --scrollbar-thumb-hover: rgb(0, 0, 0);
+
+/* Focus Ring */
+    *:focus-visible, .btn:focus-visible, a:focus-visible {
+        box-shadow: 0 0 0 3px rgba(30, 39, 46, 0.15) !important; 
+    }  
+
+/* Toggle Switch */
+    --toggle-track-off: #dcdde1;
+    --toggle-track-on: #1e272e;
+    --toggle-knob-off: #ffffff;
+    --toggle-knob-on: #ffffff;
+
+/* Notification Message */
+    --toast-bg: rgba(255, 255, 255, 0.95);
+    --toast-text: #1e272e;
+    --toast-border: rgba(0, 0, 0, 0.05);
     
+    --alert-success-bg: #e3fbee;
+    --alert-success-text: #00b894;
+    --alert-error-bg: #ffebeb;
+    --alert-error-text: #d63031;
+    --alert-warning-bg: #fff5e6;
+    --alert-warning-text: #ff9f43;
+    --alert-info-bg: #e5f4ff;
+    --alert-info-text: #0984e3;   
+
 }
 
 
@@ -72,33 +100,55 @@
 
 /* Course_Overview */
 
-    .dashboard-card { box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important; }
-    .dashboard-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important; }
+    /* Base Card State */
+    .dashboard-card { background-color: #ffffff !important; box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important; }
 
-    .dashboard-card .coursename, .dashboard-card .card-title a { color: #1e272e !important; }
-    .dashboard-card .card-title a:hover { color: var(--sem-color) !important; }
+    /* HOVER: Instantly flips the background color (Bottom half) */
+    .dashboard-card:hover { 
+        background-color: #000000 !important; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.9) !important; 
+    }
 
-    .dashboard-card .course-category { background: rgba(255, 255, 255, 0.9) !important; color: #2d3436 !important; backdrop-filter: blur(4px) !important; box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important; }
+    /* Base Text Colors */
+    .dashboard-card .coursename, 
+    .dashboard-card .card-title a,
+    .dashboard-card .coursename span { 
+        color: #000000 !important; /* Pure black title */
+    }
+
+    /* Secondary text (Progress text, etc.) */
+    .dashboard-card p, 
+    .dashboard-card .text-muted { 
+        color: #747d8c !important; 
+    }
+
+    /* HOVER: Flips all text to white */
+    .dashboard-card:hover .coursename, 
+    .dashboard-card:hover .card-title a,
+    .dashboard-card:hover .coursename span,
+    .dashboard-card:hover p, 
+    .dashboard-card:hover .text-muted { 
+        color: #ffffff !important; 
+    }    
+
+    /* Progress Bar Track */
     .dashboard-card .progress { background-color: #f1f2f6 !important; box-shadow: inset 0 1px 2px rgba(0,0,0,0.05) !important; }
-    .dashboard-card .progress-text, .dashboard-card .text-muted { color: #747d8c !important; }
+    .dashboard-card:hover .progress { background-color: rgba(255, 255, 255, 0.15) !important; }
+    .dashboard-card .course-category { background: rgba(255, 255, 255, 0.9) !important; color: #2d3436 !important; backdrop-filter: blur(4px) !important; box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important; }
 
-    .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn { background-color: transparent !important; color: #a4b0be !important; }
-    .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn:hover { background-color: rgba(0, 0, 0, 0.05) !important; color: #2f3640 !important; }
-    .dashboard-card .dropdown-menu { box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important; background-color: #ffffff !important; }
-
+    /* Menus */
+    .dashboard-card .dropdown .btn.coursemenubtn, .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn { background: transparent !important; color: #a4b0be !important; }
+    .dashboard-card .dropdown .btn.coursemenubtn:hover, .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn:hover { background: rgba(255, 255, 255, 0.15) !important; color: #ffffff !important; }
+    .dashboard-card .dropdown-menu { background-color: #ffffff !important; box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important; }
     .dashboard-card .dropdown-item { background-color: #f1f2f6 !important; }
     .dashboard-card .dropdown-item:nth-child(1)::before { color: #e1b12c !important; }
     .dashboard-card .dropdown-item:nth-child(2)::before { color: #2f3640 !important; }
     .dashboard-card .dropdown-item:nth-child(3)::before { color: #2f3640 !important; }
     .dashboard-card .dropdown-item:nth-child(4)::before { color: #e84118 !important; }
-
-    .dashboard-card .dropdown-item:nth-child(1):hover,
-    .dashboard-card .dropdown-item:nth-child(2):hover,
-    .dashboard-card .dropdown-item:nth-child(3):hover { background-color: var(--sem-color) !important; }
+    .dashboard-card .dropdown-item:nth-child(1):hover { background-color: #e1b12c !important; }
+    .dashboard-card .dropdown-item:nth-child(2):hover, .dashboard-card .dropdown-item:nth-child(3):hover { background-color: var(--sem-color) !important; }
     .dashboard-card .dropdown-item:nth-child(4):hover { background-color: #e84118 !important; }
-
-    .dashboard-card .dropdown-item:hover { color: #ffffff !important; }
-    .dashboard-card .dropdown-item:hover::before { color: #ffffff !important; }
+    .dashboard-card .dropdown-item:hover, .dashboard-card .dropdown-item:hover::before { color: #ffffff !important; }
 
 /* My_Course */
 
@@ -119,6 +169,9 @@
     .block_course_list .footer a {
         color: #000000 !important;
     }
+
+/*Microsoft Block */
+   
 }    
 
 :root {

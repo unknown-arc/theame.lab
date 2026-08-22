@@ -1,0 +1,12 @@
+/* ==========================================
+   GLOBAL FOCUS STATE (Removes default blue line)
+   ========================================== */
+*:focus, *:focus-visible, .btn:focus, a:focus, input:focus {
+    outline: none !important; /* Kills the harsh browser default */
+}
+
+/* Adds a smooth transition for our custom focus rings */
+*:focus-visible {
+    transition: box-shadow 0.2s ease !important;
+    border-radius: inherit; /* Matches the curve of whatever you clicked */
+}

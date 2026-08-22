@@ -1,0 +1,157 @@
+/* ===================================================
+   ONLINE USERS: PROFILE-CARD GRID LAYOUT (PURE CSS)
+   =================================================== */
+
+/* 1. Grid Container Setup (Min 160px, Max 190px, 4 Columns) */
+.block_online_users ul, 
+aside[data-block="online_users"] ul,
+section[data-block="online_users"] ul {
+    display: grid !important;
+    
+    /* Profile cards are slightly narrower than course cards to look proportional */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 190px)) !important; 
+    
+    gap: 16px !important; 
+    padding: 0 !important;
+    justify-content: center !important; 
+    
+    /* Max width matches your 4-column layout math */
+    max-width: 888px !important; 
+    
+    margin: 24px auto 0 auto !important; 
+    list-style: none !important;
+}
+
+/* 2. Uniform Card Styling (The <li> is now the card itself) */
+.block_online_users li,
+aside[data-block="online_users"] li,
+section[data-block="online_users"] li {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    background: #ffffff !important;
+    height: 220px !important; 
+    border-radius: 12px !important;
+    overflow: hidden !important; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    --user-glow: #0984e3; /* Fallback Color */
+}
+
+/* Base Hover Animation */
+.block_online_users li:hover,
+aside[data-block="online_users"] li:hover,
+section[data-block="online_users"] li:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+/* 3. The Top Banner Half (Colored background behind avatar) */
+.block_online_users li::before,
+aside[data-block="online_users"] li::before,
+section[data-block="online_users"] li::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    height: 75px !important;
+    background: var(--user-glow) !important;
+    z-index: 1 !important;
+}
+
+/* ===================================================
+   AUTOMATIC 8-COLOR REPEATING LOOP
+   Cycles through 8 colors for all users, forever.
+   =================================================== */
+
+.block_online_users li:nth-child(8n + 1) { --user-glow: #ff4757 !important; } 
+.block_online_users li:nth-child(8n + 2) { --user-glow: #ffa502 !important; } 
+.block_online_users li:nth-child(8n + 3) { --user-glow: #2ed573 !important; } 
+.block_online_users li:nth-child(8n + 4) { --user-glow: #1e90ff !important; } 
+.block_online_users li:nth-child(8n + 5) { --user-glow: #3742fa !important; } 
+.block_online_users li:nth-child(8n + 6) { --user-glow: #ff7f50 !important; } 
+.block_online_users li:nth-child(8n + 7) { --user-glow: #eccc68 !important; } 
+.block_online_users li:nth-child(8n + 0) { --user-glow: #ff6b81 !important; } 
+
+/* ===================================================
+   INTERNAL CARD ELEMENTS (Avatar, Name, Button)
+   =================================================== */
+
+/* --- The Main Link (Avatar & Name Wrapper) --- */
+.block_online_users li a:first-child,
+aside[data-block="online_users"] li a:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    z-index: 2 !important; /* Keeps it above the colored banner */
+    width: 100% !important;
+    padding: 35px 10px 0 10px !important; /* Pushes the avatar down to perfectly overlap the banner seam */
+    text-decoration: none !important;
+    color: #2d3436 !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+}
+
+/* --- The Avatar Image / Initials --- */
+.block_online_users li a:first-child img, 
+.block_online_users li a:first-child .userinitials,
+aside[data-block="online_users"] li a:first-child img,
+aside[data-block="online_users"] li a:first-child .userinitials {
+    width: 65px !important;
+    height: 65px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 4px solid #ffffff !important; /* Creates a cutout effect against the colored banner */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    margin-bottom: 12px !important;
+    background: #ffffff !important;
+    z-index: 3 !important;
+}
+
+/* --- The Green Online Dot (CSS Magic) --- */
+.block_online_users li a:first-child::after,
+aside[data-block="online_users"] li a:first-child::after {
+    content: '' !important;
+    width: 14px !important;
+    height: 14px !important;
+    background-color: #28a745 !important; 
+    border-radius: 50% !important;
+    border: 3px solid #ffffff !important;
+    position: absolute !important;
+    top: 80px !important; /* Matches the avatar padding */
+    left: 50% !important;
+    margin-left: 15px !important; /* Pushes it to the bottom-right of the avatar */
+    z-index: 4 !important;
+}
+
+/* --- The Message Button (Bottom Center) --- */
+.block_online_users li a:nth-child(2),
+aside[data-block="online_users"] li a:nth-child(2) {
+    z-index: 2 !important;
+    margin-top: auto !important; /* Forces it to the absolute bottom of the card */
+    margin-bottom: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: #f1f2f6 !important;
+    color: var(--user-glow) !important; /* Matches the banner color! */
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Message Button Hover */
+.block_online_users li a:nth-child(2):hover,
+aside[data-block="online_users"] li a:nth-child(2):hover {
+    background: var(--user-glow) !important;
+    color: #ffffff !important;
+    transform: scale(1.05) !important;
+}

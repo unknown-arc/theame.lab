@@ -1,0 +1,68 @@
+/* ==========================================
+   GLOBAL ALERTS & TOASTS (Notifications)
+   ========================================== */
+
+/* 1. TOAST NOTIFICATIONS (Floating pop-ups) */
+.toast-wrapper, .moodle-toast {
+    bottom: 20px !important;
+    right: 20px !important;
+}
+.toast {
+    background: var(--toast-bg) !important;
+    color: var(--toast-text) !important;
+    border: 1px solid var(--toast-border) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    overflow: hidden !important;
+}
+.toast-header {
+    background: transparent !important;
+    border-bottom: 1px solid var(--toast-border) !important;
+    color: var(--toast-text) !important;
+    font-weight: 700 !important;
+}
+.toast-body {
+    padding: 12px 16px !important;
+}
+
+/* 2. IN-PAGE ALERTS (Success, Error, Warning banners) */
+.alert {
+    border-radius: 12px !important;
+    border: none !important;
+    padding: 16px 20px !important;
+    font-weight: 500 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Alert Variations */
+.alert-success {
+    background-color: var(--alert-success-bg) !important;
+    color: var(--alert-success-text) !important;
+}
+.alert-danger, .alert-error {
+    background-color: var(--alert-error-bg) !important;
+    color: var(--alert-error-text) !important;
+}
+.alert-warning {
+    background-color: var(--alert-warning-bg) !important;
+    color: var(--alert-warning-text) !important;
+}
+.alert-info {
+    background-color: var(--alert-info-bg) !important;
+    color: var(--alert-info-text) !important;
+}
+
+/* Alert Close Button (The 'X') */
+.alert .close {
+    color: inherit !important;
+    opacity: 0.7 !important;
+    text-shadow: none !important;
+    transition: opacity 0.2s ease !important;
+}
+.alert .close:hover {
+    opacity: 1 !important;
+}

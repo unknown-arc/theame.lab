@@ -11,23 +11,27 @@
     --progress-bg: #22c55e;
     --shadow-base: rgba(0, 0, 0, 0.5); /* Stronger shadow to make the dark boxes pop */
 
-/* Header     */
-    --header-bg: rgba(0, 0, 0, 0.936);
-    --header-border: rgba(255, 255, 255, 0.08);
+}
 
+
+:root { /* Header */
+
+    --header-bg: rgba(0, 0, 0, 0.75);
+    --header-border: rgba(255, 255, 255, 0.08);
     --header-title: #f5f5f7;
     --header-nav: #b5b5bb;
     --header-nav-hover: #ffffff;
     --header-link: #4da3ff;
-
     --header-hover-bg: rgba(255, 255, 255, 0.06);
-
     --header-active-bar: #ffffff;
+}
+
+:root {  /*Components*/
 
 /* Buttons    */
     /* Solid White Default */
     --btn-bg-default: #000000;
-    --btn-border-default: transparent;
+    --btn-border-default: #1a1a1a;
     --btn-text-default: #dedede; /* Dark text to contrast the white button */
     --btn-shadow-default: 0 4px 15px rgba(0, 0, 0, 0.3);
     
@@ -58,89 +62,88 @@
     --search-btn-hover: #818cf8;
     --search-clear-hover: #ffffff;
 
-    /* Scrollbar Colors */
+/* Scrollbar Colors */
     --scrollbar-track: transparent;
     --scrollbar-thumb: rgba(255, 255, 255, 0.15); /* Soft, semi-transparent white */
     --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3); /* Brighter on hover */
+
+/* Focus Ring */
+    *:focus-visible, .btn:focus-visible, a:focus-visible {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25) !important; }
+
+/* Toggle Switch */
+    --toggle-track-off: rgba(255, 255, 255, 0.15); /* Soft translucent off state */
+    --toggle-track-on: #ffffff;                   /* Pure white when checked */
+    --toggle-knob-off: #a4b0be;                   /* Soft grey knob when off */
+    --toggle-knob-on: #000000;                    /* High contrast black knob */     
+    
+/* Notifications Messages  */
+    --toast-bg: rgba(255, 255, 255, 0.95);
+    --toast-text: #1e272e;
+    --toast-border: rgba(0, 0, 0, 0.05);
+    
+    --alert-success-bg: #e3fbee;
+    --alert-success-text: #00b894;
+    --alert-error-bg: #ffebeb;
+    --alert-error-text: #d63031;
+    --alert-warning-bg: #fff5e6;
+    --alert-warning-text: #ff9f43;
+    --alert-info-bg: #e5f4ff;
+    --alert-info-text: #0984e3;
+
 }
 
 :root {
 
-/* Course_Overview     */
-
+    /* Base Card State */
     .dashboard-card { background-color: #000000 !important; box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
-    .dashboard-card:hover { box-shadow: 0 10px 25px rgba(255, 255, 255, 0.9) !important; }
 
-    .dashboard-card .coursename, .dashboard-card .card-title a { color: #f1f2f6 !important; }
-    .dashboard-card .card-title a:hover { color: var(--sem-color) !important; }
+    /* HOVER: Instantly flips the background color (Bottom half) */
+    .dashboard-card:hover { 
+        background-color: #ffffff !important; 
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.9) !important; 
+    }
 
-    .dashboard-card .course-category { background: rgba(47, 54, 64, 0.9) !important; color: #f5f6fa !important; backdrop-filter: blur(4px) !important; box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important; }
+    /* Base Text Colors */
+    .dashboard-card .coursename, 
+    .dashboard-card .card-title a,
+    .dashboard-card .coursename span { 
+        color: #ffffff !important; /* Pure black title */
+    }
+
+    /* Secondary text (Progress text, etc.) */
+    .dashboard-card p, 
+    .dashboard-card .text-muted { 
+        color: #747d8c !important; 
+    }
+
+    /* HOVER: Flips all text to white */
+    .dashboard-card:hover .coursename, 
+    .dashboard-card:hover .card-title a,
+    .dashboard-card:hover .coursename span,
+    .dashboard-card:hover p, 
+    .dashboard-card:hover .text-muted { 
+        color: #000000 !important; 
+    }
+
+    /* Progress Bar Track */
     .dashboard-card .progress { background-color: #2f3640 !important; box-shadow: inset 0 1px 2px rgba(0,0,0,0.3) !important; }
-    .dashboard-card .progress-text, .dashboard-card .text-muted { color: #a4b0be !important; }
+    .dashboard-card:hover .progress { background-color: rgba(0, 0, 0, 0.1) !important; }
+    .dashboard-card .course-category { background: rgba(47, 54, 64, 0.9) !important; color: #f5f6fa !important; backdrop-filter: blur(4px) !important; box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important; }
 
-    .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn:hover { background-color: rgba(255, 255, 255, 0.1) !important; color: #f1f2f6 !important; }
-    .dashboard-card .dropdown-menu { box-shadow: 0 8px 25px rgba(0,0,0,0.5) !important; background-color: #2f3640 !important; }
-
-    .dashboard-card .dropdown-item { background-color: #353b48 !important; }
-    .dashboard-card .dropdown-item:nth-child(2)::before { color: #f5f6fa !important; }
-    .dashboard-card .dropdown-item:nth-child(3)::before { color: #f5f6fa !important; }
-
-    .dashboard-card .dropdown-item:hover { color: #1e272e !important; }
-    .dashboard-card .dropdown-item:hover::before { color: #1e272e !important; }   
-
-    /* 3-Dot Button */
-    .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn { 
-        color: #a4b0be !important; 
-    }
-    .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn:hover { 
-        background-color: rgba(255, 255, 255, 0.1) !important; 
-        color: #ffffff !important; 
-    }
-
-    /* The Popup Menu Container */
-    .dashboard-card .dropdown-menu { 
-        background-color: #2f3640 !important; 
-        border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Adds a crisp, subtle edge */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; /* Deeper shadow for depth */
-    }
-
-    /* The Pills (Resting State) */
-    .dashboard-card .dropdown-item { 
-        background-color: rgba(255, 255, 255, 0.08) !important; /* Softer, glassy look instead of harsh grey */
-        color: #f1f2f6 !important; 
-    }
-
-    /* Icon Colors Before Hover (Brightened for dark mode) */
-    .dashboard-card .dropdown-item:nth-child(1)::before { color: #feca57 !important; } /* Gold Star */
-    .dashboard-card .dropdown-item:nth-child(2)::before { color: #dcdde1 !important; } /* Unstar */
-    .dashboard-card .dropdown-item:nth-child(3)::before { color: #dcdde1 !important; } /* Restore */
-    .dashboard-card .dropdown-item:nth-child(4)::before { color: #ff7675 !important; } /* Remove */
-
-    /* Hover State Text & Icons */
-    .dashboard-card .dropdown-item:hover { 
-        color: #ffffff !important; 
-    }
-    .dashboard-card .dropdown-item:hover::before { 
-        color: #ffffff !important; 
-    }
-
-
-    .dashboard-card .dropdown-item:nth-child(1):hover { 
-    background-color: #feca57 !important; /* Gold fill for Star */
-    }
-    .dashboard-card .dropdown-item:nth-child(2):hover,
-    .dashboard-card .dropdown-item:nth-child(3):hover { 
-        background-color: var(--sem-color) !important; /* Dynamic course color fill */
-    }
-    .dashboard-card .dropdown-item:nth-child(4):hover { 
-        background-color: #ff7675 !important; /* Red fill for Remove */
-    }
-
-    /* 2. Change text and icon color for perfect contrast against the bright backgrounds */
-    .dashboard-card .dropdown-item:hover,
-    .dashboard-card .dropdown-item:hover::before { 
-        color: #1e272e !important; /* Dark text makes it pop beautifully against the bright hover colors */
-    }
+    /* Menus */
+    .dashboard-card .dropdown .btn.coursemenubtn, .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn { background: rgba(255, 255, 255, 0.05) !important; color: #a4b0be !important; }
+    .dashboard-card .dropdown .btn.coursemenubtn:hover, .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn:hover { background: rgba(0, 0, 0, 0.1) !important; color: #1e272e !important; }
+    .dashboard-card .dropdown-menu { background-color: #2f3640 !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; }
+    .dashboard-card .dropdown-item { background-color: rgba(255, 255, 255, 0.08) !important; }
+    .dashboard-card .dropdown-item:nth-child(1)::before { color: #feca57 !important; } 
+    .dashboard-card .dropdown-item:nth-child(2)::before { color: #dcdde1 !important; } 
+    .dashboard-card .dropdown-item:nth-child(3)::before { color: #dcdde1 !important; } 
+    .dashboard-card .dropdown-item:nth-child(4)::before { color: #ff7675 !important; } 
+    .dashboard-card .dropdown-item:nth-child(1):hover { background-color: #feca57 !important; }
+    .dashboard-card .dropdown-item:nth-child(2):hover, .dashboard-card .dropdown-item:nth-child(3):hover { background-color: var(--sem-color) !important; }
+    .dashboard-card .dropdown-item:nth-child(4):hover { background-color: #ff7675 !important; }
+    .dashboard-card .dropdown-item:hover, .dashboard-card .dropdown-item:hover::before { color: #1e272e !important; }
 
 /* My_Courses */
 
