@@ -49,6 +49,39 @@
     width: 100%;
 }
 
+/* Creates the icon inside the button */
+#custom-right-side button::after {
+    content: '';
+    display: block;
+    width: 18px; /* Adjust size as needed */
+    height: 18px;
+    
+    /* Inherits the button's text color automatically (Light/Dark mode friendly) */
+    background-color: currentColor; 
+    
+    /* Apply the SVG as a mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E"); 
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    
+    /* Pushes the icon to the far right edge of the button */
+    margin-left: auto; 
+    
+    /* Hidden state */
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Reveals the icon smoothly when hovering over the button */
+#custom-right-side button:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+} 
+
 /* --- New Bottom Text & Effects --- */
 #custom-status-text {
     margin-top: 15px;
