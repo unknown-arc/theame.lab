@@ -21,7 +21,8 @@
 
     "themes/core/css/global/header/iitplogo.css",
     "themes/core/css/global/header/header.css",
-    "themes/core/css/global/header/profilepopup.css",
+    "themes/core/css/global/header/profiledropdown.css",
+    "themes/core/css/global/header/sidenav.css",
     
     "themes/core/css/global/variables.css",
     "themes/core/css/global/page_transitions.css",

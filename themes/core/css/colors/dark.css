@@ -24,6 +24,25 @@
     --header-link: #4da3ff;
     --header-hover-bg: rgba(255, 255, 255, 0.06);
     --header-active-bar: #ffffff;
+
+/* Profile Dropdown */    
+    --profile-bg: rgba(30, 30, 34, 0.95);
+    --profile-border: rgba(255, 255, 255, 0.1);
+    --profile-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    --profile-text: #e0e0e0;
+    --profile-text-hover: #ffffff;
+    --profile-hover-bg: rgba(255, 255, 255, 0.1);
+    
+    --profile-btn-bg: #e0e0e0;
+    --profile-btn-text: #e0e0e0;
+    --profile-btn-text-hover: #121212;
+    --profile-arrow-svg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23121212" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>');
+    
+    --profile-logout: #ff5555;
+    --profile-logout-hover: rgba(255, 85, 85, 0.15);
+    --profile-logout-text-hover: #ff7777;
+    --profile-divider: rgba(255, 255, 255, 0.1);
+    --profile-pic-border: rgba(50, 50, 55, 0.9);
 }
 
 :root {  /*Components*/

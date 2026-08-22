@@ -24,6 +24,26 @@
     --header-link: #0071e3;
     --header-hover-bg: rgba(0, 0, 0, 0.03);
     --header-active-bar: #1d1d1f;
+
+/* Profile Dropdown */
+    
+    --profile-bg: rgba(255, 255, 255, 0.95);
+    --profile-border: rgba(255, 255, 255, 0.6);
+    --profile-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --profile-text: #222222;
+    --profile-text-hover: #0a0a0a;
+    --profile-hover-bg: rgba(0, 0, 0, 0.05);
+    
+    --profile-btn-bg: #282936;
+    --profile-btn-text: #282936;
+    --profile-btn-text-hover: #ffffff;
+    --profile-arrow-svg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>');
+    
+    --profile-logout: #ff3b3b;
+    --profile-logout-hover: rgba(255, 59, 59, 0.1);
+    --profile-logout-text-hover: #ff1a1a;
+    --profile-divider: rgba(0, 0, 0, 0.1);
+    --profile-pic-border: rgba(255, 255, 255, 0.9);
 }
 
 
