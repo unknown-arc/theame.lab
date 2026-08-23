@@ -83,7 +83,7 @@ nav.navbar.fixed-top .navbar-toggler-icon {
 /* 1. Base Background and Blur */
 .secondary-navigation.moove,
 .secondary-navigation {
-    background: var(--header-bg) !important; 
+    background: var(--sec-header-bg) !important; 
     backdrop-filter: blur(20px) !important; 
     -webkit-backdrop-filter: blur(20px) !important; 
     border-bottom: 1px solid var(--header-border) !important; 

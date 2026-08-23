@@ -1,0 +1,76 @@
+/* ===================================================
+   BASE NAVBUTTON STRUCTURE (USING CSS VARIABLES)
+   =================================================== */
+
+/* Clear Moodle's default wrapper styles */
+.initialbar,
+nav[aria-label="Pagination"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Container alignment */
+.pagination {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    justify-content: flex-start !important;
+    margin: 10px 0 !important;
+}
+
+/* Base Button Shape & Colors mapped to variables */
+.pagination .page-item .page-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--navbtn-border) !important;
+    background: var(--navbtn-bg) !important;
+    color: var(--navbtn-text) !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+}
+
+/* Hover State */
+.pagination .page-item:not(.disabled) .page-link:hover {
+    background: var(--navbtn-hover-bg) !important;
+    border-color: var(--navbtn-hover-border) !important;
+    color: var(--navbtn-hover-text) !important;
+    box-shadow: var(--navbtn-hover-shadow) !important;
+    transform: translateY(-2px) !important; 
+}
+
+/* Active Page State */
+.pagination .page-item.active .page-link {
+    background: var(--navbtn-active-bg) !important;
+    border-color: var(--navbtn-active-border) !important;
+    color: var(--navbtn-active-text) !important;
+    box-shadow: var(--navbtn-active-shadow) !important;
+    font-weight: bold !important;
+    transform: translateY(-2px) !important;
+    pointer-events: none !important;
+}
+
+/* Disabled State */
+.pagination .page-item.disabled .page-link {
+    border-color: var(--navbtn-disabled-border) !important;
+    background: transparent !important;
+    opacity: 0.4 !important;
+    pointer-events: none !important;
+}
+
+/* Specifically target ONLY the "All" button, without affecting A or N */
+.pagination .page-item.initialbarall {
+    margin-right: 12px !important;
+}
+
+/* Ensure A and N don't have any accidental extra margins */
+.pagination .page-item {
+    margin-right: 0 !important;
+}

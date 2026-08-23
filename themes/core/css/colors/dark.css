@@ -13,10 +13,14 @@
 
 }
 
+/* ============================================================== 
+        GLOBAL 
+   ==============================================================*/
 
 :root { /* Header */
 
     --header-bg: rgba(0, 0, 0, 0.95);
+    --sec-header-bg: rgb(10, 10, 10);
     --header-border: rgba(255, 255, 255, 0.08);
     --header-title: #f5f5f7;
     --header-nav: #b5b5bb;
@@ -24,6 +28,8 @@
     --header-link: #4da3ff;
     --header-hover-bg: rgba(255, 255, 255, 0.06);
     --header-active-bar: #ffffff;
+
+/* ==============================================================*/    
 
 /* Profile Dropdown */    
     --profile-bg: rgba(30, 30, 34, 0.95);
@@ -60,17 +66,46 @@
     --btn-shadow-hover: 0 10px 25px rgba(129, 140, 248, 0.35);
     --btn-shadow-active: 0 4px 10px rgba(129, 140, 248, 0.2);
 
+/* ==============================================================*/
+
+/* Navigation Buttons */
+    --navbtn-bg: rgba(255, 255, 255, 0.05);
+    --navbtn-border: rgba(255, 255, 255, 0.1);
+    --navbtn-text: #a1a1aa;
+
+    /* Hover State */
+    --navbtn-hover-bg: rgba(255, 255, 255, 0.15);
+    --navbtn-hover-border: rgba(255, 255, 255, 0.3);
+    --navbtn-hover-text: #ffffff;
+    --navbtn-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* Active State */
+    --navbtn-active-bg: #ffffff;
+    --navbtn-active-border: #ffffff;
+    --navbtn-active-text: #000000;
+    --navbtn-active-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+
+    /* Disabled State */
+    --navbtn-disabled-border: rgba(255, 255, 255, 0.05);
+
+/* ==============================================================*/    
+
 /* Cards      */
+    --filter-text: #ffffff;
     --body-bg: #0f172a; /* Deep slate background for dark mode */
     --card-glass-bg: rgba(0, 0, 0, 0.4); /* Dark glass */
     --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
     --card-glass-border: rgba(255, 255, 255, 0.1); /* Subtle bright edge */
     --list-divider: rgba(255, 255, 255, 0.1);
 
+/* ==============================================================*/    
+
 /* Dropdowns  */
     --dropdown-bg-solid: rgba(30, 30, 42, 0.95);
     --select-option-bg: #0f172a;
     --select-option-text: #e2e8f0;
+
+/* ==============================================================*/    
 
 /* Search Bar */
     --search-bg: rgba(15, 23, 42, 0.5);
@@ -81,20 +116,28 @@
     --search-btn-hover: #818cf8;
     --search-clear-hover: #ffffff;
 
+/* ==============================================================*/    
+
 /* Scrollbar Colors */
     --scrollbar-track: transparent;
     --scrollbar-thumb: rgba(255, 255, 255, 0.15); /* Soft, semi-transparent white */
     --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3); /* Brighter on hover */
 
+/* ==============================================================*/    
+
 /* Focus Ring */
     *:focus-visible, .btn:focus-visible, a:focus-visible {
         box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25) !important; }
+
+/* ==============================================================*/    
 
 /* Toggle Switch */
     --toggle-track-off: rgba(255, 255, 255, 0.15); /* Soft translucent off state */
     --toggle-track-on: #ffffff;                   /* Pure white when checked */
     --toggle-knob-off: #a4b0be;                   /* Soft grey knob when off */
     --toggle-knob-on: #000000;                    /* High contrast black knob */     
+
+/* ==============================================================*/    
     
 /* Notifications Messages  */
     --toast-bg: rgba(255, 255, 255, 0.95);
@@ -197,6 +240,10 @@
     --onlineusercard-status-border: #ffffff; /* Locked to white to match avatar */
 }
 
+/* ============================================================== 
+        LOCAL
+   ==============================================================*/
+ 
 
 :root {
     /* ... existing variables ... */

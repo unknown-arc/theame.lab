@@ -4,12 +4,15 @@
     "themes/core/css/global/cleanup/analyticwidget.css",
 
     "themes/core/css/global/components/buttons.css",
+    "themes/core/css/global/components/navbuttons.css",
     "themes/core/css/global/components/cards.css",
     "themes/core/css/global/components/dropdown.css",
     "themes/core/css/global/components/searchbar.css",
     "themes/core/css/global/components/scrollbar.css",
     "themes/core/css/global/components/toggleswitch.css",
     "themes/core/css/global/components/notifymsg.css",
+    "themes/core/css/global/components/tables.css",
+
 
     "themes/core/css/global/elements/course_overview.css",
     "themes/core/css/global/elements/my_course.css",
@@ -26,7 +29,7 @@
     
     "themes/core/css/global/variables.css",
     "themes/core/css/global/page_transitions.css",
-    "themes/core/css/global/base.css",
+    "themes/core/css/global/base.css",    
     "themes/core/css/profile/profiles.css",
     
     
@@ -47,16 +50,27 @@
   "pages": {
     "home": [
       "themes/core/css/local/home/home.css",
-      "themes/core/css/local/home/scroll_animation.css"
+      "themes/core/css/local/home/scroll_animation.css",
+      "themes/core/css/global/base.css"
     ],
     
     "dashboard": [
-      "themes/core/css/local/dashboard/dashboard.css"
+      "themes/core/css/local/dashboard/dashboard.css",
+      "themes/core/css/global/base.css"
     ],
 
     "mycourse": [
-      "themes/core/css/local/My Course/mycourse.css",
-      "themes/core/css/local/My Course/filterbarrs.css"
+      "themes/core/css/local/my course/mycourse.css",
+      "themes/core/css/local/my course/filterbarrs.css",
+      "themes/core/css/global/base.css"
+    ],
+
+    "course": [
+      "themes/core/css/local/course/coursesss.css"
+    ],
+
+    "participants": [
+      "themes/core/css/local/participants.css"
     ],
 
     "quiz": [

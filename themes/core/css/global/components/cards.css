@@ -1,9 +1,6 @@
-/* 1. Ensure the overall page background allows the glass effect to be visible */
-body {
-    background-color: var(--body-bg) !important; 
-}
-
-/* 2. Remove solid white backgrounds and borders from all main structural wrappers */
+/* ===================================================
+   2. REMOVE DEFAULT BACKGROUNDS FROM MAIN WRAPPERS
+   =================================================== */
 .main-inner,
 #page-content,
 #region-main-box,
@@ -16,26 +13,65 @@ body {
     box-shadow: none !important;
 }
 
-/* 3. Apply the rounded glassmorphism effect to the cards and blocks */
+/* ===================================================
+   3. GLASSMORPHISM FOR ALL MAIN CONTAINERS & BOXES
+   Applies to Cards, Blocks, Courseboxes, Grade reports, 
+   Participant lists, Filters, and Course Activities
+   =================================================== */
 .card, 
 .block, 
-.coursebox {
+.coursebox,
+.user-report-container,
+.participantsfilter,
+.filter-group,
+[data-region="filter"],
+.generalbox,
+.course-content .activity-item {
     background: var(--card-glass-bg) !important;
     border-radius: 20px !important; 
     box-shadow: var(--card-shadow) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
     border: 1px solid var(--card-glass-border) !important;
+    
+    /* Adds consistent spacing inside and outside the boxes */
+    padding: 20px !important;
+    margin-bottom: 20px !important;
 }
 
-/* 4. Make internal list items (like individual courses) transparent so they blend into the card */
+/* ===================================================
+   4. INTERNAL LIST ITEMS (TRANSPARENT BLEND)
+   =================================================== */
 .list-group-item, 
 .course-listitem {
     background-color: transparent !important;
     border: none !important; 
+    border-bottom: 1px solid var(--list-divider) !important;
 }
 
-/* Optional: Add a subtle separator line between list items */
-.list-group-item {
-    border-bottom: 1px solid var(--list-divider) !important;
+
+/* ===================================================
+   5. GLOBAL TABLES (TRANSPARENT BACKGROUND)
+   Ensures tables inside your glass boxes don't block the blur
+   =================================================== */
+.generaltable,
+.generaltable tr,
+.generaltable th,
+.generaltable td,
+.generaltable tbody tr:nth-of-type(odd),
+.generaltable tbody tr:nth-of-type(even),
+.generaltable tbody tr.odd,
+.generaltable tbody tr.even,
+.generaltable tbody tr:hover,
+.generaltable .category,
+table.userlist,
+table.userlist tr,
+table.userlist th,
+table.userlist td,
+table.userlist tbody tr:nth-of-type(odd),
+table.userlist tbody tr:nth-of-type(even) {
+    background: transparent !important; 
+    background-color: transparent !important;
+    color: var(--filter-text) !important;
+    border-color: var(--card-glass-border) !important; 
 }

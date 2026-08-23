@@ -1,7 +1,6 @@
 /* --- Light Theme Color Tokens (theme-light.css) --- */
 
 :root {
-
     --bg-base: #f5f5f7;
     --bg-surface: #ffffff;
     --bg-nav: rgba(255, 255, 255, 0.75);
@@ -14,9 +13,14 @@
     --shadow-base: rgba(0, 0, 0, 0.04);
 }
 
+/* ============================================================== 
+        GLOBAL 
+   ==============================================================*/
+
 :root { /* header */
 
     --header-bg: rgba(255, 255, 255, 0.95);
+    --sec-header-bg: rgb(245, 245, 245);
     --header-border: rgba(0, 0, 0, 0.08);
     --header-title: #1d1d1f;
     --header-nav: #515154;
@@ -62,17 +66,47 @@
     --btn-shadow-hover: 0 10px 25px rgba(108, 92, 231, 0.35);
     --btn-shadow-active: 0 4px 10px rgba(108, 92, 231, 0.2);
 
+/* ==============================================================*/    
+
+/* Navigation Buttons*/
+    /* Default State */
+    --navbtn-bg: rgba(0, 0, 0, 0.03);
+    --navbtn-border: rgba(0, 0, 0, 0.1);
+    --navbtn-text: #4b5563;
+
+    /* Hover State */
+    --navbtn-hover-bg: rgba(0, 0, 0, 0.08);
+    --navbtn-hover-border: rgba(0, 0, 0, 0.2);
+    --navbtn-hover-text: #000000;
+    --navbtn-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+    /* Active State */
+    --navbtn-active-bg: #000000;
+    --navbtn-active-border: #000000;
+    --navbtn-active-text: #ffffff;
+    --navbtn-active-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    /* Disabled State */
+    --navbtn-disabled-border: rgba(0, 0, 0, 0.05);
+
+/* ==============================================================*/    
+  
 /* Cards      */
+    --filter-text: #000000;
     --body-bg: #f4f6f9;
     --card-glass-bg: rgba(255, 255, 255, 0.4);
     --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
     --card-glass-border: rgba(255, 255, 255, 0.5);
     --list-divider: rgba(255, 255, 255, 0.2);
 
+/* ==============================================================*/    
+
 /*Drop Downs  */
     --dropdown-bg-solid: rgba(255, 255, 255, 0.95);
     --select-option-bg: #ffffff;
     --select-option-text: #2d3436;
+
+/* ==============================================================*/    
 
 /* Search Bar */
     --search-bg: rgba(255, 255, 255, 0.5);
@@ -83,21 +117,29 @@
     --search-btn-hover: #6c5ce7;
     --search-clear-hover: #000000;
 
+/* ==============================================================*/    
+
 /* Scrollbar */
     --scrollbar-track: transparent; 
     --scrollbar-thumb: rgba(0, 0, 0, 0.4); 
     --scrollbar-thumb-hover: rgb(0, 0, 0);
+
+/* ==============================================================*/    
 
 /* Focus Ring */
     *:focus-visible, .btn:focus-visible, a:focus-visible {
         box-shadow: 0 0 0 3px rgba(30, 39, 46, 0.15) !important; 
     }  
 
+/* ==============================================================*/    
+
 /* Toggle Switch */
     --toggle-track-off: #dcdde1;
     --toggle-track-on: #1e272e;
     --toggle-knob-off: #ffffff;
     --toggle-knob-on: #ffffff;
+
+/* ==============================================================*/    
 
 /* Notification Message */
     --toast-bg: rgba(255, 255, 255, 0.95);
@@ -202,6 +244,13 @@
     --onlineusercard-avatar-bg: #ffffff; /* Locked to white */
     --onlineusercard-status-border: #ffffff; /* Locked to white to match avatar */
 }   
+
+
+/* ============================================================== 
+        LOCAL
+   ==============================================================*/
+
+
 
 :root {
     /* ... existing variables ... */

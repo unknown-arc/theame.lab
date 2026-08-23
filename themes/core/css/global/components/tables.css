@@ -1,0 +1,60 @@
+/* ===================================================
+   7 & 8. GLOBAL TABLES (GLASS CARD EFFECT & ROUNDED)
+   Gives tables their own semi-transparent frosted look
+   =================================================== */
+.generaltable,
+table.userlist {
+    /* Apply the glass card background and blur to the table itself */
+    background: var(--card-glass-bg) !important; 
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    
+    /* Apply rounded corners and borders */
+    border: 1px solid var(--card-glass-border) !important;
+    border-collapse: separate !important; 
+    border-spacing: 0 !important; 
+    border-radius: 15px !important; 
+    overflow: hidden !important; 
+    
+    /* Ensure text color matches */
+    color: var(--filter-text) !important;
+    margin-bottom: 20px !important;
+}
+
+/* 
+   CRITICAL: Force the individual rows and cells inside the table 
+   to be fully transparent, otherwise Moodle's default white rows 
+   will cover up your beautiful glass table background!
+*/
+.generaltable tr,
+.generaltable th,
+.generaltable td,
+.generaltable tbody tr:nth-of-type(odd),
+.generaltable tbody tr:nth-of-type(even),
+.generaltable tbody tr.odd,
+.generaltable tbody tr.even,
+.generaltable tbody tr:hover,
+.generaltable .category,
+table.userlist tr,
+table.userlist th,
+table.userlist td,
+table.userlist tbody tr:nth-of-type(odd),
+table.userlist tbody tr:nth-of-type(even) {
+    background: transparent !important; 
+    background-color: transparent !important;
+    border-color: var(--card-glass-border) !important; 
+}
+
+/* Fix the inside corner clipping for the glass border */
+.generaltable thead tr:first-child th:first-child,
+table.userlist thead tr:first-child th:first-child { border-top-left-radius: 15px !important; }
+
+.generaltable thead tr:first-child th:last-child,
+table.userlist thead tr:first-child th:last-child { border-top-right-radius: 15px !important; }
+
+.generaltable tbody tr:last-child td:first-child,
+table.userlist tbody tr:last-child td:first-child,
+.generaltable tbody tr:last-child th:first-child { border-bottom-left-radius: 15px !important; }
+
+.generaltable tbody tr:last-child td:last-child,
+table.userlist tbody tr:last-child td:last-child { border-bottom-right-radius: 15px !important; }

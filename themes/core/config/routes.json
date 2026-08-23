@@ -1,42 +1,28 @@
 {
-  "login": [
-    "/login"
-  ],
+  "login": [ "/login" ],
 
-  "home": [
-    "/?redirect=0"
-  ],
+  "home": [ "/?redirect=0" ],
 
-  "dashboard": [
-    "/my"
-  ],
+  "dashboard": [ "/my" ],
 
-  "mycourse": [
-    "/my/courses.php"
-  ],
+  "mycourse": [ "/my/courses.php" ],
 
-  "quiz": [
-    "/mod/quiz"
-  ],
+  "course": [ "/course" ],
 
-  "assignment": [
-    "/mod/assign"
-  ],
+  "participants": [ "/user" ],
 
-  "calendar": [
-    "/calendar"
-  ],
+  "quiz": [ "/mod/quiz" ],
 
-  "grades": [
-    "/grade"
-  ],
+  "assignment": [ "/mod/assign" ],
 
-  "profile": [
+  "calendar": [ "/calendar" ],
+
+  "grades": [ "/grade" ],
+
+  "profile": [ 
     "/user/profile",
-    "/user/view.php"
+    "/user/view.php" 
   ],
 
-  "messages": [
-    "/message"
-  ]
+  "messages": [ "/message" ]
 }
