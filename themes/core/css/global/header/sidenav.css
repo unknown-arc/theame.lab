@@ -11,9 +11,6 @@
     -webkit-backdrop-filter: blur(20px) !important;
     border-right: 1px solid var(--header-border) !important;
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.1) !important;
-    
-    /* Set exactly as requested */
-    z-index: 2 !important; 
 }
 
 /* 2. Drawer Header (Where the close button is) */
@@ -79,13 +76,5 @@
     background-color: rgba(0, 0, 0, 0.4) !important;
     backdrop-filter: blur(4px) !important;
     -webkit-backdrop-filter: blur(4px) !important;
-    
-    /* Set to 4 so it sits just under your menu's z-index 5 */
-    z-index: 4 !important; 
-}
-
-/* 5. Add spacing above the first menu item (Home) */
-.drawer .list-group-item:first-child,
-.drawer .nav-link:first-child {
-    margin-top: 24px !important; 
+     
 }

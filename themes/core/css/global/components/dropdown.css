@@ -9,7 +9,6 @@
 .coursebox,
 .card-body {
     position: relative !important;
-    z-index: 0 !important; 
     overflow: visible !important; 
 }
 
@@ -24,7 +23,7 @@
 .dropdown:hover, 
 .btn-group:focus-within, 
 .btn-group:hover,
-.show {
+.dropdown.show { 
     z-index: 1 !important; 
 }
 
@@ -35,7 +34,6 @@
     border-radius: 15px !important;
     box-shadow: var(--card-shadow) !important;
     padding: 8px !important;
-    z-index: 1 !important; /* Forced high to prevent getting stuck behind lower cards */
 }
 
 /* 3. DROPDOWN ITEMS (Base State) */

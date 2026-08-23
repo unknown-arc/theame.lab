@@ -6,6 +6,11 @@ nav.navbar.fixed-top.navbar-light, nav.navbar.fixed-top.bg-white { background: v
 nav.navbar.fixed-top .navbar-nav { gap: 4px; position: relative; } /* Added position relative for the glider */
 nav.navbar.fixed-top .navbar-nav .nav-link { color: var(--header-nav) !important; border-radius: 8px; position: relative; transition: all .3s ease; }
 
+/* Pushes the right-side header elements away from the main navigation */
+nav.navbar .primary-navigation {
+    margin-right: 40px !important; 
+}
+
 /* 1. Bold Active Text & Hover Background */
 nav.navbar.fixed-top .navbar-nav .nav-link:hover { color: var(--header-nav-hover) !important; background: var(--header-hover-bg) !important; }
 nav.navbar.fixed-top .navbar-nav .nav-link.active, nav.navbar.fixed-top .navbar-nav .active>.nav-link { color: var(--header-title) !important; font-weight: bold !important; background: transparent !important; border-bottom: none !important; box-shadow: none !important; }
@@ -20,7 +25,6 @@ nav.navbar.fixed-top .navbar-nav .nav-link.active, nav.navbar.fixed-top .navbar-
     background: var(--header-active-bar);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
     pointer-events: none;
-    z-index: 10;
 }
 
 /* 3. Larger, Theme-Adaptive SVG Redirect Icon on Hover */
@@ -69,4 +73,54 @@ nav.navbar.fixed-top .navbar-toggler-icon {
     display: inline-block;
     width: 24px !important;
     height: 24px !important;
+}
+
+
+/* ==========================================================
+   Secondary Navigation (Sub-header) Styles
+   ========================================================== */
+
+/* 1. Base Background and Blur */
+.secondary-navigation.moove,
+.secondary-navigation {
+    background: var(--header-bg) !important; 
+    backdrop-filter: blur(20px) !important; 
+    -webkit-backdrop-filter: blur(20px) !important; 
+    border-bottom: 1px solid var(--header-border) !important; 
+    box-shadow: none !important; 
+}
+
+/* Clear any inherited blue backgrounds from child elements */
+.secondary-navigation .moremenu,
+.secondary-navigation .moove-container-fluid {
+    background: transparent !important;
+}
+
+/* 2. Nav Items Container */
+.secondary-navigation .nav-tabs {
+    border-bottom: none !important; 
+    gap: 4px; 
+}
+
+/* 3. Default Link Styles */
+.secondary-navigation .nav-tabs .nav-item a {
+    color: var(--header-nav) !important; 
+    border-radius: 8px !important; 
+    transition: all .3s ease;
+    border: none !important; 
+}
+
+/* 4. Hover State */
+.secondary-navigation .nav-tabs .nav-item a:hover {
+    color: var(--header-nav-hover) !important; 
+    background: var(--header-hover-bg) !important; 
+}
+
+/* 5. Active/Selected State */
+.secondary-navigation .nav-tabs .nav-item a.active,
+.secondary-navigation .nav-tabs .active > a {
+    color: var(--header-title) !important; 
+    font-weight: bold !important; 
+    background: transparent !important; 
+    box-shadow: none !important; 
 }

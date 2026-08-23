@@ -148,7 +148,6 @@
     background-position: 0.6rem center !important; 
     border-radius: 1.25rem !important; 
     transition: all 0.4s cubic-bezier(0.65, 0, 0.076, 1) !important;
-    z-index: 1 !important;
     display: block !important; 
 }
 #carousel-item-main a.dropdown-item[href*="profile.php"]:hover::before {
@@ -169,7 +168,6 @@
     line-height: 2.2rem !important; 
     text-align: center !important;
     transition: all 0.4s cubic-bezier(0.65, 0, 0.076, 1) !important;
-    z-index: 2 !important; 
     pointer-events: none !important;
     display: block !important; 
 }

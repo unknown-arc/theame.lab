@@ -16,7 +16,7 @@
 
 :root { /* header */
 
-    --header-bg: rgba(255, 255, 255, 0.75);
+    --header-bg: rgba(255, 255, 255, 0.95);
     --header-border: rgba(0, 0, 0, 0.08);
     --header-title: #1d1d1f;
     --header-nav: #515154;
@@ -190,9 +190,18 @@
         color: #000000 !important;
     }
 
-/*Microsoft Block */
-   
-}    
+/*Online Users */
+
+    --onlineusercard-bg: #fafafa;
+    --onlineusercard-bg-hover: #000000; /* Dark background on hover */
+    --onlineusercard-border: 1px solid rgba(0, 0, 0, 0.03);
+    --onlineusercard-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --onlineusercard-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --onlineusercard-text: #2d3436;
+    --onlineusercard-text-hover: #ffffff; /* Light text on hover */
+    --onlineusercard-avatar-bg: #ffffff; /* Locked to white */
+    --onlineusercard-status-border: #ffffff; /* Locked to white to match avatar */
+}   
 
 :root {
     /* ... existing variables ... */

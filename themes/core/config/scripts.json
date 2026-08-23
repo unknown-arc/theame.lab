@@ -1,6 +1,5 @@
 {
   "common": [
-    "themes/core/js/global/navbar.js",
     "themes/core/js/global/profile.js"
   ],
 
@@ -9,7 +8,8 @@
 
     "dashboard": [
       "themes/core/js/local/my_course.js",
-      "themes/core/js/local/microsoft_block.js"
+      "themes/core/js/local/microsoft_block.js",
+      "themes/core/js/local/profilesfetcher.js"
     ],
 
     "mycourse": [ ],
