@@ -100,6 +100,13 @@
 
 /* ==============================================================*/    
 
+/* Description */
+
+    --description-text-color: #ffffff;
+    --description-viewer-bg: rgb(15, 15, 15); 
+
+/* ==============================================================*/
+
 /* Dropdowns  */
     --dropdown-bg-solid: rgba(30, 30, 42, 0.95);
     --select-option-bg: #0f172a;
@@ -244,6 +251,27 @@
         LOCAL
    ==============================================================*/
  
+:root {/* COURSE */
+
+/* Layout and Contents */    
+    --cg-text-color: #ffffff;
+    --cg-viewer-bg: rgba(20, 20, 25, 0.4);
+    --cg-viewer-border: rgba(255, 255, 255, 0.15);
+    --cg-card-bg: rgba(255, 255, 255, 0.05);
+    --cg-card-border: rgba(255, 255, 255, 0.1);
+    --cg-card-hover: rgba(255, 255, 255, 0.12);
+    --cg-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+
+/* Lecture Cards */
+    --lecture-card-text: #e2e8f0;
+    --lecture-card-bg: rgba(255, 255, 255, 0.05);
+    --lecture-card-border: rgba(255, 255, 255, 0.1);
+    --lecture-card-hover: rgba(255, 255, 255, 0.12);
+    --lecture-card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);  
+    --lecture-btn-bg: #ffffff;
+    --lecture-btn-text: #000000;  
+}
+
 
 :root {
     /* ... existing variables ... */

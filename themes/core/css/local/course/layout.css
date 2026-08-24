@@ -1,0 +1,119 @@
+/* ==========================================================
+   CARDSTYLE.CSS - Theme Adaptive Grid, Glass Boxes & Icons
+   ========================================================== */
+
+/* 1. Hide Moodle's Native Clutter & Divider Lines */
+.course-content .collapseexpand,
+.course-content .section-collapsemenu,
+.course-content [data-toggle="collapseall"],
+.course-content a.toggle-all,
+.course-content li.section .divider,
+.course-content li.section::after,
+.course-content li.section::before,
+.course-content li.section .icons-collapse-expand,
+.course-content li.section .icon {
+    display: none !important;
+}
+
+/* 2. Restore the Grid Layout (The side-by-side boxes) */
+.course-content ul.topics, 
+.course-content ul.ctopics,
+.course-content .topics {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+    gap: 20px !important;
+    padding: 15px 0 !important;
+    list-style: none !important;
+    margin-bottom: 20px !important;
+}
+
+/* 3. Theme Adaptive Glassmorphism Card Look */
+.course-content li.section,
+.course-content .course-section {
+    background: var(--card-glass-bg) !important; /* Theme BG */
+    border: 1px solid var(--card-glass-border) !important; /* Theme Border */
+    box-shadow: var(--card-shadow) !important; /* Theme Shadow */
+    border-radius: 16px !important;
+    padding: 25px 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important; 
+    align-items: center !important;
+    transition: all 0.3s ease !important;
+    margin: 0 !important; 
+    min-height: 180px !important;
+    height: auto !important; 
+    cursor: pointer !important;
+}
+
+.course-content li.section:hover {
+    transform: translateY(-5px) !important;
+    /* Brightness filter seamlessly brightens both Light & Dark modes on hover */
+    filter: brightness(1.05) !important; 
+}
+
+/* 4. Text & Header Layout */
+.course-content .course-section-header,
+.course-content .section-summary {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.course-content .sectionname {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    width: 100% !important;
+    white-space: normal !important; 
+    word-wrap: break-word !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    color: var(--filter-text) !important; /* Theme Text Color */
+}
+
+.course-content .sectionname a {
+    color: inherit !important;
+    text-decoration: none !important;
+    text-align: center !important;
+}
+
+/* 5. Custom Dynamic Icon Box (Default State before clicking) */
+.custom-grid-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 55px !important;
+    height: 55px !important;
+    border-radius: 14px !important;
+    background: var(--list-divider) !important; /* Subtle theme-aware background */
+    border: 1px solid var(--card-glass-border) !important;
+    margin-bottom: 12px !important; 
+    font-size: 22px !important;
+    color: var(--filter-text) !important; /* Theme Text Color */
+    transition: all 0.3s ease !important;
+}
+
+/* 6. ACTIVE STATE: Fill icon with dynamic color & emphasize card */
+.course-content li.section.custom-is-open {
+    /* Slight background change to make the active card pop out from the page */
+    background: var(--body-bg) !important; 
+    border-color: var(--card-theme-color, var(--card-glass-border)) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important; 
+}
+
+.course-content li.section.custom-is-open .custom-grid-icon {
+    /* Use the CSS variable set by JavaScript! */
+    background: var(--card-theme-color, #0984e3) !important; 
+    border-color: var(--card-theme-color, #0984e3) !important;
+    /* Always pure white so the icon stands out clearly against the bright colors */
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important; 
+    transform: scale(1.15) !important; 
+}

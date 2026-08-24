@@ -1,0 +1,242 @@
+/* ========================================
+   1. STACKING CONTEXT & Z-INDEX FIXES
+   ======================================== */
+.block, 
+.card, 
+.coursebox,
+.card-body {
+    position: relative !important;
+    overflow: visible !important; 
+}
+
+.block:hover, 
+.card:hover, 
+.coursebox:hover,
+.block:focus-within, 
+.card:focus-within, 
+.coursebox:focus-within,
+.dropdown:focus-within, 
+.dropdown:hover, 
+.btn-group:focus-within, 
+.btn-group:hover,
+.dropdown.show { 
+    z-index: 1 !important; 
+}
+
+/* ========================================
+   2. GLOBAL FORM INPUTS & WRAPPERS
+   ======================================== */
+.form-control,
+.custom-select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+select,
+.form-select,
+[role="combobox"] {
+    border-radius: 15px !important;
+    background: var(--card-glass-bg) !important;
+    border: z1px solid var(--card-glass-border) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    color: var(--filter-text) !important;
+    padding: 8px 15px !important;
+    box-shadow: none !important;
+    font-family: inherit !important;
+    outline: none !important;
+}
+
+/* Prevent double-backgrounds on autocomplete inner inputs */
+.form-control [role="combobox"],
+.form-control .form-autocomplete-input,
+.form-autocomplete-input {
+    border: znone !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    padding: 0 !important; 
+}
+
+/* Standard Select Options */
+select option {
+    background-color: var(--select-option-bg) !important; 
+    color: var(--select-option-text) !important;
+    padding: 10px !important;
+}
+
+/* ========================================
+   3. MAIN DROPDOWN & AUTOCOMPLETE CONTAINERS
+   ======================================== */
+.dropdown-menu,
+.form-autocomplete-suggestions {
+    background: var(--dropdown-bg-solid) !important; 
+    border: z1px solid var(--card-glass-border) !important;
+    border-radius: 15px !important;
+    box-shadow: var(--card-shadow) !important;
+    padding: 8px !important;
+}
+
+/* ========================================
+   4. DROPDOWN ITEMS (Base State)
+   ======================================== */
+.dropdown-item,
+.form-autocomplete-suggestions li {
+    color: var(--btn-text-default) !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    padding: 8px 15px !important;
+    margin-bottom: 2px !important;
+    height: auto !important; 
+    white-space: normal !important; 
+    word-wrap: break-word !important;
+    transition: all 0.2s ease !important;
+}
+
+/* ========================================
+   5. DROPDOWN ITEMS (Hover/Focus State)
+   ======================================== */
+.dropdown-item:hover,
+.dropdown-item:focus,
+.form-autocomplete-suggestions li:hover,
+.form-autocomplete-suggestions li:focus,
+.form-autocomplete-suggestions li[aria-selected="true"] {
+    background: var(--btn-bg-hover) !important;
+    color: var(--btn-text-hover) !important;
+    font-weight: 600 !important; 
+}
+
+/* ========================================
+   6. ACTIVE DROPDOWN ITEM (Selected State)
+   ======================================== */
+.dropdown-item[aria-current="true"],
+.dropdown-item.active,
+.form-autocomplete-suggestions li[aria-selected="true"] {
+    position: relative !important;
+    background: rgba(127, 127, 127, 0.08) !important; 
+    background-color: rgba(127, 127, 127, 0.08) !important; 
+    color: var(--btn-text-default) !important;
+    font-weight: 700 !important; 
+    padding-left: 20px !important; 
+    transform: none !important; 
+}
+
+/* Nuke default checkmarks */
+.dropdown-item[aria-current="true"] i,
+.dropdown-item.active i,
+.dropdown-item[aria-current="true"] .icon,
+.dropdown-item.active .icon,
+.dropdown-item[aria-current="true"]::before,
+.dropdown-item.active::before,
+.form-autocomplete-suggestions li[aria-selected="true"]::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* The Sleek Left Accent Line */
+.dropdown-item[aria-current="true"]::after,
+.dropdown-item.active::after,
+.form-autocomplete-suggestions li[aria-selected="true"]::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 6px !important; 
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    height: 60% !important; 
+    width: 4px !important;
+    background: #0984e3 !important; 
+    border-radius: 4px !important;
+    display: block !important;
+    box-shadow: 0 0 6px rgba(9, 132, 227, 0.4) !important; 
+}
+
+/* ========================================
+   7. AUTOCOMPLETE TAGS, TEXT & ICONS
+   ======================================== */
+
+/* Placeholder text */
+[role="combobox"]::placeholder,
+.form-autocomplete-input::placeholder {
+    color: var(--filter-text) !important;
+    opacity: 0.6 !important; 
+}
+
+/* Selected Badges (e.g., "No filters applied") */
+.form-autocomplete-selection .badge,
+.form-autocomplete-selection [role="option"] {
+    background-color: rgba(127, 127, 127, 0.15) !important; 
+    color: var(--filter-text) !important;
+    border: z1px solid var(--card-glass-border) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    padding: 5px 10px !important;
+}
+
+/* Transparent wrapper for tags */
+.form-autocomplete-selection {
+    background: transparent !important;
+    border: znone !important;
+    color: var(--filter-text) !important;
+}
+
+/* Icons (Close buttons and arrows) */
+.form-autocomplete-selection [role="option"]::before,
+.form-autocomplete-selection .badge::before,
+.form-autocomplete-selection [role="option"]::after,
+.form-autocomplete-selection .badge::after,
+.form-autocomplete-downarrow,
+.form-autocomplete-downarrow i,
+.form-autocomplete-downarrow svg,
+.form-autocomplete-selection svg {
+    color: var(--filter-text) !important;
+    fill: var(--filter-text) !important; 
+    opacity: 0.8 !important;
+}
+
+/* ========================================
+   8. FIX: REMOVE / ROUND COMPETENCY FILTER BORDER
+   ======================================== */
+#page-admin-tool-lp-coursecompetencies .border,
+#page-admin-tool-lp-coursecompetencies [data-region="filter"],
+#page-admin-tool-lp-coursecompetencies [data-region="coursecompetencies"] > div > div,
+[data-region="coursecompetencies"] .border,
+[data-region="coursecompetencies"] fieldset,
+[data-region="coursecompetencies"] form {
+    /* Remove the harsh white border */
+    border: none !important; 
+    
+    /* Optional: Add a subtle glass border and rounding (Uncomment if you want a box) */
+    /* border: 1px solid rgba(255, 255, 255, 0.1) !important; */
+    /* border-radius: 15px !important; */
+    
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Ensure the inner autocomplete container doesn't draw its own border */
+#page-admin-tool-lp-coursecompetencies .form-autocomplete-element {
+    border: none !important;
+    background: transparent !important;
+}
+
+
+
+/* ========================================
+   10. FIX: REMOVE UNWANTED SPACE IN NAV TABS
+   ======================================== */
+.secondary-navigation .moremenu .nav.more-nav.nav-tabs {
+    width: max-content !important; /* Shrinks the UL to strictly fit the tabs */
+    max-width: 100% !important;
+    margin-left: 0 !important; /* Removes any centering auto-margins */
+    justify-content: flex-start !important; /* Aligns tabs neatly to the left edge */
+}
+
+/* Ensure the parent container doesn't force unnecessary stretching */
+.secondary-navigation .moove-container-fluid {
+    display: flex !important;
+    justify-content: flex-start !important;
+    padding-left: 20px !important; /* Adjust if you need more/less left padding */
+}

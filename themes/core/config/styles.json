@@ -5,7 +5,8 @@
 
     "themes/core/css/global/components/buttons.css",
     "themes/core/css/global/components/navbuttons.css",
-    "themes/core/css/global/components/cards.css",
+    "themes/core/css/global/components/cards2.css",
+    "themes/core/css/global/components/description.css",
     "themes/core/css/global/components/dropdown.css",
     "themes/core/css/global/components/searchbar.css",
     "themes/core/css/global/components/scrollbar.css",
@@ -51,27 +52,27 @@
     "home": [
       "themes/core/css/local/home/home.css",
       "themes/core/css/local/home/scroll_animation.css",
-      "themes/core/css/global/base.css"
+      "themes/core/css/global/clean.css"
     ],
     
     "dashboard": [
       "themes/core/css/local/dashboard/dashboard.css",
-      "themes/core/css/global/base.css"
+      "themes/core/css/global/clean.css"
     ],
 
     "mycourse": [
       "themes/core/css/local/my course/mycourse.css",
       "themes/core/css/local/my course/filterbarrs.css",
-      "themes/core/css/global/base.css"
+      "themes/core/css/global/clean.css"
     ],
 
     "course": [
-      "themes/core/css/local/course/coursesss.css"
+      "themes/core/css/local/course/layout.css",
+      "themes/core/css/local/course/content.css",
+      "themes/core/css/local/course/lectures.css"
     ],
-
-    "participants": [
-      "themes/core/css/local/participants.css"
-    ],
+    "participants": ["themes/core/css/local/participants.css"],
+    "competencies": [ "themes/core/css/local/competencies.css" ],
 
     "quiz": [
       "themes/core/css/local/quiz/quiz.css"

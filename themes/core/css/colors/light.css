@@ -99,7 +99,14 @@
     --card-glass-border: rgba(255, 255, 255, 0.5);
     --list-divider: rgba(255, 255, 255, 0.2);
 
-/* ==============================================================*/    
+/* ==============================================================*/ 
+
+/* Description */
+
+    --description-text-color: #000000;
+    --description-viewer-bg: rgba(244, 246, 249); 
+
+/* ==============================================================*/
 
 /*Drop Downs  */
     --dropdown-bg-solid: rgba(255, 255, 255, 0.95);
@@ -250,7 +257,26 @@
         LOCAL
    ==============================================================*/
 
+:root{ /* COURSE */   
 
+/* Layput and Contents */
+    --cg-text-color: #000000;
+    --cg-viewer-bg: rgba(244, 246, 249, 0.6);
+    --cg-viewer-border: rgba(0, 0, 0, 0.1);
+    --cg-card-bg: rgba(255, 255, 255, 0.4);
+    --cg-card-border: rgba(255, 255, 255, 0.5);
+    --cg-card-hover: rgba(255, 255, 255, 0.7);
+    --cg-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+
+/* Lecture Cards */
+    --lecture-card-text: #1a1a1a;
+    --lecture-card-bg: rgba(255, 255, 255, 0.4);
+    --lecture-card-border: rgba(255, 255, 255, 0.5);
+    --lecture-card-hover: rgba(255, 255, 255, 0.7);
+    --lecture-card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    --lecture-btn-bg: #000000;
+    --lecture-btn-text: #ffffff;
+}
 
 :root {
     /* ... existing variables ... */

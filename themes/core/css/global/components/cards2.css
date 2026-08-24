@@ -1,5 +1,7 @@
 
-/* 2. Remove solid white backgrounds and borders from all main structural wrappers */
+/* ===================================================
+   2. REMOVE DEFAULT BACKGROUNDS FROM MAIN WRAPPERS
+   =================================================== */
 .main-inner,
 #page-content,
 #region-main-box,
@@ -12,10 +14,19 @@
     box-shadow: none !important;
 }
 
-/* 3. Apply the rounded glassmorphism effect to the cards and blocks */
+/* ===================================================
+   3. GLASSMORPHISM FOR ALL MAIN CONTAINERS & BOXES
+   Applies to Cards, Blocks, Courseboxes, Grade reports, 
+   Participant lists, Filters, and Course Activities
+   =================================================== */
 .card, 
 .block, 
-.coursebox {
+.coursebox,
+.user-report-container,
+.participantsfilter,
+.filter-group,
+.generalbox,
+.course-content .activity-item {
     background: var(--card-glass-bg) !important;
     border-radius: 20px !important; 
     box-shadow: var(--card-shadow) !important;
@@ -25,10 +36,12 @@
     
 }
 
-/* 4. Make internal list items (like individual courses) transparent so they blend into the card */
+/* ===================================================
+   4. INTERNAL LIST ITEMS (TRANSPARENT BLEND)
+   =================================================== */
 .list-group-item, 
 .course-listitem {
     background-color: transparent !important;
     border: none !important; 
     border-bottom: 1px solid var(--list-divider) !important;
-}
+} 

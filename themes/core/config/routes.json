@@ -11,6 +11,8 @@
 
   "participants": [ "/user" ],
 
+  "competencies": [ "/admin/tool/lp/coursecompetencies" ],
+
   "quiz": [ "/mod/quiz" ],
 
   "assignment": [ "/mod/assign" ],

@@ -1,0 +1,85 @@
+/* =========================================
+   1. REMOVE ALL EXTRA BACKGROUND BLOCKS
+   ========================================= */
+.description,
+.description .course-description-item,
+.description .description-inner,
+.description .no-overflow,
+.description .activity-dates {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important; /* Removes default awkward spacing */
+}
+
+/* =========================================
+   2. APPLY GLASS EFFECT TO INNER CARDS
+   ========================================= */
+/* Apply to your Lecture Cards */
+.description .no-overflow > div > div,
+.description .no-overflow .card-body {
+    background: var(--lecture-card-bg) !important;
+    border: 1px solid var(--lecture-card-border) !important;
+    box-shadow: var(--lecture-card-shadow) !important;
+    color: var(--lecture-card-text) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-radius: 16px !important;
+    transition: background 0.3s ease !important;
+}
+
+/* Ensure text inside the cards uses the right color */
+.description .no-overflow > div > div h3,
+.description .no-overflow > div > div p,
+.description .no-overflow > div > div span {
+    color: var(--lecture-card-text) !important;
+}
+
+/* Hover state for Lecture Cards */
+.description .no-overflow > div > div:hover {
+    background: var(--lecture-card-hover) !important;
+}
+
+/* =========================================
+   3. REDESIGN "JOIN SESSION" BUTTONS
+   ========================================= */
+/* Base Button Styling */
+.description .no-overflow a[href],
+.description .no-overflow .btn {
+    /* Gradient twice as wide: Left half is base theme color, Right half is green */
+    background: linear-gradient(to right, var(--lecture-btn-bg) 50%, #22c55e 50%) !important;
+    background-size: 200% 100% !important;
+    background-position: left bottom !important; /* Shows only the base color initially */
+    color: var(--lecture-btn-text) !important;
+    border: none !important;
+    padding: 12px 32px !important;
+    border-radius: 50px !important; /* Fully rounded circular/pill shape */
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transition: all 0.4s ease-out !important; /* Smooth animation timing */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Hide Icons inside the button */
+.description .no-overflow a[href] img,
+.description .no-overflow a[href] svg,
+.description .no-overflow a[href] i,
+.description .no-overflow a[href] .icon,
+.description .no-overflow .btn img,
+.description .no-overflow .btn svg,
+.description .no-overflow .btn i,
+.description .no-overflow .btn .icon {
+    display: none !important;
+}
+
+/* Button Hover Animation (Green left-to-right wipe) */
+.description .no-overflow a[href]:hover,
+.description .no-overflow .btn:hover {
+    background-position: right bottom !important; /* Slides the green half into view */
+    color: #ffffff !important; /* Forces text to white so it's readable on green */
+    transform: scale(1.05) !important; /* Slight pop effect */
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4) !important; /* Green glowing shadow */
+}

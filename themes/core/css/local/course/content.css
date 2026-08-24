@@ -1,0 +1,171 @@
+/* Fallback if Moodle uses a specific body class for dark mode */
+body.theme-dark {
+    --cg-text-color: #ffffff;
+    --cg-viewer-bg: rgba(20, 20, 25, 0.4);
+    --cg-viewer-border: rgba(255, 255, 255, 0.15);
+    --cg-card-bg: rgba(255, 255, 255, 0.05);
+    --cg-card-border: rgba(255, 255, 255, 0.1);
+    --cg-card-hover: rgba(255, 255, 255, 0.12);
+    --cg-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================
+   1. STRICT HIDING (KEEPS CONTENT OUT OF BASECARDS)
+   ========================================================== */
+.course-content ul.topics > li.section .content,
+.course-content ul.topics > li.section ul.section,
+.course-content ul.topics > li.section li.activity {
+    display: none !important;
+}
+
+/* ==========================================================
+   2. THE GLOBAL VIEWER BOX
+   ========================================================== */
+#global-course-viewer {
+    display: none;
+    width: 100% !important;
+    min-height: 200px;
+    background: var(--cg-viewer-bg) !important;
+    border: 1px solid var(--cg-viewer-border) !important;
+    border-radius: 16px !important;
+    padding: 30px !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    margin-bottom: 40px !important;
+    animation: slideDown 0.3s ease-out;
+}
+
+#global-course-viewer.active {
+    display: block !important;
+}
+
+#global-course-viewer .moved-content-wrapper,
+#global-course-viewer ul.section {
+    display: block !important;
+    width: 100% !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+}
+
+/* ==========================================================
+   3. INNER CONTENT LAYOUT (THEME ADAPTED)
+   ========================================================== */
+/* The Grid Container */
+#global-course-viewer .card-view-mode ul.section {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+    gap: 20px !important;
+    padding: 10px 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Mini Card Base */
+#global-course-viewer .card-view-mode li.activity {
+    background: var(--cg-card-bg) !important;
+    border: 1px solid var(--cg-card-border) !important;
+    box-shadow: var(--cg-shadow) !important;
+    border-radius: 16px !important;
+    padding: 20px 18px !important; 
+    margin: 0 !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 210px !important; 
+    transition: all 0.3s ease !important;
+}
+
+#global-course-viewer .card-view-mode li.activity:hover {
+    background: var(--cg-card-hover) !important;
+    transform: translateY(-4px) !important;
+}
+
+/* Strip Moodle's Specific Horizontal Layouts */
+#global-course-viewer .card-view-mode .d-flex.flex-md-row,
+#global-course-viewer .card-view-mode .activitytitle.media {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    width: 100% !important;
+    height: 100% !important; 
+    margin: 0 !important;
+}
+
+/* Icon (Top & Centered) */
+#global-course-viewer .card-view-mode .activityiconcontainer {
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 auto 15px auto !important; 
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+}
+
+#global-course-viewer .card-view-mode .activityiconcontainer img {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+/* Text (Middle & Centered) */
+#global-course-viewer .card-view-mode .media-body,
+#global-course-viewer .card-view-mode .activityname {
+    width: 100% !important;
+    text-align: center !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+}
+
+#global-course-viewer .card-view-mode .instancename {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: var(--cg-text-color) !important; /* Theme Adapted Text */
+    display: block !important;
+    white-space: normal !important; 
+    word-break: break-word !important; 
+    line-height: 1.4 !important;
+    text-align: center !important; 
+}
+
+/* Hide Moodle's extra hidden text */
+#global-course-viewer .card-view-mode .accesshide {
+    display: none !important;
+}
+
+/* Button Container (Bottom & Full Width) */
+#global-course-viewer .card-view-mode .activity-info {
+    width: 100% !important;
+    margin-top: auto !important; 
+    padding-top: 20px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure the form wrapping the "Mark as Done" button is full width */
+#global-course-viewer .card-view-mode .activity-info form {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Target all button types including Moodle's form submits */
+#global-course-viewer .card-view-mode .activity-info button,
+#global-course-viewer .card-view-mode .activity-info .btn,
+#global-course-viewer .card-view-mode .activity-info form button,
+#global-course-viewer .card-view-mode .activity-info form input[type="submit"] {
+    width: 100% !important;
+    border-radius: 8px !important; 
+    padding: 8px 0 !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important; 
+    box-sizing: border-box !important;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
