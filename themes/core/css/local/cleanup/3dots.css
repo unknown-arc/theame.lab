@@ -1,0 +1,5 @@
+/* Hide the left Course Index toggle button */
+.drawer-toggler.drawer-left-toggle,
+button[data-target="theme_boost-drawers-courseindex"] {
+    display: none !important;
+}

@@ -14,7 +14,10 @@
 
     "mycourse": [ ],
 
-    "course": ["themes/core/js/local/coursepage.js"],
+    "course": [
+      "themes/core/js/local/coursepage.js",
+      "themes/core/js/local/lectureroom.js"
+    ],
 
     "quiz": [],
 

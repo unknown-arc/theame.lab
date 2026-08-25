@@ -117,3 +117,12 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important; 
     transform: scale(1.15) !important; 
 }
+
+/* 7. HOVER STATE: Reveal dynamic color on hover */
+.course-content li.section:hover .custom-grid-icon {
+    background: var(--card-theme-color, #0984e3) !important; 
+    border-color: var(--card-theme-color, #0984e3) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important; 
+    transform: scale(1.08) !important; 
+}

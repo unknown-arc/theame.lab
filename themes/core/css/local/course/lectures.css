@@ -1,85 +1,178 @@
-/* =========================================
-   1. REMOVE ALL EXTRA BACKGROUND BLOCKS
-   ========================================= */
-.description,
-.description .course-description-item,
-.description .description-inner,
-.description .no-overflow,
-.description .activity-dates {
+/* ==========================================================
+   1. MAIN WRAPPERS & FLATTENING
+   ========================================================== */
+#global-course-viewer .card-view-mode li#module-4563 {
     background: transparent !important;
+    border: none !important;
     box-shadow: none !important;
-    border: none !important;
-    padding: 0 !important; /* Removes default awkward spacing */
+    padding: 0 !important;
 }
 
-/* =========================================
-   2. APPLY GLASS EFFECT TO INNER CARDS
-   ========================================= */
-/* Apply to your Lecture Cards */
-.description .no-overflow > div > div,
-.description .no-overflow .card-body {
-    background: var(--lecture-card-bg) !important;
-    border: 1px solid var(--lecture-card-border) !important;
-    box-shadow: var(--lecture-card-shadow) !important;
-    color: var(--lecture-card-text) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
+#module-4563 .activity-item {
+    background: var(--cg-card-bg) !important;
+    border: 1px solid var(--cg-card-border) !important;
     border-radius: 16px !important;
-    transition: background 0.3s ease !important;
+    padding: 30px !important;
+    box-shadow: var(--cg-shadow) !important;
 }
 
-/* Ensure text inside the cards uses the right color */
-.description .no-overflow > div > div h3,
-.description .no-overflow > div > div p,
-.description .no-overflow > div > div span {
-    color: var(--lecture-card-text) !important;
-}
-
-/* Hover state for Lecture Cards */
-.description .no-overflow > div > div:hover {
-    background: var(--lecture-card-hover) !important;
-}
-
-/* =========================================
-   3. REDESIGN "JOIN SESSION" BUTTONS
-   ========================================= */
-/* Base Button Styling */
-.description .no-overflow a[href],
-.description .no-overflow .btn {
-    /* Gradient twice as wide: Left half is base theme color, Right half is green */
-    background: linear-gradient(to right, var(--lecture-btn-bg) 50%, #22c55e 50%) !important;
-    background-size: 200% 100% !important;
-    background-position: left bottom !important; /* Shows only the base color initially */
-    color: var(--lecture-btn-text) !important;
+#module-4563 .no-overflow div,
+#module-4563 .description-inner {
+    background: transparent !important;
     border: none !important;
-    padding: 12px 32px !important;
-    border-radius: 50px !important; /* Fully rounded circular/pill shape */
-    font-weight: 600 !important;
-    text-decoration: none !important;
-    display: inline-flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    transition: all 0.4s ease-out !important; /* Smooth animation timing */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: none !important;
 }
 
-/* Hide Icons inside the button */
-.description .no-overflow a[href] img,
-.description .no-overflow a[href] svg,
-.description .no-overflow a[href] i,
-.description .no-overflow a[href] .icon,
-.description .no-overflow .btn img,
-.description .no-overflow .btn svg,
-.description .no-overflow .btn i,
-.description .no-overflow .btn .icon {
+/* Hide Moodle's native content icons INSIDE the description only */
+#module-4563 .description-inner img,
+#module-4563 .description-inner .icon {
     display: none !important;
 }
 
-/* Button Hover Animation (Green left-to-right wipe) */
-.description .no-overflow a[href]:hover,
-.description .no-overflow .btn:hover {
-    background-position: right bottom !important; /* Slides the green half into view */
-    color: #ffffff !important; /* Forces text to white so it's readable on green */
-    transform: scale(1.05) !important; /* Slight pop effect */
-    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4) !important; /* Green glowing shadow */
+/* ==========================================================
+   2. MAIN GRID & TYPOGRAPHY
+   ========================================================== */
+#module-4563 .schedule-title {
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 25px !important;
+    font-size: 20px !important;
+    color: var(--cg-text-color) !important;
+}
+
+#module-4563 .schedule-note {
+    text-align: center !important;
+    margin-top: 25px !important;
+    font-size: 13px !important;
+    color: var(--cg-text-color) !important;
+    opacity: 0.8 !important;
+}
+
+#module-4563 .custom-schedule-grid {
+    display: grid !important;
+    /* Increased minimum width to 360px to accommodate the horizontal split layout */
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+/* ==========================================================
+   3. HORIZONTAL CARD STRUCTURE (Left Text / Right SVG)
+   ========================================================== */
+#module-4563 .schedule-card {
+    border-radius: 16px !important;
+    padding: 25px !important;
+    display: flex !important;
+    flex-direction: row !important; /* Forces left and right alignment */
+    align-items: center !important;
+    justify-content: space-between !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    color: #ffffff !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    min-height: 200px !important; 
+}
+
+#module-4563 .schedule-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25) !important;
+}
+
+/* LEFT SIDE: Text and Buttons */
+#module-4563 .card-left {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+}
+
+/* RIGHT SIDE: Visual SVG Area */
+#module-4563 .card-right {
+    flex-shrink: 0 !important;
+    width: 90px !important;
+    height: 90px !important;
+    margin-left: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#module-4563 .card-right svg {
+    width: 100% !important;
+    height: 100% !important;
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2)); /* Gives the SVGs a nice 3D pop */
+}
+
+/* Typography Overrides */
+#module-4563 .schedule-card h3 {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    margin: 0 0 10px 0 !important;
+    font-weight: 700 !important;
+}
+
+#module-4563 .schedule-card p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 14px !important;
+    margin: 4px 0 !important;
+}
+
+#module-4563 .schedule-card .day-badge {
+    display: inline-block !important;
+    background: rgba(0, 0, 0, 0.25) !important;
+    padding: 4px 12px !important;
+    border-radius: 12px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    margin-bottom: 12px !important;
+}
+
+/* ==========================================================
+   4. CARD THEMED BACKGROUNDS
+   ========================================================== */
+/* Morning: Soft Blue Sky */
+#module-4563 .time-morning { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important; }
+
+/* Afternoon: Bright Solid Blue/Cyan */
+#module-4563 .time-afternoon { background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important; }
+
+/* Evening: Deep Night Purple/Blue */
+#module-4563 .time-evening { background: linear-gradient(135deg, #301847 0%, #171c4c 100%) !important; }
+
+/* Recordings: Dark Studio Slate */
+#module-4563 .tool-recordings { background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%) !important; }
+
+/* ==========================================================
+   5. BUTTONS
+   ========================================================== */
+#module-4563 .btn-join,
+#module-4563 .btn-record {
+    margin-top: 15px !important; 
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    border-radius: 50px !important;
+    padding: 10px 24px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+#module-4563 .btn-join:hover {
+    background: #22c55e !important; 
+    border-color: #22c55e !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4) !important; 
+}
+
+#module-4563 .btn-record:hover {
+    background: #0984e3 !important; 
+    border-color: #0984e3 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(9, 132, 227, 0.4) !important; 
 }

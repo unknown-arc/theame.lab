@@ -15,8 +15,8 @@ h2:has(+ .subscribelink) {
 }
 
 /* 1. Squeeze the main content to 72% to make room on the right */
-#region-main {
+/* #region-main {
     position: relative !important;
-    padding-right: 28% !important; /* Creates an empty 28% column on the right */
+    padding-right: 28% !important; 
     min-height: 80vh !important;
-}
+} */

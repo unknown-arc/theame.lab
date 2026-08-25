@@ -52,27 +52,37 @@
     "home": [
       "themes/core/css/local/home/home.css",
       "themes/core/css/local/home/scroll_animation.css",
-      "themes/core/css/global/clean.css"
+      "themes/core/css/local/cleanup/h1.css"
     ],
     
     "dashboard": [
       "themes/core/css/local/dashboard/dashboard.css",
-      "themes/core/css/global/clean.css"
+      "themes/core/css/local/cleanup/h1.css"
     ],
 
     "mycourse": [
       "themes/core/css/local/my course/mycourse.css",
       "themes/core/css/local/my course/filterbarrs.css",
-      "themes/core/css/global/clean.css"
+      "themes/core/css/local/cleanup/h1.css"
     ],
 
     "course": [
       "themes/core/css/local/course/layout.css",
       "themes/core/css/local/course/content.css",
-      "themes/core/css/local/course/lectures.css"
+      "themes/core/css/local/course/lectures.css",
+      "themes/core/css/local/cleanup/3dots.css"
     ],
-    "participants": ["themes/core/css/local/participants.css"],
-    "competencies": [ "themes/core/css/local/competencies.css" ],
+    "participants": [ 
+      "themes/core/css/local/participants.css",
+      "themes/core/css/local/cleanup/3dots.css" 
+    ],
+    "competencies": [ 
+      "themes/core/css/local/competencies.css", 
+      "themes/core/css/local/cleanup/3dots.css" 
+    ],
+    "grades": [       
+      "themes/core/css/local/cleanup/3dots.css"
+    ],
 
     "quiz": [
       "themes/core/css/local/quiz/quiz.css"
@@ -85,11 +95,6 @@
     "calendar": [
       "themes/core/css/local/calendar/calendar.css"
     ],
-
-    "grades": [
-      "themes/core/css/local/grades/grades.css"
-    ],
-
     "profile": [
       "themes/core/css/local/profile/profile.css"
     ],

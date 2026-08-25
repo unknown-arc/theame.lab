@@ -1,14 +1,3 @@
-/* Fallback if Moodle uses a specific body class for dark mode */
-body.theme-dark {
-    --cg-text-color: #ffffff;
-    --cg-viewer-bg: rgba(20, 20, 25, 0.4);
-    --cg-viewer-border: rgba(255, 255, 255, 0.15);
-    --cg-card-bg: rgba(255, 255, 255, 0.05);
-    --cg-card-border: rgba(255, 255, 255, 0.1);
-    --cg-card-hover: rgba(255, 255, 255, 0.12);
-    --cg-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-}
-
 /* ==========================================================
    1. STRICT HIDING (KEEPS CONTENT OUT OF BASECARDS)
    ========================================================== */
@@ -76,9 +65,36 @@ body.theme-dark {
     transition: all 0.3s ease !important;
 }
 
+/* 1. Default hover color for any unmapped activity */
 #global-course-viewer .card-view-mode li.activity:hover {
-    background: var(--cg-card-hover) !important;
-    transform: translateY(-4px) !important;
+    background: #0984e3 !important; /* Default Blue */
+    border-color: #0984e3 !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 2. Exception: Forum (Announcements) -> Orange/Red to match icon */
+#global-course-viewer .card-view-mode li.activity.modtype_forum:hover {
+    background: #e74c3c !important; 
+    border-color: #e74c3c !important;
+}
+
+/* 3. Exception: Resources (Files/PDFs/Tables) -> Cyan/Blue to match icon */
+#global-course-viewer .card-view-mode li.activity.modtype_resource:hover {
+    background: #3498db !important; 
+    border-color: #3498db !important;
+}
+
+/* 4. Exception: Assignments/Submissions -> Green */
+#global-course-viewer .card-view-mode li.activity.modtype_assign:hover {
+    background: #2ecc71 !important; 
+    border-color: #2ecc71 !important;
+}
+
+/* 5. Exception: Quizzes -> Purple/Pink */
+#global-course-viewer .card-view-mode li.activity.modtype_quiz:hover {
+    background: #9b59b6 !important; 
+    border-color: #9b59b6 !important;
 }
 
 /* Strip Moodle's Specific Horizontal Layouts */
@@ -168,4 +184,49 @@ body.theme-dark {
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================
+   4. INNER CONTENT LAYOUT (THEME ADAPTED)
+   ========================================================== */
+
+/* --- REVERSE HOVER STATE --- */
+
+/* 1. Card fills with the dynamic theme color */
+.course-content li.section:hover {
+    background: var(--card-theme-color, #333) !important;
+    border-color: var(--card-theme-color, #333) !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important; 
+}
+
+/* 2. Card text turns white to contrast the colored background */
+.course-content li.section:hover .sectionname {
+    color: #ffffff !important;
+}
+
+/* 3. Icon inverts (White background, colored symbol) to stand out */
+.course-content li.section:hover .custom-grid-icon {
+    background: #ffffff !important; 
+    color: var(--card-theme-color, #0984e3) !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important; 
+    transform: scale(1.08) !important; 
+}
+
+/* 5.Style the "Done" completion buttons/badges */
+.course-content .btn-outline-success,
+.course-content .btn-success,
+.course-content .badge-success,
+.course-content [data-action="togglemanualcompletion"].btn-outline-success {
+    background-color: #2ecc71 !important; /* Green background */
+    color: #ffffff !important; /* White text */
+    border-color: #2ecc71 !important; /* Green border */
+}
+
+/* Ensure the checkmark icon inside becomes white */
+.course-content .btn-outline-success i,
+.course-content .btn-success i,
+.course-content .badge-success i {
+    color: #ffffff !important;
 }
