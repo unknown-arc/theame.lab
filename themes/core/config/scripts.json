@@ -1,6 +1,7 @@
 {
   "common": [
-    "themes/core/js/global/profile.js"
+    "themes/core/js/global/profile.js",
+    "themes/core/js/global/navbar.js"
   ],
 
   "pages": {
@@ -9,7 +10,8 @@
     "dashboard": [
       "themes/core/js/local/my_course.js",
       "themes/core/js/local/microsoft_block.js",
-      "themes/core/js/local/profilesfetcher.js"
+      "themes/core/js/local/profilesfetcher.js",
+      "themes/core/js/local/welcome.js"
     ],
 
     "mycourse": [ ],

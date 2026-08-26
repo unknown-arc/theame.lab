@@ -1,0 +1,239 @@
+/* ===================================================
+   COURSE OVERVIEW - CONSOLIDATED (CARD & LIST VIEW)
+   =================================================== */
+
+/* 1. CONTAINERS & HOVER STATES */
+/* Card View Base */
+.dashboard-card {
+    --sem-color: #636e72;
+    background-color: var(--card-bg) !important; 
+    box-shadow: var(--card-shadow) !important;
+    border-radius: 16px !important;
+    border: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease !important;
+    overflow: visible !important; 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.dashboard-card:hover { 
+    transform: translateY(-6px) !important; 
+    background-color: var(--card-bg-hover) !important; 
+    box-shadow: var(--card-shadow-hover) !important; 
+}
+
+/* List View Base */
+.course-listitem, .list-group-item.course-listitem {
+    --sem-color: #636e72;
+    background-color: var(--card-bg) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    margin-bottom: 12px !important;
+    box-shadow: var(--card-shadow) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease !important;
+    padding: 16px !important;
+}
+.course-listitem:hover, .list-group-item.course-listitem:hover {
+    background-color: var(--card-bg-hover) !important;
+    box-shadow: var(--card-shadow-hover) !important;
+    transform: translateX(6px) !important; /* Lists slide right instead of up */
+    z-index: 1 !important;
+}
+.list-group.course-list { background: transparent !important; border: none !important; }
+
+
+/* 2. UNIVERSAL COURSE ID COLORS (Applies to both) */
+[data-course-id$="0"] { --sem-color: #0984e3 !important; } 
+[data-course-id$="1"] { --sem-color: #00b894 !important; } 
+[data-course-id$="2"] { --sem-color: #6c5ce7 !important; } 
+[data-course-id$="3"] { --sem-color: #e17055 !important; } 
+[data-course-id$="4"] { --sem-color: #d63031 !important; } 
+[data-course-id$="5"] { --sem-color: #00cec9 !important; } 
+[data-course-id$="6"] { --sem-color: #fdcb6e !important; } 
+[data-course-id$="7"] { --sem-color: #e84393 !important; } 
+[data-course-id$="8"] { --sem-color: #ff9f43 !important; } 
+[data-course-id$="9"] { --sem-color: #8e44ad !important; } 
+
+
+/* 3. BASE IMAGE & PATTERNS */
+.dashboard-card-img, .course-listitem div[style*="background-image"], .course-listitem .courseimage {
+    background-color: var(--sem-color) !important;
+    background-blend-mode: soft-light !important;
+    background-size: cover !important;
+}
+.dashboard-card-img { border-top-left-radius: 16px !important; border-top-right-radius: 16px !important; }
+.course-listitem div[style*="background-image"], .course-listitem .courseimage { border-radius: 8px !important; }
+
+[data-course-id$="0"] .dashboard-card-img, [data-course-id$="6"] .dashboard-card-img,
+[data-course-id$="0"] .course-listitem div[style*="background-image"], [data-course-id$="6"] .course-listitem div[style*="background-image"] { background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.25) 10px, rgba(255,255,255,0.25) 20px) !important; }
+
+[data-course-id$="1"] .dashboard-card-img, [data-course-id$="7"] .dashboard-card-img,
+[data-course-id$="1"] .course-listitem div[style*="background-image"], [data-course-id$="7"] .course-listitem div[style*="background-image"] { background-image: radial-gradient(circle, rgba(255,255,255,0.3) 15%, transparent 15%) !important; background-size: 20px 20px !important; }
+
+[data-course-id$="2"] .dashboard-card-img, [data-course-id$="8"] .dashboard-card-img,
+[data-course-id$="2"] .course-listitem div[style*="background-image"], [data-course-id$="8"] .course-listitem div[style*="background-image"] { background-image: repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(0,0,0,0.15) 15px, rgba(0,0,0,0.15) 30px) !important; }
+
+[data-course-id$="3"] .dashboard-card-img, [data-course-id$="9"] .dashboard-card-img,
+[data-course-id$="3"] .course-listitem div[style*="background-image"], [data-course-id$="9"] .course-listitem div[style*="background-image"] { background-image: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255,255,255,0.2) 10px, rgba(255,255,255,0.2) 20px) !important; }
+
+[data-course-id$="4"] .dashboard-card-img, [data-course-id$="4"] .course-listitem div[style*="background-image"] { background-image: linear-gradient(rgba(255,255,255,0.2) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.2) 2px, transparent 2px) !important; background-size: 25px 25px !important; }
+
+[data-course-id$="5"] .dashboard-card-img, [data-course-id$="5"] .course-listitem div[style*="background-image"] { background-image: radial-gradient(circle at 100% 150%, rgba(255,255,255,0.2) 24%, transparent 25%) !important; background-size: 40px 40px !important; }
+
+
+/* 4. TYPOGRAPHY & BADGES */
+/* Titles */
+.dashboard-card .coursename, .dashboard-card .card-title a, .dashboard-card .coursename span,
+.course-listitem .coursename, .course-listitem .coursename a, .course-listitem .coursename span { 
+    color: var(--text-title) !important;
+    font-size: 16px !important; 
+    font-weight: 700 !important; 
+    text-decoration: none !important; 
+    line-height: 1.4 !important; 
+    transition: color 0.3s ease !important; 
+}
+
+/* Star Icon */
+.dashboard-card .fa-star, .course-listitem .fa-star, .course-listitem [data-region="star-icon"] i { color: #ffb142 !important; margin-right: 4px !important; }
+
+/* Subtext Catch-All */
+.dashboard-card p, .dashboard-card .text-muted,
+.course-listitem .text-muted, .course-listitem .categoryname, .course-listitem [class*="category"],
+.course-listitem [class*="text-"]:not(.coursename):not(.progress-bar), .course-listitem .coursename ~ div,
+.course-listitem p, .course-listitem small { 
+    color: var(--text-secondary) !important;
+    transition: color 0.3s ease !important; 
+    font-size: 12px !important; 
+    font-weight: 600 !important; 
+}
+
+/* Hover Typography Flip */
+.dashboard-card:hover .coursename, .dashboard-card:hover .card-title a, .dashboard-card:hover .coursename span,
+.course-listitem:hover .coursename, .course-listitem:hover .coursename a, .course-listitem:hover .coursename span { 
+    color: var(--text-title-hover) !important; 
+}
+.dashboard-card:hover p, .dashboard-card:hover .text-muted,
+.course-listitem:hover .text-muted, .course-listitem:hover .categoryname, .course-listitem:hover [class*="category"],
+.course-listitem:hover [class*="text-"]:not(.coursename):not(.progress-bar), .course-listitem:hover .coursename ~ div,
+.course-listitem:hover p, .course-listitem:hover small { 
+    color: var(--text-title-hover) !important; 
+}
+
+/* Category Badges */
+.dashboard-card .course-category, .course-listitem .course-category { 
+    background: var(--badge-bg) !important; 
+    color: var(--badge-text) !important; 
+    box-shadow: var(--badge-shadow) !important;
+    backdrop-filter: blur(4px) !important;
+    border-radius: 20px !important; 
+    padding: 6px 14px !important; 
+    font-size: 11px !important; 
+    font-weight: 700 !important; 
+    text-transform: uppercase !important; 
+    letter-spacing: 0.5px !important; 
+}
+
+
+/* 5. STRIP MOODLE'S HARDCODED BACKGROUNDS */
+.dashboard-card .card-body, .dashboard-card .card-footer, .dashboard-card > .d-flex { 
+    background-color: transparent !important; border: none !important;
+}
+
+
+/* 6. PROGRESS BAR */
+.dashboard-card .progress, .course-listitem .progress { 
+    background-color: var(--progress-track-bg) !important; 
+    box-shadow: var(--progress-track-shadow) !important;
+    height: 8px !important; 
+    border-radius: 10px !important; 
+    margin-top: 15px !important; 
+    transition: background-color 0.3s ease !important; 
+}
+.dashboard-card:hover .progress, .course-listitem:hover .progress { background-color: var(--progress-track-bg-hover) !important; }
+.dashboard-card .progress-bar, .course-listitem .progress-bar { background: var(--sem-color) !important; border-radius: 10px !important; }
+
+
+/* 7. MENUS & ICONS (THE 3-DOT FIX) */
+.dashboard-card:hover, .dashboard-card:has(.dropdown.show), .course-listitem:hover, .course-listitem:has(.dropdown.show) { z-index: 1 !important; }
+
+/* Menu Button */
+.dashboard-card .dropdown .btn, .course-listitem .dropdown .btn {
+    background: var(--menu-btn-bg) !important; 
+    color: var(--menu-btn-color) !important;
+    border-radius: 50% !important; 
+    width: 36px !important; 
+    height: 36px !important; 
+    padding: 0 !important; 
+    display: inline-flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
+    border: 1px solid transparent !important;
+}
+.dashboard-card .dropdown .btn:hover, .course-listitem .dropdown .btn:hover,
+.dashboard-card:hover .dropdown .btn, .course-listitem:hover .dropdown .btn { 
+    color: var(--menu-btn-color-hover) !important;
+}
+.dashboard-card .dropdown .btn:hover, .course-listitem .dropdown .btn:hover {
+    background: var(--menu-btn-bg-hover) !important; 
+    transform: translateY(-3px) !important; 
+}
+.dashboard-card .dropdown .btn:active, .course-listitem .dropdown .btn:active { transform: translateY(1px) !important; }
+.dashboard-card .dropdown .btn i, .course-listitem .dropdown .btn i, 
+.dashboard-card .dropdown .btn .icon, .course-listitem .dropdown .btn .icon { font-size: 16px !important; margin: 0 !important; }
+
+/* Dropdown Menu Structure */
+.dashboard-card .dropdown-menu, .course-listitem .dropdown-menu { 
+    background-color: var(--dropdown-bg) !important;
+    border: var(--dropdown-border) !important;
+    box-shadow: var(--dropdown-shadow) !important;
+    border-radius: 36px !important; 
+    padding: 8px !important; 
+    z-index: 1 !important; 
+    flex-direction: row !important; 
+    gap: 8px !important; 
+    min-width: max-content !important; 
+    right: 0 !important; 
+    left: auto !important; 
+    transform: translateY(35px) !important; 
+}
+.dashboard-card .dropdown-menu.show, .course-listitem .dropdown-menu.show { display: flex !important; }
+.dashboard-card .dropdown-item.hidden, .dashboard-card .dropdown-item.d-none,
+.course-listitem .dropdown-item.hidden, .course-listitem .dropdown-item.d-none { display: none !important; }
+
+/* Dropdown Items */
+.dashboard-card .dropdown-item, .course-listitem .dropdown-item { 
+    background-color: var(--dropdown-item-bg) !important;
+    display: flex !important; 
+    flex-direction: row-reverse !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    width: 36px !important; 
+    height: 36px !important; 
+    padding: 0 !important; 
+    border-radius: 36px !important; 
+    font-size: 0 !important; 
+    white-space: nowrap !important; 
+    overflow: hidden !important; 
+    transition: all 0.25s ease !important; 
+    color: transparent !important; 
+}
+.dashboard-card .dropdown-item i, .dashboard-card .dropdown-item .icon,
+.course-listitem .dropdown-item i, .course-listitem .dropdown-item .icon { display: none !important; }
+
+/* Dropdown Icon Content & Variables */
+.dashboard-card .dropdown-item:nth-child(1)::before, .course-listitem .dropdown-item:nth-child(1)::before { content: "\2605" !important; color: var(--dropdown-icon-1) !important; font-size: 16px !important; transition: margin 0.25s ease !important; }
+.dashboard-card .dropdown-item:nth-child(2)::before, .course-listitem .dropdown-item:nth-child(2)::before { content: "\2606" !important; color: var(--dropdown-icon-2) !important; font-size: 16px !important; transition: margin 0.25s ease !important; }
+.dashboard-card .dropdown-item:nth-child(3)::before, .course-listitem .dropdown-item:nth-child(3)::before { content: "\21BB" !important; color: var(--dropdown-icon-3) !important; font-size: 16px !important; transition: margin 0.25s ease !important; }
+.dashboard-card .dropdown-item:nth-child(4)::before, .course-listitem .dropdown-item:nth-child(4)::before { content: "\2298" !important; color: var(--dropdown-icon-4) !important; font-size: 16px !important; font-weight: bold !important; transition: margin 0.25s ease !important; }
+
+/* Dropdown Hover States */
+.dashboard-card .dropdown-item:hover, .course-listitem .dropdown-item:hover { width: auto !important; padding: 0 14px !important; font-size: 12px !important; }
+.dashboard-card .dropdown-item:hover::before, .course-listitem .dropdown-item:hover::before { margin-left: 6px !important; margin-right: 0 !important; }
+.dashboard-card .dropdown-item:hover, .dashboard-card .dropdown-item:hover::before,
+.course-listitem .dropdown-item:hover, .course-listitem .dropdown-item:hover::before { color: var(--dropdown-item-hover-color) !important; }
+
+.dashboard-card .dropdown-item:nth-child(1):hover, .course-listitem .dropdown-item:nth-child(1):hover { background-color: var(--dropdown-icon-1) !important; }
+.dashboard-card .dropdown-item:nth-child(2):hover, .dashboard-card .dropdown-item:nth-child(3):hover,
+.course-listitem .dropdown-item:nth-child(2):hover, .course-listitem .dropdown-item:nth-child(3):hover { background-color: var(--sem-color) !important; }
+.dashboard-card .dropdown-item:nth-child(4):hover, .course-listitem .dropdown-item:nth-child(4):hover { background-color: var(--dropdown-icon-4) !important; }

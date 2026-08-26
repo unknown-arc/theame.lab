@@ -2,21 +2,14 @@
    MY COURSES: SPLIT-CARD GRID LAYOUT (JS POWERED)
    =================================================== */
 
-/* 1. Grid Container Setup (Min 180px, Max 200px, Strictly 4 Columns) */
+/* 1. Grid Container Setup */
 .block_course_list .card-text {
     display: grid !important;
-    
-    /* Boxes will flexibly scale between 180px and 200px based on screen size */
     grid-template-columns: repeat(auto-fit, minmax(180px, 210px)) !important; 
-    
     gap: 16px !important; 
     padding: 0 !important;
     justify-content: center !important; 
-    
-    /* THE MATH: 848px is exactly 4 boxes at their maximum 200px size + the 3 gaps. 
-       This mathematically blocks a 5th box from ever joining the row. */
     max-width: 888px !important; 
-    
     margin: 24px auto 0 auto !important; 
 }
 
@@ -25,8 +18,10 @@
 .block_course_list .card-text ul.unlist li,
 .block_course_list .footer { display: block !important; margin: 0 !important; }
 
-/* 3. Uniform Card Styling */
+/* 3. Uniform Card Styling & Theme Application */
 .block_course_list .card-text a {
+    background-color: var(--mc-bg) !important;
+    color: var(--mc-text) !important;
     display: block !important;
     position: relative !important;
     width: 100% !important;
@@ -40,20 +35,19 @@
     font-size: 13px !important;
     line-height: 1.4 !important;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-    --course-glow: #0984e3; /* Fallback Color */
+    --course-glow: linear-gradient(135deg, #0984e3, #74b9ff); /* Base Fallback Gradient */
 }
 
 /* 4. Hide Default Moodle Icons */
 .block_course_list .card-text a .icon { display: none !important; }
 
-/* 5. The Top Half (Reads directly from JavaScript!) */
+/* 5. The Top Half (Reads data-course-code) */
 .block_course_list .card-text a::before {
-    content: attr(data-course-code) !important; /* MAGIC: CSS reads the JS attribute */
+    content: attr(data-course-code) !important; 
     position: absolute !important;
     top: 0 !important; left: 0 !important; right: 0 !important;
     height: 90px !important;
     background: var(--course-glow) !important;
-    
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -63,25 +57,27 @@
     letter-spacing: 2px !important;
 }
 
-/* 6. Base Hover Animation */
+/* 6. Base Hover Animation & Theme Flips */
 .block_course_list .card-text a:hover {
     transform: translateY(-5px) !important;
     border-color: transparent !important;
+    background-color: var(--mc-bg-hover) !important;
+    color: var(--mc-text-hover) !important;
+    box-shadow: var(--mc-shadow-hover) !important;
 }
 
 /* ===================================================
-   AUTOMATIC 8-COLOR REPEATING LOOP
-   Cycles through 8 colors for all courses, forever.
+   AUTOMATIC 8-GRADIENT REPEATING LOOP
    =================================================== */
 
-.block_course_list .card-text ul.unlist li:nth-child(8n + 1) a { --course-glow: #ff4757 !important; } 
-.block_course_list .card-text ul.unlist li:nth-child(8n + 2) a { --course-glow: #ffa502 !important; } 
-.block_course_list .card-text ul.unlist li:nth-child(8n + 3) a { --course-glow: #2ed573 !important; } 
-.block_course_list .card-text ul.unlist li:nth-child(8n + 4) a { --course-glow: #1e90ff !important; } 
-.block_course_list .card-text ul.unlist li:nth-child(8n + 5) a { --course-glow: #3742fa !important; } 
-.block_course_list .card-text ul.unlist li:nth-child(8n + 6) a { --course-glow: #ff7f50 !important; } 
-.block_course_list .card-text ul.unlist li:nth-child(8n + 7) a { --course-glow: #eccc68 !important; } 
-.block_course_list .card-text ul.unlist li:nth-child(8n + 0) a { --course-glow: #ff6b81 !important; } 
+.block_course_list .card-text ul.unlist li:nth-child(8n + 1) a { --course-glow: linear-gradient(135deg, #ff4757, #ff6b81) !important; } 
+.block_course_list .card-text ul.unlist li:nth-child(8n + 2) a { --course-glow: linear-gradient(135deg, #ffa502, #ffb142) !important; } 
+.block_course_list .card-text ul.unlist li:nth-child(8n + 3) a { --course-glow: linear-gradient(135deg, #2ed573, #7bed9f) !important; } 
+.block_course_list .card-text ul.unlist li:nth-child(8n + 4) a { --course-glow: linear-gradient(135deg, #1e90ff, #70a1ff) !important; } 
+.block_course_list .card-text ul.unlist li:nth-child(8n + 5) a { --course-glow: linear-gradient(135deg, #3742fa, #5352ed) !important; } 
+.block_course_list .card-text ul.unlist li:nth-child(8n + 6) a { --course-glow: linear-gradient(135deg, #ff7f50, #ff6348) !important; } 
+.block_course_list .card-text ul.unlist li:nth-child(8n + 7) a { --course-glow: linear-gradient(135deg, #eccc68, #f1c40f) !important; } 
+.block_course_list .card-text ul.unlist li:nth-child(8n + 0) a { --course-glow: linear-gradient(135deg, #ff6b81, #ff9ff3) !important; } 
 
 /* ===================================================
    SPECIAL BLOCKS: MOCK & ALL COURSES OVERRIDES
@@ -94,7 +90,7 @@
 }
 .block_course_list .card-text a[title*="Mock"],
 .block_course_list .card-text a[title*="MK"] { 
-    --course-glow: #ff3838 !important; 
+    --course-glow: linear-gradient(135deg, #ff3838, #c23616) !important; 
 }
 /* Font size override for the word "MOCK" to fit perfectly */
 .block_course_list .card-text a[title*="Mock"]::before,
@@ -109,6 +105,7 @@
     color: transparent !important; 
 }
 .block_course_list .footer a { 
-    --course-glow: #a4b0be !important; 
+    --course-glow: linear-gradient(135deg, #a4b0be, #ced6e0) !important; 
     text-align: center !important;
+    color: var(--mc-text) !important;
 }

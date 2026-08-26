@@ -14,13 +14,6 @@
     "themes/core/css/global/components/notifymsg.css",
     "themes/core/css/global/components/tables.css",
 
-
-    "themes/core/css/global/elements/course_overview.css",
-    "themes/core/css/global/elements/my_course.css",
-    "themes/core/css/global/elements/microsoft_block.css",
-    "themes/core/css/global/elements/calendar.css",
-    "themes/core/css/global/elements/online_users.css",
-
     "themes/core/css/global/style/typography.css",
 
     "themes/core/css/global/header/iitplogo.css",
@@ -28,14 +21,11 @@
     "themes/core/css/global/header/profiledropdown.css",
     "themes/core/css/global/header/sidenav.css",
     
+    "themes/core/css/global/course_overview.css",
     "themes/core/css/global/variables.css",
     "themes/core/css/global/page_transitions.css",
     "themes/core/css/global/base.css",    
-    "themes/core/css/profile/profiles.css",
-    
-    
-    "themes/core/css/backgrounds/CyberpunkNeon.css"
-
+    "themes/core/css/profile/profiles.css"
   ],
 
   "colors": {
@@ -49,6 +39,7 @@
   },
 
   "pages": {
+    
     "home": [
       "themes/core/css/local/home/home.css",
       "themes/core/css/local/home/scroll_animation.css",
@@ -56,8 +47,13 @@
     ],
     
     "dashboard": [
+      "themes/core/css/local/cleanup/h1.css",
       "themes/core/css/local/dashboard/dashboard.css",
-      "themes/core/css/local/cleanup/h1.css"
+      "themes/core/css/local/dashboard/welcome.css",      
+      "themes/core/css/local/dashboard/my_course.css",
+      "themes/core/css/local/dashboard/microsoft_block.css",
+      "themes/core/css/local/dashboard/calendar.css",
+      "themes/core/css/local/dashboard/online_users.css"
     ],
 
     "mycourse": [
@@ -102,12 +98,6 @@
     "messages": [
       "themes/core/css/local/messages/messages.css"
     ]
-  },
-
-  "localcripts": {
-        "mycourse": [
-            "themes/core/js/local/mycourse.js"
-        ]
   },
 
   "shared": {

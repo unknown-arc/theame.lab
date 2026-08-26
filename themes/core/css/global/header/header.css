@@ -75,6 +75,33 @@ nav.navbar.fixed-top .navbar-toggler-icon {
     height: 24px !important;
 }
 
+/* ==========================================================
+   Override Profile Menu Hover (Light Shade instead of Black)
+   ========================================================== */
+   
+nav.navbar.fixed-top .usermenu .btn:hover,
+nav.navbar.fixed-top .usermenu a.dropdown-toggle:hover {
+    background: rgb(255, 255, 255) !important; /* Light transparent shade */
+    color: var(--btn-text-default) !important; /* Stops the text/icon from turning white */
+    border-color: transparent !important;
+}
+
+/* Remove border and shadow in normal state */
+nav.navbar.fixed-top .usermenu .btn:not(:hover),
+nav.navbar.fixed-top .usermenu a.dropdown-toggle:not(:hover) {
+    border-color: transparent !important; 
+    box-shadow: none !important; 
+}
+/* Add smooth transition to the profile picture */
+nav.navbar.fixed-top .usermenu .userpicture {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* Enlarge the image when the profile button is hovered */
+nav.navbar.fixed-top .usermenu .btn:hover .userpicture,
+nav.navbar.fixed-top .usermenu a.dropdown-toggle:hover .userpicture {
+    transform: scale(1.15) !important;
+}
 
 /* ==========================================================
    Secondary Navigation (Sub-header) Styles

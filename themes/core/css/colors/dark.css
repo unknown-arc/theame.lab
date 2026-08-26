@@ -162,77 +162,67 @@
 
 }
 
+
+:root{ 
+    
+/* Dashboard */
+    /* Card Base & Hover */
+    --card-bg: #000000;
+    --card-bg-hover: #ffffff;
+    --card-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    --card-shadow-hover: 0 10px 25px rgba(255, 255, 255, 0.75);
+
+    /* Typography */
+    --text-title: #ffffff;
+    --text-title-hover: #000000;
+    --text-secondary: #747d8c;
+
+    /* Progress Bar */
+    --progress-track-bg: #2f3640;
+    --progress-track-bg-hover: rgba(0, 0, 0, 0.1);
+    --progress-track-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+
+    /* Category Badge */
+    --badge-bg: rgba(47, 54, 64, 0.9);
+    --badge-text: #f5f6fa;
+    --badge-shadow: 0 2px 8px rgba(0,0,0,0.4);
+
+    /* Course Menu Button */
+    --menu-btn-bg: rgba(255, 255, 255, 0.05);
+    --menu-btn-color: #a4b0be;
+    --menu-btn-bg-hover: rgba(0, 0, 0, 0.1);
+    --menu-btn-color-hover: #1e272e;
+
+    /* Dropdown Menu */
+    --dropdown-bg: #2f3640;
+    --dropdown-border: 1px solid rgba(255, 255, 255, 0.08);
+    --dropdown-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    
+    /* Dropdown Items */
+    --dropdown-item-bg: rgba(255, 255, 255, 0.08);
+    --dropdown-item-hover-color: #1e272e;
+    --dropdown-icon-1: #feca57;
+    --dropdown-icon-2: #dcdde1;
+    --dropdown-icon-3: #dcdde1;
+    --dropdown-icon-4: #ff7675;
+
+}
+
+/* ============================================================== 
+        LOCAL
+   ==============================================================*/
+ 
 :root {
 
-    /* Base Card State */
-    .dashboard-card { background-color: #000000 !important; box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
-
-    /* HOVER: Instantly flips the background color (Bottom half) */
-    .dashboard-card:hover { 
-        background-color: #ffffff !important; 
-        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.9) !important; 
-    }
-
-    /* Base Text Colors */
-    .dashboard-card .coursename, 
-    .dashboard-card .card-title a,
-    .dashboard-card .coursename span { 
-        color: #ffffff !important; /* Pure black title */
-    }
-
-    /* Secondary text (Progress text, etc.) */
-    .dashboard-card p, 
-    .dashboard-card .text-muted { 
-        color: #747d8c !important; 
-    }
-
-    /* HOVER: Flips all text to white */
-    .dashboard-card:hover .coursename, 
-    .dashboard-card:hover .card-title a,
-    .dashboard-card:hover .coursename span,
-    .dashboard-card:hover p, 
-    .dashboard-card:hover .text-muted { 
-        color: #000000 !important; 
-    }
-
-    /* Progress Bar Track */
-    .dashboard-card .progress { background-color: #2f3640 !important; box-shadow: inset 0 1px 2px rgba(0,0,0,0.3) !important; }
-    .dashboard-card:hover .progress { background-color: rgba(0, 0, 0, 0.1) !important; }
-    .dashboard-card .course-category { background: rgba(47, 54, 64, 0.9) !important; color: #f5f6fa !important; backdrop-filter: blur(4px) !important; box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important; }
-
-    /* Menus */
-    .dashboard-card .dropdown .btn.coursemenubtn, .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn { background: rgba(255, 255, 255, 0.05) !important; color: #a4b0be !important; }
-    .dashboard-card .dropdown .btn.coursemenubtn:hover, .dashboard-card .ml-auto.dropdown .btn-link.coursemenubtn:hover { background: rgba(0, 0, 0, 0.1) !important; color: #1e272e !important; }
-    .dashboard-card .dropdown-menu { background-color: #2f3640 !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; }
-    .dashboard-card .dropdown-item { background-color: rgba(255, 255, 255, 0.08) !important; }
-    .dashboard-card .dropdown-item:nth-child(1)::before { color: #feca57 !important; } 
-    .dashboard-card .dropdown-item:nth-child(2)::before { color: #dcdde1 !important; } 
-    .dashboard-card .dropdown-item:nth-child(3)::before { color: #dcdde1 !important; } 
-    .dashboard-card .dropdown-item:nth-child(4)::before { color: #ff7675 !important; } 
-    .dashboard-card .dropdown-item:nth-child(1):hover { background-color: #feca57 !important; }
-    .dashboard-card .dropdown-item:nth-child(2):hover, .dashboard-card .dropdown-item:nth-child(3):hover { background-color: var(--sem-color) !important; }
-    .dashboard-card .dropdown-item:nth-child(4):hover { background-color: #ff7675 !important; }
-    .dashboard-card .dropdown-item:hover, .dashboard-card .dropdown-item:hover::before { color: #1e272e !important; }
-
 /* My_Courses */
+ 
+    --mc-bg: #000000;
+    --mc-text: #ffffff;
+    --mc-bg-hover: #ffffff;
+    --mc-text-hover: #000000;
+    --mc-shadow-hover: 0 12px 25px rgba(255, 255, 255, 0.3);
 
-    /* Details Area (Bottom Half) Base Colors */
-    .block_course_list .card-text a {
-        background-color: #000000 !important;
-        color: #ffffff !important;
-    }
-
-    /* Hover State: Reverse Colors & Bright Glow */
-    .block_course_list .card-text a:hover {
-        background-color: #ffffff !important; /* Reverses to white background */
-        color: #000000 !important; /* Reverses to dark text */
-        box-shadow: 0 12px 25px rgba(255, 255, 255, 0.3) !important; /* Soft white glowing shadow */
-    }
-
-    /* Protect the Footer/All Courses text color on resting state */
-    .block_course_list .footer a {
-        color: #ffffff !important;
-    }
+/* ==============================================================*/ 
 
 /* Online Users */
 
@@ -245,15 +235,11 @@
     --onlineusercard-text-hover: #1e1e2e; /* Dark text on hover */
     --onlineusercard-avatar-bg: #ffffff; /* Locked to white */
     --onlineusercard-status-border: #ffffff; /* Locked to white to match avatar */
-}
 
-/* ============================================================== 
-        LOCAL
-   ==============================================================*/
- 
-:root {/* COURSE */
+/* ==============================================================*/ 
 
-/* Layout and Contents */    
+/* COURSE */    
+    /* Layout and Contents */    
     --cg-text-color: #ffffff;
     --cg-viewer-bg: rgba(20, 20, 25, 0.4);
     --cg-viewer-border: rgba(255, 255, 255, 0.15);
@@ -262,7 +248,7 @@
     --cg-card-hover: rgba(255, 255, 255, 0.12);
     --cg-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 
-/* Lecture Cards */
+    /* Lecture Cards */
     --lecture-card-text: #e2e8f0;
     --lecture-card-bg: rgba(255, 255, 255, 0.05);
     --lecture-card-border: rgba(255, 255, 255, 0.1);
