@@ -1,14 +1,15 @@
 /* ==========================================================
    1. MAIN WRAPPERS & FLATTENING
    ========================================================== */
-#global-course-viewer .card-view-mode li#module-4563 {
+/* Remove Moodle's default outer wrapper styles */
+#global-course-viewer .card-view-mode li.is-custom-schedule {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
 }
 
-#module-4563 .activity-item {
+li.is-custom-schedule .activity-item {
     background: var(--cg-card-bg) !important;
     border: 1px solid var(--cg-card-border) !important;
     border-radius: 16px !important;
@@ -16,23 +17,23 @@
     box-shadow: var(--cg-shadow) !important;
 }
 
-#module-4563 .no-overflow div,
-#module-4563 .description-inner {
+li.is-custom-schedule .no-overflow div,
+li.is-custom-schedule .description-inner {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
 }
 
 /* Hide Moodle's native content icons INSIDE the description only */
-#module-4563 .description-inner img,
-#module-4563 .description-inner .icon {
+li.is-custom-schedule .description-inner img,
+li.is-custom-schedule .description-inner .icon {
     display: none !important;
 }
 
 /* ==========================================================
    2. MAIN GRID & TYPOGRAPHY
    ========================================================== */
-#module-4563 .schedule-title {
+li.is-custom-schedule .schedule-title {
     text-align: center !important;
     width: 100% !important;
     margin-bottom: 25px !important;
@@ -40,7 +41,7 @@
     color: var(--cg-text-color) !important;
 }
 
-#module-4563 .schedule-note {
+li.is-custom-schedule .schedule-note {
     text-align: center !important;
     margin-top: 25px !important;
     font-size: 13px !important;
@@ -48,9 +49,8 @@
     opacity: 0.8 !important;
 }
 
-#module-4563 .custom-schedule-grid {
+li.is-custom-schedule .custom-schedule-grid {
     display: grid !important;
-    /* Increased minimum width to 360px to accommodate the horizontal split layout */
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)) !important;
     gap: 20px !important;
     width: 100% !important;
@@ -59,11 +59,11 @@
 /* ==========================================================
    3. HORIZONTAL CARD STRUCTURE (Left Text / Right SVG)
    ========================================================== */
-#module-4563 .schedule-card {
+li.is-custom-schedule .schedule-card {
     border-radius: 16px !important;
     padding: 25px !important;
     display: flex !important;
-    flex-direction: row !important; /* Forces left and right alignment */
+    flex-direction: row !important; 
     align-items: center !important;
     justify-content: space-between !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -73,21 +73,22 @@
     min-height: 200px !important; 
 }
 
-#module-4563 .schedule-card:hover {
+li.is-custom-schedule .schedule-card:hover {
     transform: translateY(-5px) !important;
     box-shadow: 0 15px 35px rgba(0,0,0,0.25) !important;
 }
 
 /* LEFT SIDE: Text and Buttons */
-#module-4563 .card-left {
+li.is-custom-schedule .card-left {
     flex: 1 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    align-self: stretch !important; /* Pushes the button perfectly to the bottom */
 }
 
 /* RIGHT SIDE: Visual SVG Area */
-#module-4563 .card-right {
+li.is-custom-schedule .card-right {
     flex-shrink: 0 !important;
     width: 90px !important;
     height: 90px !important;
@@ -97,27 +98,27 @@
     justify-content: center !important;
 }
 
-#module-4563 .card-right svg {
+li.is-custom-schedule .card-right svg {
     width: 100% !important;
     height: 100% !important;
-    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2)); /* Gives the SVGs a nice 3D pop */
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.2)); 
 }
 
 /* Typography Overrides */
-#module-4563 .schedule-card h3 {
+li.is-custom-schedule .schedule-card h3 {
     color: #ffffff !important;
     font-size: 18px !important;
     margin: 0 0 10px 0 !important;
     font-weight: 700 !important;
 }
 
-#module-4563 .schedule-card p {
+li.is-custom-schedule .schedule-card p {
     color: rgba(255, 255, 255, 0.95) !important;
     font-size: 14px !important;
     margin: 4px 0 !important;
 }
 
-#module-4563 .schedule-card .day-badge {
+li.is-custom-schedule .schedule-card .day-badge {
     display: inline-block !important;
     background: rgba(0, 0, 0, 0.25) !important;
     padding: 4px 12px !important;
@@ -130,24 +131,17 @@
 /* ==========================================================
    4. CARD THEMED BACKGROUNDS
    ========================================================== */
-/* Morning: Soft Blue Sky */
-#module-4563 .time-morning { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important; }
-
-/* Afternoon: Bright Solid Blue/Cyan */
-#module-4563 .time-afternoon { background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important; }
-
-/* Evening: Deep Night Purple/Blue */
-#module-4563 .time-evening { background: linear-gradient(135deg, #301847 0%, #171c4c 100%) !important; }
-
-/* Recordings: Dark Studio Slate */
-#module-4563 .tool-recordings { background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%) !important; }
+li.is-custom-schedule .time-morning { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important; }
+li.is-custom-schedule .time-afternoon { background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important; }
+li.is-custom-schedule .time-evening { background: linear-gradient(135deg, #301847 0%, #171c4c 100%) !important; }
+li.is-custom-schedule .tool-recordings { background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%) !important; }
 
 /* ==========================================================
-   5. BUTTONS
+   5. BUTTONS (Bottom Aligned + Slide-in Hover Icon)
    ========================================================== */
-#module-4563 .btn-join,
-#module-4563 .btn-record {
-    margin-top: 15px !important; 
+li.is-custom-schedule .btn-join,
+li.is-custom-schedule .btn-record {
+    margin-top: auto !important; 
     background: rgba(255, 255, 255, 0.15) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
@@ -158,19 +152,61 @@
     font-size: 14px !important;
     border-radius: 50px !important;
     padding: 10px 24px !important;
-    text-align: center !important;
     text-decoration: none !important;
+    
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
-#module-4563 .btn-join:hover {
-    background: #22c55e !important; 
-    border-color: #22c55e !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4) !important; 
+/* Creates a guaranteed gap between the last line of text and the bottom-aligned button */
+li.is-custom-schedule .card-left p:last-of-type {
+    margin-bottom: 25px !important;
 }
 
-#module-4563 .btn-record:hover {
+/* THE SVG ICON (Hidden by default) */
+li.is-custom-schedule .btn-join::after,
+li.is-custom-schedule .btn-record::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 16px;
+    background-color: #ffffff; 
+    
+    /* SVG Mask */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E"); 
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    opacity: 0;
+    margin-left: 0;
+}
+
+/* SHOW ICON ON HOVER */
+li.is-custom-schedule .btn-join:hover::after,
+li.is-custom-schedule .btn-record:hover::after {
+    width: 16px;
+    opacity: 1;
+    margin-left: 8px; 
+}
+
+/* NEW VIBRANT GREEN HOVER FOR JOIN */
+li.is-custom-schedule .btn-join:hover {
+    background: #00d26a !important; 
+    border-color: #00d26a !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0, 210, 106, 0.4) !important; 
+}
+
+/* BLUE HOVER FOR RECORD */
+li.is-custom-schedule .btn-record:hover {
     background: #0984e3 !important; 
     border-color: #0984e3 !important;
     transform: translateY(-3px) !important;
