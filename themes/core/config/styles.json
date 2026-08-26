@@ -22,10 +22,8 @@
     "themes/core/css/global/header/sidenav.css",
     
     "themes/core/css/global/course_overview.css",
-    "themes/core/css/global/variables.css",
     "themes/core/css/global/page_transitions.css",
-    "themes/core/css/global/base.css",    
-    "themes/core/css/profile/profiles.css"
+    "themes/core/css/global/base.css"
   ],
 
   "colors": {
@@ -58,7 +56,6 @@
 
     "mycourse": [
       "themes/core/css/local/my course/mycourse.css",
-      "themes/core/css/local/my course/filterbarrs.css",
       "themes/core/css/local/cleanup/h1.css"
     ],
 
