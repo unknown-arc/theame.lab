@@ -1,0 +1,191 @@
+/* ==========================================================
+   2. GRID CONTAINER
+   ========================================================== */
+.block_timeline [data-region="event-list-content"] .list-group {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)) !important;
+    gap: 24px !important;
+    padding: 15px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    width: 100% !important;
+}
+
+/* ==========================================================
+   3. SHATTER MOODLE'S HORIZONTAL FLEXBOX
+   ========================================================== */
+.block_timeline .timeline-event-list-item > div,
+.block_timeline .timeline-event-list-item .d-flex.flex-wrap,
+.block_timeline .timeline-event-list-item .timeline-name,
+.block_timeline .timeline-event-list-item .event-name-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* ==========================================================
+   4. BASE CARD STYLING
+   ========================================================== */
+.block_timeline .timeline-event-list-item {
+    position: relative !important; 
+    box-sizing: border-box !important; 
+    overflow: hidden !important; 
+    
+    background: var(--timeline-card-bg) !important; 
+    border: 1px solid var(--timeline-card-border) !important;
+    box-shadow: var(--timeline-card-shadow) !important; 
+    border-radius: 16px !important;
+    
+    padding: 55px 25px 25px 25px !important; 
+    
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    transition: all 0.3s ease !important;
+    min-height: 260px !important; 
+    width: 100% !important;
+}
+
+.block_timeline .timeline-event-list-item .border-bottom {
+    display: none !important;
+}
+
+/* ==========================================================
+   5. TIME BADGE
+   ========================================================== */
+.block_timeline .timeline-event-list-item small.text-right {
+    position: absolute !important;
+    top: 15px !important;
+    left: 15px !important;
+    
+    background: var(--timeline-card-bg) !important; 
+    color: var(--timeline-text-main) !important;
+    border-radius: 20px !important; 
+    padding: 5px 14px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    
+    border: none !important;
+    width: auto !important;
+    display: inline-block !important;
+    z-index: 5 !important;
+}
+
+body.theme-dark .block_timeline .timeline-event-list-item small.text-right, 
+[data-bs-theme="dark"] .block_timeline .timeline-event-list-item small.text-right {
+    background: #2d2d2d !important;
+    color: #ffffff !important;
+}
+
+/* ==========================================================
+   6. ICON ALIGNMENT & HOVER FIX
+   ========================================================== */
+/* Keeps the icon perfectly centered with space below it */
+.block_timeline .timeline-event-list-item .activityiconcontainer {
+    margin: 0 auto 20px auto !important; 
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Base state for smooth transition */
+.block_timeline .timeline-event-list-item .activityiconcontainer img {
+    transition: filter 0.3s ease !important;
+}
+
+/* Turns the white icon completely black on hover */
+.block_timeline .timeline-event-list-item:hover .activityiconcontainer img {
+    filter: brightness(0) !important; 
+}
+
+/* ==========================================================
+   7. HEADINGS & SUB-HEADINGS
+   ========================================================== */
+.block_timeline .timeline-event-list-item h6.event-name {
+    text-align: center !important;
+    white-space: normal !important; 
+    word-break: break-word !important; 
+    width: 100% !important;
+    font-size: 16px !important;
+    font-weight: 800 !important; 
+    margin-bottom: 12px !important; 
+    padding: 0 !important;
+}
+
+.block_timeline .timeline-event-list-item h6.event-name a {
+    color: var(--timeline-text-main) !important; 
+    text-decoration: none !important;
+}
+
+.block_timeline .timeline-event-list-item .event-name-container small.mb-0 {
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    color: var(--timeline-text-muted) !important;
+    display: block !important;
+    width: 100% !important;
+    font-size: 13px !important;
+    margin-bottom: 25px !important; 
+}
+
+/* ==========================================================
+   8. HOVER STATES
+   ========================================================== */
+.block_timeline .timeline-event-list-item:hover {
+    background: #ED5792 !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important; 
+}
+
+.block_timeline .timeline-event-list-item:hover h6.event-name a,
+.block_timeline .timeline-event-list-item:hover .event-name-container small.mb-0 {
+    color: #ffffff !important;
+}
+
+.block_timeline .timeline-event-list-item:hover .activityiconcontainer {
+    background: #ffffff !important; 
+    border-color: #ffffff !important;
+    transform: scale(1.08) !important; 
+}
+
+/* ==========================================================
+   9. ACTION BUTTON (Integration with global button.css)
+   ========================================================== */
+/* Wrappers are strictly configured to center content */
+.block_timeline .timeline-event-list-item .timeline-action-button {
+    margin-top: auto !important; 
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important; 
+}
+
+.block_timeline .timeline-event-list-item h6.event-action {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Force the button to the absolute center-bottom of the card */
+.block_timeline .timeline-event-list-item a.btn {
+    font-weight: 800 !important; 
+    color: var(--timeline-text-main) !important;
+}
+
+.block_timeline .timeline-event-list-item a.btn:hover {
+    color: var(--timeline-text-hover) !important; /* White text on hover */
+    font-weight: 800 !important; /* Keeps it bold */
+}
+
+

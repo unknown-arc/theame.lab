@@ -238,6 +238,16 @@
 
 /* ==============================================================*/ 
 
+/* Timeline */
+    --timeline-card-bg: rgba(30, 30, 30, 0.6);
+    --timeline-card-border: rgba(255, 255, 255, 0.1);
+    --timeline-card-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    --timeline-text-main: #ffffff;
+    --timeline-text-hover: #000000; 
+    --timeline-text-muted: #adb5bd;
+    --timeline-icon-bg: rgba(255, 255, 255, 0.05);    
+
+/* ==============================================================*/ 
 /* COURSE */    
     /* Layout and Contents */    
     --cg-text-color: #ffffff;

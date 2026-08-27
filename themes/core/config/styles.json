@@ -51,7 +51,8 @@
       "themes/core/css/local/dashboard/my_course.css",
       "themes/core/css/local/dashboard/microsoft_block.css",
       "themes/core/css/local/dashboard/calendar.css",
-      "themes/core/css/local/dashboard/online_users.css"
+      "themes/core/css/local/dashboard/online_users.css",
+      "themes/core/css/local/dashboard/timeline.css"
     ],
 
     "mycourse": [

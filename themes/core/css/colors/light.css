@@ -242,6 +242,17 @@
 
 /* ==============================================================*/ 
 
+/* Timeline */
+    --timeline-card-bg: rgba(255, 255, 255, 0.75);
+    --timeline-card-border: rgba(0, 0, 0, 0.1);
+    --timeline-card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --timeline-text-main: #000000;
+    --timeline-text-hover: #ffffff;
+    --timeline-text-muted: #6c757d;
+    --timeline-icon-bg: rgba(0, 0, 0, 0.04);
+
+/* ==============================================================*/ 
+
 /* COURSE */   
     /* Layput and Contents */
     --cg-text-color: #000000;

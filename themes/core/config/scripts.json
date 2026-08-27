@@ -1,7 +1,6 @@
 {
   "common": [
-    "themes/core/js/global/profile.js",
-    "themes/core/js/global/navbar.js"
+    "themes/core/js/global/profile.js"
   ],
 
   "pages": {
