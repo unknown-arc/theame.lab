@@ -140,7 +140,7 @@ body.theme-dark .block_timeline .timeline-event-list-item small.text-right,
 .block_timeline .timeline-event-list-item:hover {
     background: #ED5792 !important;
     transform: translateY(-5px) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important; 
+    box-shadow: 0 10px 25px rgba(237, 87, 146, 0.5) !important; 
 }
 
 .block_timeline .timeline-event-list-item:hover h6.event-name a,
@@ -181,11 +181,15 @@ body.theme-dark .block_timeline .timeline-event-list-item small.text-right,
 .block_timeline .timeline-event-list-item a.btn {
     font-weight: 800 !important; 
     color: var(--timeline-text-main) !important;
+    box-shadow: var(--btn-shadow-default) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
 .block_timeline .timeline-event-list-item a.btn:hover {
-    color: var(--timeline-text-hover) !important; /* White text on hover */
-    font-weight: 800 !important; /* Keeps it bold */
+    color: var(--timeline-text-hover) !important; 
+    font-weight: 800 !important;       
+    transform: translateY(-3px) !important;
+    box-shadow: var(--btn-shadow-hover) !important;
 }
 
 
