@@ -5,7 +5,9 @@
 
     "themes/core/css/global/components/buttons.css",
     "themes/core/css/global/components/navbuttons.css",
-    "themes/core/css/global/components/cards2.css",
+    "themes/core/css/global/components/cards.css",
+    "themes/core/css/global/components/cardsoth.css",
+    "themes/core/css/global/components/inputform.css",
     "themes/core/css/global/components/description.css",
     "themes/core/css/global/components/dropdown.css",
     "themes/core/css/global/components/searchbar.css",
@@ -15,7 +17,6 @@
     "themes/core/css/global/components/tables.css",
 
     "themes/core/css/global/style/typography.css",
-
     "themes/core/css/global/header/iitplogo.css",
     "themes/core/css/global/header/header.css",
     "themes/core/css/global/header/profiledropdown.css",

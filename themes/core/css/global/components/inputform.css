@@ -1,0 +1,143 @@
+/* ==========================================================
+   1. STANDARD FORM INPUT BOXES (NO DROPDOWNS)
+   ========================================================== */
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    background-color: var(--input-bg) !important; 
+    border: 1px solid var(--input-border) !important; 
+    color: var(--input-text) !important; 
+    border-radius: 10px !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.form-control:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    background-color: var(--input-focus-bg) !important;
+    border-color: var(--input-focus-border) !important; 
+    box-shadow: 0 0 0 0.2rem var(--input-focus-shadow) !important;
+    color: var(--input-text) !important;
+    outline: none !important;
+}
+
+/* ==========================================================
+   2. RICH TEXT EDITOR & TOOLBAR BUTTONS
+   ========================================================== */
+/* Main Toolbar Container */
+.editor_atto_toolbar,
+.tox-toolbar,
+.tox-toolbar__primary {
+    display: flex !important;
+    flex-wrap: wrap !important; 
+    align-items: center !important;
+    gap: 6px !important; 
+    padding: 0 0 5px 0 !important;
+    margin-bottom: 12px !important; /* Adds space between buttons and input area */
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Destroy Moodle's group wrappers for perfect spacing */
+.editor_atto_toolbar .atto_group,
+.tox-toolbar__group {
+    display: contents !important; 
+}
+
+/* Wrapper background fixes */
+.editor_atto_content_wrap,
+.tox-tinymce,
+.tox-edit-area,
+div[data-fieldtype="editor"] > div {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Square Toolbar Buttons */
+.editor_atto_toolbar button,
+.tox .tox-tbtn,
+.tox .tox-mbtn {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: 6px !important;
+    color: var(--input-text) !important;
+    margin: 0 !important; 
+    padding: 6px 8px !important; 
+    min-width: 36px !important; 
+    min-height: 36px !important; 
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* THE TYPING AREA: Ensures it matches the theme and has proper spacing */
+.editor_atto_content,
+.tox-edit-area__iframe {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: 10px !important;
+    color: var(--input-text) !important;
+    padding: 12px !important;
+    min-height: 200px !important;
+    margin-bottom: 12px !important; /* Adds space between input area and info message */
+}
+
+/* ==========================================================
+   3. INFO ALERT BOX FIX (Draft Restored)
+   ========================================================== */
+/* Strip styles from the outer wrapper to prevent double borders */
+.editor_atto_notification {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-top: 12px !important; /* Extra breathing room above the alert */
+}
+
+/* Apply the border and background ONLY to the inner alert box */
+.editor_atto_notification .atto_info {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    color: var(--input-text) !important;
+    box-shadow: none !important;
+    border-radius: 10px !important;
+    padding: 10px 15px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important; /* Spaces the icon nicely away from the text */
+}
+
+/* Force text inside the info box to match the theme */
+.editor_atto_notification .atto_info,
+.editor_atto_notification .atto_info * {
+    color: var(--input-text) !important;
+}
+
+/* ==========================================================
+   4. ICON VISIBILITY FIX 
+   ========================================================== */
+/* Ensures SVGs use the correct theme text color */
+.tox .tox-tbtn svg {
+    fill: var(--input-text) !important;
+}
+
+/* DARK MODE ONLY: Invert the 'i' icon and editor icons to pure white */
+body.theme-dark .editor_atto_toolbar button img.icon,
+[data-bs-theme="dark"] .editor_atto_toolbar button img.icon,
+body.theme-dark .editor_atto_notification img,
+[data-bs-theme="dark"] .editor_atto_notification img {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* LIGHT MODE ONLY: Force the 'i' icon and editor icons to be solid black */
+body:not(.theme-dark) .editor_atto_toolbar button img.icon,
+[data-bs-theme="light"] .editor_atto_toolbar button img.icon,
+body:not(.theme-dark) .editor_atto_notification img,
+[data-bs-theme="light"] .editor_atto_notification img {
+    filter: brightness(0) !important;
+}

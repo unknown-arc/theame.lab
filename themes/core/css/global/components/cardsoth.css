@@ -1,0 +1,31 @@
+/* 2. Apply the solid color to the popup wrapper */
+.modal-content {
+    background-color: var(--modal-solid-bg) !important; 
+    border-radius: 20px !important; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important; 
+    border: 1px solid var(--modal-solid-border) !important;
+    
+    /* Explicitly remove any glass/blur effects */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* 3. Force EVERYTHING inside the modal to be transparent */
+.modal-header,
+.modal-body,
+.modal-footer,
+.modal-content .list-group,
+.modal-content .list-group-item {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* 4. Clean up the dividers */
+.modal-header {
+    border-bottom: 1px solid var(--modal-solid-border) !important;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--modal-solid-border) !important;
+    border-bottom: none !important;
+}

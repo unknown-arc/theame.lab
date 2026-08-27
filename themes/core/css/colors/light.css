@@ -99,6 +99,22 @@
     --card-glass-border: rgba(255, 255, 255, 0.5);
     --list-divider: rgba(255, 255, 255, 0.2);
 
+/* ==============================================================*/    
+
+    --modal-solid-bg: #ffffff; /* Change this to whatever solid color you want */
+    --modal-solid-border: #e0e0e0; /* Change this to your preferred border color */
+
+/* ==============================================================*/    
+    
+/* Input Forms */
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
+    --input-text: #000000;
+    --input-focus-bg: #f8f9fa;
+    --input-focus-border: #333333;
+    --input-focus-shadow: rgba(0, 0, 0, 0.1);
+
+
 /* ==============================================================*/ 
 
 /* Description */
