@@ -1,0 +1,87 @@
+/* 1. Tighter Grid to Eliminate Spaces */
+.block_tags .tag_cloud .inline-list {
+    display: grid !important;
+    /* Smaller 4px grid cells allow the algorithm to fit circles into tighter gaps */
+    grid-template-columns: repeat(auto-fill, 4px) !important;
+    grid-auto-rows: 4px !important;
+    gap: 2px !important; /* Tighter spacing between circles */
+    grid-auto-flow: dense !important; 
+    justify-content: center !important;
+    padding: 10px 0 !important;
+}
+
+.block_tags .tag_cloud .inline-list li {
+    display: contents !important; 
+}
+
+/* 2. Base Styling & Ambient Glow */
+.block_tags .tag_cloud .inline-list li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    line-height: 1.15 !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important; 
+    overflow: hidden !important; 
+    width: 100% !important;
+    height: 100% !important;
+    font-weight: 600 !important;
+    
+    /* Subtle ambient glow for all circles */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+/* 3. Improved Hover - Glowing Ring & Brightness (Less Expansion) */
+.block_tags .tag_cloud .inline-list li a:hover {
+    /* Smaller scale prevents it from heavily overlapping neighbors */
+    transform: scale(1.08) !important; 
+    z-index: 10 !important;
+    position: relative !important;
+    
+    /* Adds a glowing outline to easily identify the hovered tag */
+    outline: 2px solid #ffffff !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6) !important;
+    filter: brightness(1.2) !important;
+}
+
+/* 4. Resized Spans (Mathematically adjusted for the new 4px grid) */
+.block_tags .s0, .block_tags .s1, .block_tags .s2 {
+    grid-column: span 11 !important; grid-row: span 11 !important; font-size: 10px !important;
+}
+.block_tags .s3, .block_tags .s4, .block_tags .s5 {
+    grid-column: span 14 !important; grid-row: span 14 !important; font-size: 11px !important;
+}
+.block_tags .s6, .block_tags .s7, .block_tags .s8 {
+    grid-column: span 17 !important; grid-row: span 17 !important; font-size: 13px !important;
+}
+.block_tags .s9, .block_tags .s10, .block_tags .s11 {
+    grid-column: span 20 !important; grid-row: span 20 !important; font-size: 15px !important;
+}
+.block_tags .s12, .block_tags .s13, .block_tags .s14 {
+    grid-column: span 23 !important; grid-row: span 23 !important; font-size: 17px !important;
+}
+.block_tags .s15, .block_tags .s16, .block_tags .s17 {
+    grid-column: span 26 !important; grid-row: span 26 !important; font-size: 19px !important;
+}
+.block_tags .s18, .block_tags .s19, .block_tags .s20 {
+    grid-column: span 31 !important; grid-row: span 31 !important; font-size: 22px !important;
+}
+
+/* 5. 10 Vibrant Gradient Colors */
+.block_tags .inline-list li:nth-child(10n+1) a { background: linear-gradient(135deg, #ff416c, #ff4b2b) !important; } /* Orange-Red */
+.block_tags .inline-list li:nth-child(10n+2) a { background: linear-gradient(135deg, #2193b0, #6dd5ed) !important; } /* Blue-Cyan */
+.block_tags .inline-list li:nth-child(10n+3) a { background: linear-gradient(135deg, #b224ef, #7579ff) !important; } /* Purple */
+.block_tags .inline-list li:nth-child(10n+4) a { background: linear-gradient(135deg, #f7971e, #ffd200) !important; color: #111 !important; } /* Yellow */
+.block_tags .inline-list li:nth-child(10n+5) a { background: linear-gradient(135deg, #11998e, #38ef7d) !important; color: #111 !important; } /* Green */
+.block_tags .inline-list li:nth-child(10n+6) a { background: linear-gradient(135deg, #ff758c, #ff7eb3) !important; } /* Pink */
+.block_tags .inline-list li:nth-child(10n+7) a { background: linear-gradient(135deg, #4facfe, #00f2fe) !important; color: #111 !important; } /* Bright Blue */
+.block_tags .inline-list li:nth-child(10n+8) a { background: linear-gradient(135deg, #cc2b5e, #753a88) !important; } /* Magenta */
+.block_tags .inline-list li:nth-child(10n+9) a { background: linear-gradient(135deg, #00b09b, #96c93d) !important; color: #111 !important; } /* Lime */
+.block_tags .inline-list li:nth-child(10n+10) a { background: linear-gradient(135deg, #8A2387, #E94057) !important; } /* Sunset */

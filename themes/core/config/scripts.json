@@ -10,7 +10,8 @@
       "themes/core/js/local/my_course.js",
       "themes/core/js/local/microsoft_block.js",
       "themes/core/js/local/profilesfetcher.js",
-      "themes/core/js/local/welcome.js"
+      "themes/core/js/local/welcome.js",
+      "themes/core/js/local/tags.js"
     ],
 
     "mycourse": [ ],

@@ -3,7 +3,7 @@
 :root {
     --bg-base: #f5f5f7;
     --bg-surface: #ffffff;
-    --bg-nav: rgba(255, 255, 255, 0.75);
+    --bg-nav: rgba(255, 255, 255, 0.75):
     --text-primary: #1d1d1f;
     --text-secondary: #515154;
     --border-color: rgba(0, 0, 0, 0.08);
@@ -163,6 +163,12 @@
     --toggle-knob-on: #ffffff;
 
 /* ==============================================================*/    
+
+/* Tags */
+    --tag-bg: #f3f3f3;
+    --tag-text: #000000;
+
+/* ==============================================================*/  
 
 /* Notification Message */
     --toast-bg: rgba(255, 255, 255, 0.95);
