@@ -74,7 +74,7 @@
     border: none !important;
     width: auto !important;
     display: inline-block !important;
-    z-index: 5 !important;
+    z-index: 0 !important;
 }
 
 body.theme-dark .block_timeline .timeline-event-list-item small.text-right, 

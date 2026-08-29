@@ -1,0 +1,140 @@
+/* =========================================
+   1. The Drawer Close Button (Solid Red Hover, No Circle)
+   ========================================= */
+.drawerheader .btn:hover,
+.drawerheader button:hover,
+button[data-action="closedrawer"]:hover {
+    background-color: #dc3545 !important; /* Solid red background */
+    border-radius: 8px !important; /* Matches your other cards instead of a full circle */
+    transition: all 0.2s ease !important;
+}
+
+.drawerheader .btn:hover i,
+.drawerheader button:hover i,
+button[data-action="closedrawer"]:hover i {
+    color: #ffffff !important; /* White X for high contrast against the red */
+}
+
+/* =========================================
+   2. Remove List Formatting & Create Grid 
+   ========================================= */
+.calendar_filters ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 15px !important;
+}
+
+.calendar_filters li {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+
+/* =========================================
+   3. Upgraded Card Styling (Gradient Glassmorphism)
+   ========================================= */
+.calendar_filters li a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 16px 12px !important;
+    border-radius: 16px !important;
+    
+    /* New: Diagonal glass gradient for a much richer look */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important; /* Gives a glossy top edge */
+    
+    color: var(--calendar-text-primary, #fff) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important; /* Deeper shadow */
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* =========================================
+   4. Style the Icon Container as a Circular Badge
+   ========================================= */
+.calendar_filters li a span[class^="calendar_event_"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    margin-bottom: 12px !important;
+    font-size: 1.2rem !important;
+    transition: transform 0.3s ease !important;
+}
+
+.calendar_filters li a .icon {
+    margin: 0 !important;
+}
+
+/* 5. Hide Moodle's Empty Spacer */
+.calendar_filters li a > span:nth-child(2) {
+    display: none !important;
+}
+
+/* =========================================
+   6. Custom Icons Fix (Forces rendering)
+   ========================================= */
+/* This specific rule forces FontAwesome to load the solid version of the icons so they don't appear as blank boxes */
+.calendar_filters li a .icon::before {
+    font-family: 'FontAwesome', 'Font Awesome 5 Free', 'Font Awesome 6 Free' !important;
+    font-weight: 900 !important; 
+}
+
+.calendar_filters li a .calendar_event_site i::before { content: "\f0ac" !important; } /* Globe */
+.calendar_filters li a .calendar_event_category i::before { content: "\f07b" !important; } /* Folder */
+.calendar_filters li a .calendar_event_course i::before { content: "\f19d" !important; } /* Graduation Cap */
+.calendar_filters li a .calendar_event_group i::before { content: "\f0c0" !important; } /* Users */
+.calendar_filters li a .calendar_event_user i::before { content: "\f007" !important; } /* Single User */
+.calendar_filters li a .calendar_event_other i::before { content: "\f02b" !important; } /* Tag */
+
+/* =========================================
+   7. Color Coding & Hover Effects
+   ========================================= */
+
+/* SITE - Green */
+.calendar_filters li a:has(.calendar_event_site) { border-color: rgba(46, 204, 113, 0.2) !important; }
+.calendar_filters li a .calendar_event_site { background: rgba(46, 204, 113, 0.15) !important; color: #2ecc71 !important; }
+.calendar_filters li a:has(.calendar_event_site):hover { background: rgba(46, 204, 113, 0.08) !important; border-color: rgba(46, 204, 113, 0.5) !important; transform: translateY(-3px) !important; box-shadow: 0 8px 20px rgba(46, 204, 113, 0.15) !important; }
+
+/* CATEGORY - Purple */
+.calendar_filters li a:has(.calendar_event_category) { border-color: rgba(155, 89, 182, 0.2) !important; }
+.calendar_filters li a .calendar_event_category { background: rgba(155, 89, 182, 0.15) !important; color: #9b59b6 !important; }
+.calendar_filters li a:has(.calendar_event_category):hover { background: rgba(155, 89, 182, 0.08) !important; border-color: rgba(155, 89, 182, 0.5) !important; transform: translateY(-3px) !important; box-shadow: 0 8px 20px rgba(155, 89, 182, 0.15) !important; }
+
+/* COURSE - Red/Pink */
+.calendar_filters li a:has(.calendar_event_course) { border-color: rgba(231, 76, 60, 0.2) !important; }
+.calendar_filters li a .calendar_event_course { background: rgba(231, 76, 60, 0.15) !important; color: #e74c3c !important; }
+.calendar_filters li a:has(.calendar_event_course):hover { background: rgba(231, 76, 60, 0.08) !important; border-color: rgba(231, 76, 60, 0.5) !important; transform: translateY(-3px) !important; box-shadow: 0 8px 20px rgba(231, 76, 60, 0.15) !important; }
+
+/* GROUP - Orange/Yellow */
+.calendar_filters li a:has(.calendar_event_group) { border-color: rgba(243, 156, 18, 0.2) !important; }
+.calendar_filters li a .calendar_event_group { background: rgba(243, 156, 18, 0.15) !important; color: #f39c12 !important; }
+.calendar_filters li a:has(.calendar_event_group):hover { background: rgba(243, 156, 18, 0.08) !important; border-color: rgba(243, 156, 18, 0.5) !important; transform: translateY(-3px) !important; box-shadow: 0 8px 20px rgba(243, 156, 18, 0.15) !important; }
+
+/* USER - Blue */
+.calendar_filters li a:has(.calendar_event_user) { border-color: rgba(52, 152, 219, 0.2) !important; }
+.calendar_filters li a .calendar_event_user { background: rgba(52, 152, 219, 0.15) !important; color: #3498db !important; }
+.calendar_filters li a:has(.calendar_event_user):hover { background: rgba(52, 152, 219, 0.08) !important; border-color: rgba(52, 152, 219, 0.5) !important; transform: translateY(-3px) !important; box-shadow: 0 8px 20px rgba(52, 152, 219, 0.15) !important; }
+
+/* OTHER - Teal */
+.calendar_filters li a:has(.calendar_event_other) { border-color: rgba(26, 188, 156, 0.2) !important; }
+.calendar_filters li a .calendar_event_other { background: rgba(26, 188, 156, 0.15) !important; color: #1abc9c !important; }
+.calendar_filters li a:has(.calendar_event_other):hover { background: rgba(26, 188, 156, 0.08) !important; border-color: rgba(26, 188, 156, 0.5) !important; transform: translateY(-3px) !important; box-shadow: 0 8px 20px rgba(26, 188, 156, 0.15) !important; }
+
+/* Scale up the icon slightly on hover for extra polish */
+.calendar_filters li a:hover span[class^="calendar_event_"] {
+    transform: scale(1.1) !important;
+}

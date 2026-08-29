@@ -1,0 +1,79 @@
+/* =========================================
+   1. Base Tree Item Styling (Padding & Shape)
+   ========================================= */
+.block_navigation .block_tree .tree_item,
+.block_navigation .block_tree .tree_item.branch {
+    padding: 8px 12px !important;
+    margin: 3px 0 !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    border: 1px solid transparent !important;
+}
+
+/* =========================================
+   2. Typography & Link Formatting
+   ========================================= */
+.block_navigation .block_tree .tree_item a {
+    color: var(--text-primary, inherit) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    flex-grow: 1 !important;
+    transition: color 0.2s ease !important;
+}
+
+/* =========================================
+   3. Hover Effects (Soft Highlight & Nudge)
+   ========================================= */
+.block_navigation .block_tree .tree_item:hover {
+    background-color: rgba(0, 122, 255, 0.08) !important; /* Soft blue background */
+    transform: translateX(4px) !important; /* Gentle slide to the right */
+}
+
+.block_navigation .block_tree .tree_item:hover a,
+.block_navigation .block_tree .tree_item:hover i {
+    color: #007bff !important; /* Bright blue text/icon on hover */
+}
+
+/* =========================================
+   4. Active Node (Highlighting the current page)
+   ========================================= */
+.block_navigation .block_tree .active_tree_node {
+    background-color: rgba(0, 122, 255, 0.12) !important;
+    border-left: 4px solid #007bff !important; /* Bold blue left border */
+    border-radius: 4px 8px 8px 4px !important; /* Adjust corners for the border */
+}
+
+.block_navigation .block_tree .active_tree_node a,
+.block_navigation .block_tree .active_tree_node i {
+    font-weight: 700 !important;
+    color: #007bff !important;
+}
+
+/* =========================================
+   5. Structural Tree Lines & Spacing
+   ========================================= */
+.block_navigation .block_tree ul {
+    margin-left: 12px !important; /* Tighter indentation */
+    padding-left: 12px !important;
+    border-left: 2px solid rgba(128, 128, 128, 0.15) !important; /* Elegant connecting line for sub-menus */
+}
+
+/* Removes the line from the very first top-level list so it looks clean */
+.block_navigation > .block_tree > ul {
+    border-left: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* =========================================
+   6. Icon Formatting
+   ========================================= */
+.block_navigation .block_tree .tree_item i {
+    margin-right: 10px !important;
+    font-size: 0.95rem !important;
+    color: var(--text-secondary, #888) !important;
+    transition: color 0.2s ease !important;
+}

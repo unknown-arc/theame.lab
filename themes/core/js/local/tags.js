@@ -2,10 +2,13 @@
     "use strict";
 
     function initInteractiveTagCloud() {
-        const viewport = document.querySelector('.block_tags .card-text.content');
-        const canvas = document.querySelector('.block_tags .tag_cloud');
-        
-        if (!viewport || !canvas) return;
+    // Looks for the block viewport first, falls back to the search page container
+    const viewport = document.querySelector('.block_tags .card-text.content') || document.querySelector('#tag-search-results');
+    const canvas = document.querySelector('.block_tags .tag_cloud') || document.querySelector('#tag-search-results .tag_cloud');
+    
+    if (!viewport || !canvas) return;
+
+    // ... The rest of your JavaScript remains exactly the same ...
 
         // Auto-Resize Long Text & Disable Native Drag
         const tags = canvas.querySelectorAll('.inline-list li a');

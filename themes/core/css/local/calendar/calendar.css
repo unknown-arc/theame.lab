@@ -1,5 +1,6 @@
 /* 1. Main Container & Card Styling (Fixed Double-Stacking) */
-.block_calendar_month .card-body {
+.block_calendar_month .card-body,
+.maincalendar {
     background: transparent !important; /* Lets the parent .block glass effect show through */
     backdrop-filter: none !important; 
     -webkit-backdrop-filter: none !important;
@@ -10,19 +11,25 @@
 }
 
 /* 2. Controls & Navigation (Month Selection) */
-.block_calendar_month .calendar-controls {
+.block_calendar_month .calendar-controls,
+.maincalendar .calendar-controls {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     padding: 10px 0 20px 0 !important;
 }
-.block_calendar_month .calendar-controls h4 {
+
+/* Moodle uses h4 in the block, but h2.current on the main page */
+.block_calendar_month .calendar-controls h4,
+.maincalendar .calendar-controls h2.current {
     font-size: 1.25rem !important;
     font-weight: 600 !important;
     margin: 0 !important;
     color: var(--calendar-text-primary) !important;
 }
-.block_calendar_month .calendar-controls .arrow_link {
+
+.block_calendar_month .calendar-controls .arrow_link,
+.maincalendar .calendar-controls .arrow_link {
     color: var(--calendar-text-secondary) !important;
     text-decoration: none !important;
     padding: 8px 12px !important;
@@ -30,18 +37,23 @@
     transition: background 0.2s !important;
     font-weight: bold !important;
 }
-.block_calendar_month .calendar-controls .arrow_link:hover {
+
+.block_calendar_month .calendar-controls .arrow_link:hover,
+.maincalendar .calendar-controls .arrow_link:hover {
     background: var(--calendar-hover-bg) !important;
     color: var(--calendar-text-primary) !important;
 }
 
 /* 3. Clean Table Layout (Removing borders) */
-.block_calendar_month .calendartable {
+.block_calendar_month .calendartable,
+.maincalendar .calendartable {
     width: 100% !important;
-    border-collapse: separate !important; /* Changed from collapse to fix cut corners */
-    border-spacing: 4px !important; /* Adds a small invisible gap between blocks */
+    border-collapse: separate !important; 
+    border-spacing: 4px !important; 
 }
-.block_calendar_month .calendartable th {
+
+.block_calendar_month .calendartable th,
+.maincalendar .calendartable th {
     color: var(--calendar-text-secondary) !important;
     font-weight: 600 !important;
     font-size: 0.8rem !important;
@@ -49,15 +61,18 @@
     padding-bottom: 12px !important;
     border: none !important;
 }
-.block_calendar_month .calendartable td {
+
+.block_calendar_month .calendartable td,
+.maincalendar .calendartable td {
     border: none !important;
     padding: 4px !important;
     vertical-align: top !important;
-    height: 55px !important; /* Gives cells breathing room */
+    height: 55px !important; 
 }
 
 /* 4. Day Numbers & Circular Hover Effect */
-.block_calendar_month .day-number-circle {
+.block_calendar_month .day-number-circle,
+.maincalendar .day-number-circle {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -70,25 +85,31 @@
     font-size: 0.95rem !important;
     transition: all 0.2s ease !important;
 }
-.block_calendar_month td.day:not(.dayblank):hover .day-number-circle {
+
+.block_calendar_month td.day:not(.dayblank):hover .day-number-circle,
+.maincalendar td.day:not(.dayblank):hover .day-number-circle {
     background-color: var(--calendar-hover-bg) !important;
 }
 
 /* 5. "Today" Highlight Styling */
-.block_calendar_month td.today .day-number-circle {
+.block_calendar_month td.today .day-number-circle,
+.maincalendar td.today .day-number-circle {
     background-color: var(--calendar-accent) !important;
     color: var(--calendar-today-text) !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3) !important; /* Soft glow */
+    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3) !important; 
 }
 
-/* 6. Modern Event Pills (Replaces default Moodle dots) */
-.block_calendar_month [data-region="day-content"] ul {
+/* 6. Modern Event Pills */
+.block_calendar_month [data-region="day-content"] ul,
+.maincalendar [data-region="day-content"] ul {
     list-style: none !important;
     padding: 0 !important;
     margin: 4px 0 0 0 !important;
 }
-.block_calendar_month [data-region="day-content"] li a {
+
+.block_calendar_month [data-region="day-content"] li a,
+.maincalendar [data-region="day-content"] li a {
     display: block !important;
     background-color: var(--calendar-event-bg) !important;
     color: var(--calendar-event-text) !important;
@@ -103,40 +124,47 @@
     margin-bottom: 3px !important;
     text-align: left !important;
 }
-.block_calendar_month [data-region="day-content"] li a:hover {
+
+.block_calendar_month [data-region="day-content"] li a:hover,
+.maincalendar [data-region="day-content"] li a:hover {
     filter: brightness(0.9) !important;
 }
-/* Hide the ugly default Moodle dot/bullet icon */
-.block_calendar_month .calendar-circle {
+
+.block_calendar_month .calendar-circle,
+.maincalendar .calendar-circle {
     display: none !important;
 }
 
 /* 7. Top Header Buttons & Dropdowns */
-.block_calendar_month .header .btn-primary {
+.block_calendar_month .header .btn-primary,
+.maincalendar .header .btn-primary {
     background-color: var(--calendar-accent) !important;
-    background-image: none !important; /* Strips Moodle's default gradient */
+    background-image: none !important; 
     color: var(--calendar-today-text) !important;
     border: none !important;
-    border-radius: 20px !important; /* Modern Pill Button */
-    padding: 6px 20px !important; /* Slightly wider padding so text doesn't hit the edges */
+    border-radius: 20px !important; 
+    padding: 6px 20px !important; 
     font-weight: 600 !important;
     font-size: 0.85rem !important;
     transition: all 0.2s ease !important;
-    box-shadow: none !important; /* Removes square shadows */
-    overflow: hidden !important; /* Forces the hover effect to respect the rounded corners */
+    box-shadow: none !important; 
+    overflow: hidden !important; 
 }
 
-/* Fixes the hover and focus states */
 .block_calendar_month .header .btn-primary:hover,
 .block_calendar_month .header .btn-primary:focus,
-.block_calendar_month .header .btn-primary:active {
+.block_calendar_month .header .btn-primary:active,
+.maincalendar .header .btn-primary:hover,
+.maincalendar .header .btn-primary:focus,
+.maincalendar .header .btn-primary:active {
     background-color: var(--calendar-accent-hover) !important;
     background-image: none !important; 
     box-shadow: none !important;
     outline: none !important;
 }
 
-.block_calendar_month .header .custom-select {
+.block_calendar_month .header .custom-select,
+.maincalendar .header .custom-select {
     background-color: var(--calendar-hover-bg) !important;
     color: var(--calendar-text-primary) !important;
     border: 1px solid var(--calendar-border) !important;
@@ -147,7 +175,9 @@
 }
 
 /* 8. Bottom Footer Links (Styled as modern buttons) */
-.block_calendar_month .footer .bottom {
+/* The main calendar page drops the .footer class and just uses .bottom */
+.block_calendar_month .footer .bottom,
+.maincalendar .bottom {
     display: flex !important;
     justify-content: space-between !important;
     gap: 10px !important;
@@ -156,12 +186,13 @@
     border-top: 1px solid var(--calendar-border) !important;
 }
 
-.block_calendar_month .footer a {
+.block_calendar_month .footer a,
+.maincalendar .bottom a {
     display: inline-block !important;
     flex: 1 !important;
     text-align: center !important;
-    background-color: rgba(0, 122, 255, 0.1) !important; /* Light blue button background */
-    color: #007bff !important; /* Default blue text */
+    background-color: rgba(0, 122, 255, 0.1) !important; 
+    color: #007bff !important; 
     padding: 8px 16px !important;
     border-radius: 8px !important;
     text-decoration: none !important;
@@ -171,29 +202,31 @@
 }
 
 /* 9. Restored Blue-to-Red Hover Effect */
-/* Turns the footer buttons red on hover */
-.block_calendar_month .footer a:hover {
-    background-color: rgba(220, 53, 69, 0.1) !important; /* Light red background */
-    color: #dc3545 !important; /* Red text */
-    transform: translateY(-1px) !important; /* Subtle lift effect */
+.block_calendar_month .footer a:hover,
+.maincalendar .bottom a:hover {
+    background-color: rgba(220, 53, 69, 0.1) !important; 
+    color: #dc3545 !important; 
+    transform: translateY(-1px) !important; 
 }
 
-/* If you need ALL standard links in the calendar to also turn red on hover */
-.block_calendar_month a:not(.btn-primary):not(.arrow_link):hover {
+.block_calendar_month a:not(.btn-primary):not(.arrow_link):hover,
+.maincalendar a:not(.btn-primary):not(.arrow_link):hover {
     color: #dc3545 !important;
 }
 
-.block_calendar_month [data-region="day-content"] li a:hover {
-    background-color: rgba(220, 53, 69, 0.15) !important; /* Soft red background */
-    color: #dc3545 !important; /* Bright red text */
-    filter: none !important; /* Removes the brightness filter so the red pops */
-    transform: translateY(-1px) !important; /* Adds the same subtle lift effect as your footer */
+.block_calendar_month [data-region="day-content"] li a:hover,
+.maincalendar [data-region="day-content"] li a:hover {
+    background-color: rgba(220, 53, 69, 0.15) !important; 
+    color: #dc3545 !important; 
+    filter: none !important; 
+    transform: translateY(-1px) !important; 
 }
 
-/* Replace the default white block hover with a dark-theme friendly color */
 .block_calendar_month .calendartable tbody td:hover,
-.block_calendar_month .calendartable tbody td.day:hover {
-    background-color: var(--calendar-hover-bg) !important; /* Soft translucent highlight */
-    border-radius: 8px !important; /* Rounds the corners of the highlighted square */
+.block_calendar_month .calendartable tbody td.day:hover,
+.maincalendar .calendartable tbody td:hover,
+.maincalendar .calendartable tbody td.day:hover {
+    background-color: var(--calendar-hover-bg) !important; 
+    border-radius: 8px !important; 
     transition: background-color 0.2s ease !important;
 }

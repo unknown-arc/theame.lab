@@ -10,16 +10,16 @@
   "competencies": [ "/admin/tool/lp/coursecompetencies" ],
   "grades": [ "/grade/report" ],
 
-  "quiz": [ "/mod/quiz" ],
-
-  "assignment": [ "/mod/assign" ],
-
   "calendar": [ "/calendar" ],
+  "tag": [ "/tag" ],
+  
+  "quiz": [ "/mod/quiz" ],
+  "assignment": [ "/mod/assign" ],
+  "messages": [ "/message" ],
 
   "profile": [ 
     "/user/profile",
     "/user/view.php" 
-  ],
+  ]
 
-  "messages": [ "/message" ]
 }

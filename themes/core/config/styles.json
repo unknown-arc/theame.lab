@@ -25,6 +25,7 @@
     "themes/core/css/global/course_overview.css",
     "themes/core/css/global/page_transitions.css",
     "themes/core/css/global/base.css"
+
   ],
 
   "colors": {
@@ -44,23 +45,24 @@
       "themes/core/css/local/home/scroll_animation.css",
       "themes/core/css/local/cleanup/h1.css"
     ],
-    
+
     "dashboard": [
       "themes/core/css/local/cleanup/h1.css",
-      "themes/core/css/local/dashboard/dashboard.css",
       "themes/core/css/local/dashboard/welcome.css",      
       "themes/core/css/local/dashboard/my_course.css",
       "themes/core/css/local/dashboard/microsoft_block.css",
-      "themes/core/css/local/dashboard/calendar.css",
       "themes/core/css/local/dashboard/online_users.css",
       "themes/core/css/local/dashboard/timeline.css",
-      "themes/core/css/local/dashboard/tags.css"
+      "themes/core/css/local/dashboard/navigation.css",
+      "themes/core/css/local/calendar/calendar.css",
+      "themes/core/css/local/tags.css"
     ],
 
     "mycourse": [
       "themes/core/css/local/my course/mycourse.css",
       "themes/core/css/local/cleanup/h1.css"
     ],
+
 
     "course": [
       "themes/core/css/local/course/layout.css",
@@ -80,23 +82,22 @@
       "themes/core/css/local/cleanup/3dots.css"
     ],
 
+
+    "calendar": [      
+      "themes/core/css/local/calendar/calendar.css",
+      "themes/core/css/local/calendar/events.css"
+    ],
+    "tag": [
+      "themes/core/css/local/tags.css"
+    ],
+
     "quiz": [
-      "themes/core/css/local/quiz/quiz.css"
     ],
-
     "assignment": [
-      "themes/core/css/local/assignment/assignment.css"
-    ],
-
-    "calendar": [
-      "themes/core/css/local/calendar/calendar.css"
     ],
     "profile": [
-      "themes/core/css/local/profile/profile.css"
     ],
-
     "messages": [
-      "themes/core/css/local/messages/messages.css"
     ]
   },
 
