@@ -5,7 +5,7 @@
     position: relative !important;
     cursor: grab !important;
     border-radius: 12px !important;
-    background: var(--bg-surface) !important; /* Automatically swaps light/dark */
+    background: var(--tags-bg-surface) !important; /* Automatically swaps light/dark */
     
     user-select: none !important;
     -webkit-user-select: none !important; 
@@ -46,7 +46,7 @@
     align-items: center !important;
     justify-content: center !important;
     border-radius: 50% !important;
-    color: var(--text-primary) !important; /* Automatically swaps text to black/white */
+    color: var(--tages-text) !important; /* Automatically swaps text to black/white */
     text-decoration: none !important;
     text-align: center !important;
     line-height: 1.15 !important;

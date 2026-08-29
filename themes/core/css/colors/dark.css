@@ -162,13 +162,7 @@
     --toggle-knob-on: #000000;                    /* High contrast black knob */     
 
 /* ==============================================================*/    
-
-/* Tags */
-    --tag-bg: #050505;
-    --tag-text: #ffffff;
-
-/* ==============================================================*/    
-    
+ 
 /* Notifications Messages  */
     --toast-bg: rgba(255, 255, 255, 0.95);
     --toast-text: #1e272e;
@@ -249,7 +243,7 @@
 
 /* Online Users */
 
-    --onlineusercard-bg: rgba(30,30,42,0.95);
+    --onlineusercard-bg: rgb(30, 30, 42, 0.95);
     --onlineusercard-bg-hover: #ffffff; /* Light background on hover */
     --onlineusercard-border: 1px solid rgba(255, 255, 255, 0.05);
     --onlineusercard-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -261,16 +255,40 @@
 
 /* ==============================================================*/ 
 
+/* Calendar */ 
+
+    --calendar-bg: #000000;
+    --calendar-text-primary: #f5f5f7;
+    --calendar-text-secondary: #98989d;
+    --calendar-border: rgba(255, 255, 255, 0.08); /* Softened border for dark mode */
+    --calendar-accent: #0a84ff;
+    --calendar-accent-hover: #006bed;
+    --calendar-today-text: #ffffff;
+    --calendar-hover-bg: rgba(255, 255, 255, 0.1); /* Subtle light hover for dark mode */
+    
+    /* Event Pill Colors */
+    --calendar-event-bg: #004088;
+    --calendar-event-text: #99cfff;
+
+/* ==============================================================*/ 
+
 /* Timeline */
-    --timeline-card-bg: rgba(30, 30, 30, 0.6);
+    --timeline-card-bg: rgb(30, 30, 42);
     --timeline-card-border: rgba(255, 255, 255, 0.1);
     --timeline-card-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     --timeline-text-main: #ffffff;
     --timeline-text-hover: #000000; 
     --timeline-text-muted: #adb5bd;
-    --timeline-icon-bg: rgba(255, 255, 255, 0.05);    
+    --timeline-icon-bg: rgba(255, 255, 255, 0.05);  
+    
+/* ==============================================================*/      
+
+/* Tags */
+    --tag-bg: rgb(30, 30, 42);
+    --tag-text: #ffffff;
 
 /* ==============================================================*/ 
+
 /* COURSE */    
     /* Layout and Contents */    
     --cg-text-color: #ffffff;

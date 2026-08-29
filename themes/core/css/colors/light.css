@@ -162,13 +162,7 @@
     --toggle-knob-off: #ffffff;
     --toggle-knob-on: #ffffff;
 
-/* ==============================================================*/    
-
-/* Tags */
-    --tag-bg: #f3f3f3;
-    --tag-text: #000000;
-
-/* ==============================================================*/  
+/* ==============================================================*/     
 
 /* Notification Message */
     --toast-bg: rgba(255, 255, 255, 0.95);
@@ -264,6 +258,22 @@
 
 /* ==============================================================*/ 
 
+/* Calendar */
+    --calendar-bg: #ffffff;
+    --calendar-text-primary: #1d1d1f;
+    --calendar-text-secondary: #86868b;
+    --calendar-border: #e5e5ea;
+    --calendar-accent: #007aff; /* Apple-style Blue */
+    --calendar-accent-hover: #0062cc;
+    --calendar-today-text: #ffffff;
+    --calendar-hover-bg: #f5f5f7;
+    
+    /* Event Pill Colors */
+    --calendar-event-bg: #e5f1ff;
+    --calendar-event-text: #0058d0;
+
+/* ==============================================================*/ 
+
 /* Timeline */
     --timeline-card-bg: rgba(255, 255, 255, 0.75);
     --timeline-card-border: rgba(0, 0, 0, 0.1);
@@ -272,6 +282,12 @@
     --timeline-text-hover: #ffffff;
     --timeline-text-muted: #6c757d;
     --timeline-icon-bg: rgba(0, 0, 0, 0.04);
+
+/* ==============================================================*/ 
+
+/* Tags */
+    --tag-bg: #f3f3f3;
+    --tag-text: #000000;
 
 /* ==============================================================*/ 
 
@@ -293,6 +309,8 @@
     --lecture-card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
     --lecture-btn-bg: #000000;
     --lecture-btn-text: #ffffff;
+
+
 }
 
 :root {
