@@ -16,7 +16,8 @@
     "themes/core/css/global/components/notifymsg.css",
     "themes/core/css/global/components/tables.css",
 
-    "themes/core/css/global/style/typography.css",
+    "themes/core/css/fronts/typography.css",
+
     "themes/core/css/global/header/iitplogo.css",
     "themes/core/css/global/header/header.css",
     "themes/core/css/global/header/profiledropdown.css",

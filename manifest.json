@@ -51,8 +51,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "shared/*.css",
-        "shared/**/*.css",
+        "shared/routes/*.json",
         "themes/core/css/**/*.css",
         "themes/core/config/*.json",
         "themes/core/assets/**/*",

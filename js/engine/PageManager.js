@@ -34,7 +34,7 @@
             if(this._routesConfig)return this._routesConfig;
 
             this._routesConfig=await Utils.loadJSON(
-                "themes/core/config/routes.json"
+                "shared/routes/routes.json"
             );
 
             return this._routesConfig;
