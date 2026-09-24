@@ -1,0 +1,223 @@
+/* ==========================================
+   LOGIN BLOCK & FORM STYLING
+   ========================================== */
+
+/* 1. Hide Unwanted Elements */
+.login-container img, 
+.logo img, 
+.login-logo, 
+.logo,
+.login-container .d-flex.mt-2,
+.card-body > .d-flex.mt-2:last-child {
+    display: none !important;
+}
+
+/* 2. Force Outer Moodle Layout Containers to be Opaque-Free */
+#page-wrapper, 
+#page, 
+#region-main-box, 
+#region-main, 
+#page-content,
+.login-container,
+.login-wrapper,
+.loginform .left-column,
+.loginform .right-column,
+.loginform .column-content,
+.card-body {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Fixed Left-Center Positioning Container */
+.login-wrapper,
+#page-login-index .login-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 25% !important; 
+    transform: translateX(-50%) !important; 
+    width: 420px !important; 
+    height: 100vh !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; 
+    z-index: 1000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 3. The Glassmorphism Card (75% Translucent) */
+.card, 
+.loginwrapper .card,
+.loginform {
+    width: 100% !important; 
+    max-width: 420px !important;
+    position: relative !important; 
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    
+    background-color: rgba(255, 255, 255, 0.75) !important; 
+    backdrop-filter: blur(24px) !important; 
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-radius: 24px !important; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    padding: 2.5rem 2rem !important;
+    box-sizing: border-box !important;
+}
+
+/* 4. Form Inputs & Primary Button */
+input.form-control {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    padding: 14px 16px !important;
+    font-size: 15px !important;
+    color: #1d1d1f !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important; 
+}
+
+input.form-control:focus {
+    background-color: #ffffff !important;
+    border-color: #0071e3 !important; 
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15) !important;
+    outline: none !important;
+}
+
+#loginbtn, .btn-primary {
+    background-color: #1d1d1f !important; 
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    padding: 12px 16px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    box-sizing: border-box !important;
+}
+
+#loginbtn:hover, .btn-primary:hover {
+    background-color: #000000 !important;
+    transform: scale(1.02) !important; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 5. Vertical Stacking & Line Removal */
+.login-container .row, 
+.login-wrapper .row,
+.loginform.row,
+.card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+.login-container [class*="col-"],
+.loginwrapper [class*="col-"],
+.loginform [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    border: none !important;
+    padding: 0 !important; 
+}
+
+.login-divider, .divider, hr, 
+.login-container [class*="col-"]::before, 
+.login-container [class*="col-"]::after {
+    display: none !important; 
+    content: none !important;
+}
+
+/* 6. Separator Line & Microsoft Button */
+.login-form-forgotpassword,
+.forgetpass,
+.login-container a[href*="forgot_password"] {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding-bottom: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important; 
+}
+
+.login-heading,
+.login-divider,
+.potentialidp-title,
+.login-container h6,
+.login-container h5,
+.login-container p {
+    color: #86868b !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.forgetpass ~ div, 
+.potentialidp-title ~ div,
+.login-identityproviders,
+.potentialidplist,
+.potentialidp {
+    width: 100% !important;
+    min-width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* Microsoft OAuth Button Fix */
+.login-identityprovider-btn,
+.potentialidplist a,
+.potentialidp a,
+.login-container a.btn:not(#loginbtn) {
+    background-color: #ffffff !important;
+    color: #1d1d1f !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important; 
+    padding: 12px 16px !important;
+    width: 100% !important;
+    max-width: 100% !important; 
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04) !important;
+    transition: all 0.3s ease !important;
+    margin-top: 8px !important;
+}
+
+.login-identityprovider-btn img {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.login-identityprovider-btn:hover,
+.potentialidplist a:hover,
+.potentialidp a:hover {
+    background-color: #f5f5f7 !important;
+    transform: scale(1.02) translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
+    border-color: rgba(0, 0, 0, 0.3) !important;
+}

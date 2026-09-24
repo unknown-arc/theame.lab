@@ -1,0 +1,45 @@
+/* ==========================================
+   LOGIN BACKGROUND & GLOBAL STYLES
+   ========================================== */
+
+/* 1. Global Font and Resets */
+* {
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+/* 2. Complete Background Replacement */
+html, body, #page-wrapper, #page, #page-login-index, .login-wrapper {
+    background-color: transparent !important; 
+    background-image: none !important; 
+}
+
+html {
+    background-image: url('https://4kwallpapers.com/images/wallpapers/miyamoto-musashi-3840x2160-15204.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+}
+
+/* 3. Top-Left Floating Brand (IITP Logo & Text) */
+body::before {
+    content: "IITP" !important;
+    position: fixed !important;
+    top: 20px !important;
+    left: 36px !important;
+    z-index: 1001 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    font-size: 1.45rem !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    letter-spacing: 1.2px !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    background: url('../../../../assets/images/IIT-Patna.png') no-repeat left center !important;
+    background-size: 36px 36px !important;
+    padding-left: 50px !important;
+    min-height: 36px !important;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) !important;
+}
