@@ -10,6 +10,7 @@
     "themes/core/css/global/components/inputform.css",
     "themes/core/css/global/components/description.css",
     "themes/core/css/global/components/dropdown.css",
+    "themes/core/css/global/components/dailog.css",
     "themes/core/css/global/components/searchbar.css",
     "themes/core/css/global/components/scrollbar.css",
     "themes/core/css/global/components/toggleswitch.css",
@@ -17,7 +18,7 @@
     "themes/core/css/global/components/tables.css",
 
     "themes/core/css/fronts/typography.css",
-
+    
     "themes/core/css/global/header/iitplogo.css",
     "themes/core/css/global/header/header.css",
     "themes/core/css/global/header/profiledropdown.css",
@@ -25,7 +26,9 @@
     
     "themes/core/css/global/course_overview.css",
     "themes/core/css/global/page_transitions.css",
-    "themes/core/css/global/base.css"
+    "themes/core/css/global/base.css",
+    
+    "themes/core/css/global/quiz/quiz.css"
 
   ],
 

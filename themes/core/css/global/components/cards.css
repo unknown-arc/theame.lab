@@ -26,6 +26,7 @@
 .participantsfilter,
 .filter-group,
 .generalbox,
+.activity-header,
 .course-content .activity-item {
     background: var(--card-glass-bg) !important;
     border-radius: 20px !important; 
