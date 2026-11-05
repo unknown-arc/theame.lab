@@ -1,0 +1,175 @@
+/* ===================================================
+   UNIFIED SINGLE-LAYER GLASSMORPHISM QUIZ CSS
+   =================================================== */
+
+/* 1. Main Outer Question Card (The Single Glass Layer) */
+.que.multichoice {
+    background: var(--card-glass-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--card-glass-border) !important;
+    border-radius: 20px !important;
+    box-shadow: var(--card-shadow) !important;
+    color: var(--filter-text) !important;
+    padding: 20px !important;
+}
+
+/* 2. Strip Backgrounds from Inner Wrapper Divs to Prevent Stacking */
+.que .content, 
+.que .formulation,
+.que .info {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+}
+
+/* Fix Info Header Spacing */
+.que .info {
+    margin-bottom: 16px !important;
+    border-bottom: 1px solid var(--list-divider) !important;
+    padding-bottom: 12px !important;
+}
+
+.que .info h3.no {
+    color: var(--filter-text) !important;
+    font-size: 1.1rem !important;
+}
+
+.que .info .state, 
+.que .info .grade {
+    color: #94a3b8 !important;
+    font-size: 0.85rem !important;
+}
+
+/* 3. Timer / Time Left (Highlighted in Red) */
+#quiz-timer, 
+.timeleft {
+    background: var(--card-glass-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    border-radius: 16px !important;
+    color: #ef4444 !important;
+    font-weight: 600 !important;
+    box-shadow: var(--card-shadow) !important;
+    padding: 10px 16px !important;
+}
+
+/* 4. Quiz Navigation Block Container */
+.block_quiz_navigation, 
+#block-region-side-pre .block_quiz_navigation,
+.block_navigation {
+    background: var(--card-glass-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--card-glass-border) !important;
+    border-radius: 20px !important;
+    box-shadow: var(--card-shadow) !important;
+    padding: 16px !important;
+}
+
+.qn_buttons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 6px 0 !important;
+}
+
+/* 5. Redesigned Navigation Buttons (Pill Theme) */
+.qn_buttons .qnbutton,
+.block_quiz_navigation .qnbutton {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid var(--card-glass-border) !important;
+    color: var(--filter-text) !important;
+    border-radius: 10px !important;
+    min-width: 38px !important;
+    height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 8px !important;
+    font-size: 13px !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+}
+
+/* Hide Moodle's split-background visual wrappers */
+.qn_buttons .qnbutton .thispageholder,
+.qn_buttons .qnbutton .trafficlight {
+    display: none !important;
+}
+
+/* Active page & Saved state rings */
+.qn_buttons .qnbutton.thispage {
+    border-color: #38bdf8 !important;
+    background: rgba(56, 189, 248, 0.15) !important;
+}
+
+.qn_buttons .qnbutton.answersaved {
+    background: rgba(34, 197, 94, 0.12) !important;
+    border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+.qn_buttons .qnbutton:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* 6. "Finish attempt ..." Button Styling */
+.block_quiz_navigation .endtestlink,
+.block_quiz_navigation a[href*="quiz/summary.php"] {
+    display: block !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid var(--card-glass-border) !important;
+    color: var(--filter-text) !important;
+    text-align: center !important;
+    padding: 10px 16px !important;
+    margin-top: 14px !important;
+    border-radius: 12px !important;
+    font-weight: 500 !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.block_quiz_navigation .endtestlink:hover,
+.block_quiz_navigation a[href*="quiz/summary.php"]:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* 7. Option Blocks / Answer Choices (Single Unified Rows) */
+.que .answer div.r0, 
+.que .answer div.r1 {
+    background: rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid var(--card-glass-border) !important;
+    color: var(--filter-text) !important;
+    padding: 12px 14px !important;
+    margin-bottom: 8px !important;
+    border-radius: 10px !important;
+    transition: all 0.2s ease !important;
+}
+
+.que .answer div.r0:hover, 
+.que .answer div.r1:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Adds margin between the last option block and "Clear my choice" */
+.qtype_multichoice_clearchoice {
+    margin-top: 16px !important;
+}
